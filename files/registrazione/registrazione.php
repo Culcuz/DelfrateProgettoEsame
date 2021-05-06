@@ -7,7 +7,6 @@
     <link rel="icon" type="image/png" href="../../assets/img/favicon.png">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.all.min.js"></script>
 
-
     <!--     Fonts and icons     -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
@@ -50,27 +49,25 @@
                     text: 'Cè stato un problema in fase di registrazione',
                     allowEscape: false,
                     allowOutsideClick: false,
-                    confirmButtonText: '<a href="../login/login.php>Riprova</a>'
-                })
+                    confirmButtonText: "<a href='../login/login.php'>Riprova</a>"
+                });
             </script>
         <?php
         } else {
+            $_SESSION['connessione'] = 1; //mi salvo nell'arey di sessine il fatto che l'utente abbia la possibilità di entrare nell'area riservata
         ?>
             <script>
-                $_SESSION['connessione'] = true; //mi salvo nell'arey di sessine il fatto che l'utente abbia la possibilità di entrare nell'area riservata
-
                 Swal.fire({
                     icon: 'success',
                     title: 'Congratulazioni!',
                     text: 'Registrazione avvenuta con successo',
                     allowEscape: false,
                     allowOutsideClick: false,
-                    confirmButtonText: '<a href="../areaRis/utente/utente.php">OK</a>'
-
-
-                })
+                    confirmButtonText: "<a href='../areaRis/utente/utente.php'>OK</a>"
+                });
             </script>
         <?php
+
         }
         mysqli_close($conn);
         //-----FINE INSERIMENTO DATI NEL DATABASE-----
@@ -80,11 +77,11 @@
             Swal.fire({
                 icon: 'error',
                 title: 'Ops...',
-                text: 'Abbiamo riscontrato un problema in fase di registrazione',
+                text: 'Le password inserite sono diverse',
                 allowEscape: false,
                 allowOutsideClick: false,
-                confirmButtonText: '<a href="../login/login.php">Riprova</a>'
-            })
+                confirmButtonText: "<a href='../login/login.php'>Riprova</a>"
+            });
         </script>
     <?php
     }

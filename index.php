@@ -8,7 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title> Nøzama </title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
+
   <!--     Fonts and icons     -->
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
@@ -57,6 +57,20 @@
               <p>Categorie</p>
             </a>
           </li>
+          <?php
+          session_start();
+          if (isset($_SESSION['connessione'])) {
+            echo "<li class='nav-item'>
+            <a class='nav-link' href=''>
+            <span class='material-icons-outlined'>
+            shopping_cart
+            </span>
+              <p>Carrello</p>
+            </a>
+          </li>";
+          }
+          ?>
+
         </ul>
       </div>
     </div>
@@ -83,7 +97,6 @@
                 <a class="nav-link" href="#">Pricing</a>
               </li>
             </ul>
-
           </div>
         </div>
       </nav>
@@ -97,20 +110,41 @@
 
             <?php
             include('./files/database/config.php');
-            session_start();
             $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
             $select = "SELECT * FROM prodotto order by 'id'";
 
             $ris = mysqli_query($conn, $select);
             if (!$ris) {
-              echo "<script type='text/javascript'>alert('Errore nella visualizzazione');</script>";
+            ?>
+              <script>
+                Swal.fire({
+                  icon: 'error',
+                  title: 'Ops...',
+                  text: 'Cè stato un problema in fase di visualizzazione',
+                  allowEscape: false,
+                  allowOutsideClick: false,
+                  confirmButtonText: '<a href="./index.php>Riprova</a>'
+                })
+              </script>
+            <?php
               exit();
             }
 
             $riga = mysqli_fetch_array($ris, MYSQLI_ASSOC); // array che conterrà queste informazioni
             if (!$riga) {
-              echo "<script type='text/javascript'>alert('Nessun prodotto presente nel database');</script>";
+            ?>
+              <script>
+                Swal.fire({
+                  icon: 'error',
+                  title: 'Ops...',
+                  text: 'Cè stato un problema in fase di visualizzazione',
+                  allowEscape: false,
+                  allowOutsideClick: false,
+                  confirmButtonText: '<a href="./index.php>Riprova</a>'
+                })
+              </script>
+            <?php
               exit();
             }
 
