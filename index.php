@@ -32,11 +32,18 @@
 
         Tip 2: you can also add an image using data-image tag
     -->
-      <div class="logo">
-        <a class="simple-text logo-normal">
-          Delfrate Riccardo
+      <?php
+      session_start();
+      if (isset($_SESSION['connessione'])) {
+        $nome = $_SESSION['nome'];
+        echo "<div class='logo'>
+        <a class='simple-text logo-normal'>
+          Benvenuta/o $nome
         </a>
-      </div>
+      </div>";
+      }
+      ?>
+
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li class="nav-item active  ">
@@ -58,14 +65,21 @@
             </a>
           </li>
           <?php
-          session_start();
           if (isset($_SESSION['connessione'])) {
             echo "<li class='nav-item'>
-            <a class='nav-link' href=''>
+            <a class='nav-link' href='./files/carrello/carrello.html'>
             <span class='material-icons-outlined'>
             shopping_cart
             </span>
               <p>Carrello</p>
+            </a>
+          </li>";
+          echo "<li class='nav-item'>
+            <a class='nav-link' href='./files/logout/logout.php'>
+            <span class='material-icons-outlined'>
+            shopping_cart
+            </span>
+              <p>Logout</p>
             </a>
           </li>";
           }

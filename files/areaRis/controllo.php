@@ -56,6 +56,7 @@
         $admin = $riga[5];
         $conta = mysqli_num_rows($ris);
         if ($conta == 1) {
+            $_SESSION['nome'] = $riga[1];
             if ($admin == 1) {
                 $_SESSION['connessione'] = 1; //mi salvo nell'arey di sessine il fatto che l'utente abbia la possibilità di entrare nell'area riservata
                 header("Location: ./admin/admin.php");
