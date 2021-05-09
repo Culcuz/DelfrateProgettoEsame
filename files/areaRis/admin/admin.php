@@ -2,138 +2,179 @@
 <html lang="it">
 
 <head>
-    <meta charset="utf-8" />
-    <link rel="apple-touch-icon" sizes="76x76" href="../../../assets/img/apple-icon.png">
-    <link rel="icon" type="image/png" href="../../../assets/img/favicon.png">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title> Nøzama </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="76x76" href="../../../assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="../../../assets/img/favicon.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title> Nøzama </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--     Fonts and icons     -->
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
-    <!-- CSS Files -->
-    <link href="../../../assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <!-- CSS Files -->
+  <link href="../../../assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <!-- Google -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
-    <link href="./files/css/prodotti.css" rel="stylesheet" type="text/css">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Alata&family=Kanit:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <!-- Google -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+  <link href="./files/css/prodotti.css" rel="stylesheet" type="text/css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alata&family=Kanit:wght@500&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <?php
-    session_start();
-    if (!isset($_SESSION['connessione'])) {
-    ?>
-        <script>
-            Swal.fire({
-                icon: 'error',
-                title: 'Ops...',
-                text: 'Non sei autorizzato',
-                allowEscape: false,
-                allowOutsideClick: false,
-                confirmButtonText: "<a href='../../../index.php'>Esci</a>"
-            });
-        </script>
-    <?php
-    } else {
-    ?>
-        <!-- ACCESSO AVVENUTO -->
-        <script>
-            const Toast = Swal.mixin({
-                toast: true,
-                position: 'top-end',
-                showConfirmButton: false,
-                timer: 3000,
-                timerProgressBar: true,
-                didOpen: (toast) => {
-                    toast.addEventListener('mouseenter', Swal.stopTimer)
-                    toast.addEventListener('mouseleave', Swal.resumeTimer)
-                }
-            })
+  <?php
+  session_start();
+  include('../../database/config.php');
+  $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
-            Toast.fire({
-                icon: 'success',
-                title: 'Accesso avvenuto'
-            })
-        </script>
-        <!-- FINE ACCESSO AVVENUTO -->
-    <?php
-    }
+  if (!isset($_SESSION['connessione'])) {
+  ?>
+    <script>
+      Swal.fire({
+        icon: 'error',
+        title: 'Ops...',
+        text: 'Non sei autorizzato',
+        allowEscape: false,
+        allowOutsideClick: false,
+        confirmButtonText: "<a href='../../../index.php'>Esci</a>"
+      });
+    </script>
+  <?php
+  } else {
+  ?>
+    <!-- ACCESSO AVVENUTO -->
+    <script>
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
 
-    ?>
+      Toast.fire({
+        icon: 'success',
+        title: 'Accesso avvenuto'
+      })
+    </script>
+    <!-- FINE ACCESSO AVVENUTO -->
+  <?php
+  }
 
-    <div class="wrapper ">
-        <div class="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-3.jpg">
-            <?php
-            if (isset($_SESSION['connessione'])) {
-                $nome = $_SESSION['nome'];
-                echo "<div class='logo'>
+  ?>
+
+  <div class="wrapper ">
+    <div class="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-3.jpg">
+      <?php
+      if (isset($_SESSION['connessione'])) {
+        $nome = $_SESSION['nome'];
+        echo "<div class='logo'>
         <a class='simple-text logo-normal'>
           Benvenuta/o $nome
         </a>
       </div>";
-            }
-            ?>
+      }
+      ?>
 
-            <div class="sidebar-wrapper">
-                <ul class="nav">
-                    <li class="nav-item active  ">
-                        <a class="nav-link" href="./index.php">
-                            <i class="material-icons">dashboard</i>
-                            <p>Home page</p>
-                        </a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="./files/login/login.php">
-                            <i class="material-icons">person</i>
-                            <p>Accedi/Registrati</p>
-                        </a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="./typography.html">
-                            <i class="material-icons">library_books</i>
-                            <p>Categorie</p>
-                        </a>
-                    </li>
-                    <?php
-                    if (isset($_SESSION['connessione'])) {
-                        echo "<li class='nav-item'>
-                            <a class='nav-link' href='./files/logout/logout.php'>
-                            <span class='material-icons-outlined'>
-                            shopping_cart
-                            </span>
-                            <p>Logout</p>
-                            </a>
-                          </li>";
-                    }
-                    ?>
+      <div class="sidebar-wrapper">
+        <ul class="nav">
+          <li class="nav-item active  ">
+            <a class="nav-link" href="./index.php">
+              <i class="material-icons">dashboard</i>
+              <p>Home page</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="./files/login/login.php">
+              <i class="material-icons">person</i>
+              <p>Accedi/Registrati</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="./typography.html">
+              <i class="material-icons">library_books</i>
+              <p>Categorie</p>
+            </a>
+          </li>
+          <?php
+          if (isset($_SESSION['connessione'])) {
+            echo "<li class='nav-item'>
+              <a class='nav-link' href='../../logout/logout.php'>
+              <i class='material-icons'>logout</i>
+                <p>Logout</p>
+              </a>
+            </li>";
+          }
+          ?>
 
-                </ul>
-            </div>
+        </ul>
+      </div>
+    </div>
+    <div class="main-panel">
+    <nav class="navbar navbar-expand-lg bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="navbar-toggler-icon icon-bar"></span>
+          <span class="navbar-toggler-icon icon-bar"></span>
+          <span class="navbar-toggler-icon icon-bar"></span>
+        </button>
+        <div class="container">
+
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="main-panel">
-        <div class="content">
+      </nav>
+      <div class="content">
         <div class="container-fluid">
           <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-6">
               <div class="card card-stats">
                 <div class="card-header card-header-warning card-header-icon">
                   <div class="card-icon">
-                    <i class="material-icons">content_copy</i>
+                    <i class="material-icons">inventory_2</i>
                   </div>
-                  <p class="card-category">Used Space</p>
-                  <h3 class="card-title">49/50
-                    <small>GB</small>
-                  </h3>
+                  <p class="card-category">Prodotti presenti:</p>
+                  <?php                
+                  $numeroProdotti = "SELECT * FROM prodotto";
+                  $ris = mysqli_query($conn, $numeroProdotti);
+                  $num_righe = mysqli_num_rows($ris);
+                  if (!$ris) {
+                  ?>
+                    <script>
+                      Swal.fire({
+                        icon: 'error',
+                        title: 'Ops...',
+                        text: 'Cè stato un problema in fase di visualizzazione',
+                        allowEscape: false,
+                        allowOutsideClick: false,
+                        confirmButtonText: '<a href="../../../index.php>Riprova</a>'
+                      });
+                    </script>
+                  <?php
+                  }
+                  ?>
+                  <h3 class="card-title"><?php echo $num_righe?></h3>
                 </div>
                 <div class="card-footer">
                   <div class="stats">
-                    <i class="material-icons text-danger">warning</i>
-                    <a href="javascript:;">Get More Space...</a>
+                    
                   </div>
                 </div>
               </div>
@@ -142,14 +183,33 @@
               <div class="card card-stats">
                 <div class="card-header card-header-success card-header-icon">
                   <div class="card-icon">
-                    <i class="material-icons">store</i>
+                    <i class="material-icons">account_circle</i>
                   </div>
-                  <p class="card-category">Revenue</p>
-                  <h3 class="card-title">$34,245</h3>
+                  <p class="card-category">Utenti presenti:</p>
+                  <?php                
+                  $numeroProdotti = "SELECT * FROM utente";
+                  $ris = mysqli_query($conn, $numeroProdotti);
+                  $num_righe = mysqli_num_rows($ris);
+                  if (!$ris) {
+                  ?>
+                    <script>
+                      Swal.fire({
+                        icon: 'error',
+                        title: 'Ops...',
+                        text: 'Cè stato un problema in fase di visualizzazione',
+                        allowEscape: false,
+                        allowOutsideClick: false,
+                        confirmButtonText: '<a href="../../../index.php>Riprova</a>'
+                      });
+                    </script>
+                  <?php
+                  }
+                  ?>
+                  <h3 class="card-title"><?php echo $num_righe?></h3>
                 </div>
                 <div class="card-footer">
                   <div class="stats">
-                    <i class="material-icons">date_range</i> Last 24 Hours
+                    
                   </div>
                 </div>
               </div>
@@ -158,14 +218,32 @@
               <div class="card card-stats">
                 <div class="card-header card-header-danger card-header-icon">
                   <div class="card-icon">
-                    <i class="material-icons">info_outline</i>
+                    <i class="material-icons">category</i>
                   </div>
-                  <p class="card-category">Fixed Issues</p>
-                  <h3 class="card-title">75</h3>
+                  <p class="card-category">Categorie presenti:</p>
+                  <?php                
+                  $numeroProdotti = "SELECT * FROM categoria";
+                  $ris = mysqli_query($conn, $numeroProdotti);
+                  $num_righe = mysqli_num_rows($ris);
+                  if (!$ris) {
+                  ?>
+                    <script>
+                      Swal.fire({
+                        icon: 'error',
+                        title: 'Ops...',
+                        text: 'Cè stato un problema in fase di visualizzazione',
+                        allowEscape: false,
+                        allowOutsideClick: false,
+                        confirmButtonText: '<a href="../../../index.php>Riprova</a>'
+                      });
+                    </script>
+                  <?php
+                  }
+                  ?>
+                  <h3 class="card-title"><?php echo $num_righe?></h3>
                 </div>
                 <div class="card-footer">
                   <div class="stats">
-                    <i class="material-icons">local_offer</i> Tracked from Github
                   </div>
                 </div>
               </div>
@@ -196,7 +274,8 @@
                 <div class="card-body">
                   <h4 class="card-title">Daily Sales</h4>
                   <p class="card-category">
-                    <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> increase in today sales.</p>
+                    <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> increase in today sales.
+                  </p>
                 </div>
                 <div class="card-footer">
                   <div class="stats">
@@ -531,27 +610,27 @@
           </div>
         </div>
 
-            <footer class="footer">
-                <div class="container-fluid">
-                    <nav class="float-left">
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    About Me
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <div class="copyright float-right">
-                        &copy;
-                        <script>
-                            document.write(new Date().getFullYear())
-                        </script>
-                        by <strong> Riccardo Delfrate</strong>
-                    </div>
-                </div>
-            </footer>
-        </div>
+        <footer class="footer">
+          <div class="container-fluid">
+            <nav class="float-left">
+              <ul>
+                <li>
+                  <a href="#">
+                    About Me
+                  </a>
+                </li>
+              </ul>
+            </nav>
+            <div class="copyright float-right">
+              &copy;
+              <script>
+                document.write(new Date().getFullYear())
+              </script>
+              by <strong> Riccardo Delfrate</strong>
+            </div>
+          </div>
+        </footer>
+      </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>

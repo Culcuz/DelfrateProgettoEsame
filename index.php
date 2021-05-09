@@ -68,17 +68,13 @@
           if (isset($_SESSION['connessione'])) {
             echo "<li class='nav-item'>
             <a class='nav-link' href='./files/carrello/carrello.html'>
-            <span class='material-icons-outlined'>
-            shopping_cart
-            </span>
+              <i class='material-icons'>shopping_cart</i>
               <p>Carrello</p>
             </a>
           </li>";
             echo "<li class='nav-item'>
             <a class='nav-link' href='./files/logout/logout.php'>
-            <span class='material-icons-outlined'>
-            shopping_cart
-            </span>
+            <i class='material-icons'>logout</i>
               <p>Logout</p>
             </a>
           </li>";
