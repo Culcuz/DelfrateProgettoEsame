@@ -1,5 +1,5 @@
 .Pcontainer {
-    position: absolute;
+    position: relative;
     background: center / cover;
 
     transform: translate(-50%, -50%);
@@ -17,7 +17,7 @@
 }
 
 .Player-Pcontainer {
-    position: absolute;
+    position: relative;
     bottom: 0;
     z-index: 1;
     width: 100%;
