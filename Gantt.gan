@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2021-04-01" view-index="0" gantt-divider-location="300" resource-divider-location="300" version="2.8.11" locale="it_IT">
+    <description/>
+    <view zooming-state="default:0" id="gantt-chart">
+        <field id="tpd3" name="Nome" width="167" order="0"/>
+        <field id="tpd4" name="Data d'inizio" width="65" order="1"/>
+        <field id="tpd5" name="Data di fine" width="64" order="2"/>
+        <option id="color.recent"><![CDATA[#0000ff]]></option>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Nome" width="210" order="0"/>
+        <field id="1" name="Ruolo predefinito" width="86" order="1"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="1"/>
+            <only-show-weekends value="false"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="0" name="Pianificazione" color="#8cb6ce" shape="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" meeting="false" start="2021-04-01" duration="4" complete="0" thirdDate="2021-03-31" thirdDate-constraint="0" expand="true">
+            <notes><![CDATA[Pianificazioni di tutte le varie attività successive, brainstorm, valutazioni delle opzioni, valutazione dei rischi, veirifca fattibilità del progetto, consulto fonti]]></notes>
+            <depend id="9" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="9" name="Progettazione" color="#8cb6ce" meeting="false" start="2021-04-07" duration="8" complete="0" thirdDate="2021-03-31" thirdDate-constraint="0" expand="true">
+            <notes><![CDATA[Realizzazione analisi del problema, realizzazione schema ER, realizzazione schema logico, scelta template]]></notes>
+            <depend id="27" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="27" name="Layout" color="#8cb6ce" meeting="false" start="2021-04-19" duration="3" complete="0" thirdDate="2021-04-19" thirdDate-constraint="0" expand="true">
+            <notes><![CDATA[Realizzazione del layout del sito con scelta dei colori e del font.]]></notes>
+            <depend id="28" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="28" name="Database" color="#8cb6ce" meeting="false" start="2021-04-22" duration="1" complete="0" thirdDate="2021-04-22" thirdDate-constraint="0" expand="true">
+            <notes><![CDATA[Realizzazione schema ER schema logico e creazione fisica del database in mysql.
+Identificazione delle entità e delle relazioni]]></notes>
+            <depend id="23" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="23" name="Login" color="#8cb6ce" meeting="false" start="2021-04-23" duration="1" complete="0" thirdDate="2021-04-23" thirdDate-constraint="0" expand="true">
+            <notes><![CDATA[Creazione del forom di login per permettere all'utente di accedere all'area riservata]]></notes>
+            <depend id="24" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="24" name="Registrazione" color="#8cb6ce" meeting="false" start="2021-04-26" duration="1" complete="0" thirdDate="2021-04-26" thirdDate-constraint="0" expand="true">
+            <notes><![CDATA[Creazione del form di registrazione che permetterà di essere aggiunti nel database.
+La password verrà criptata per garantire la sicurezza.]]></notes>
+            <depend id="25" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="25" name="Logout" color="#8cb6ce" meeting="false" start="2021-04-27" duration="1" complete="0" thirdDate="2021-04-27" thirdDate-constraint="0" expand="true">
+            <notes><![CDATA[Implementazione pagina di lgout la quale permetterà di disconnetersi chiudendo la sessione ed eliminando tutti i dati contenuti in essa.
+]]></notes>
+            <depend id="21" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="21" name="Aree-Riservate" color="#8cb6ce" meeting="false" start="2021-04-28" duration="7" complete="0" thirdDate="2021-04-28" thirdDate-constraint="0" expand="true">
+            <notes><![CDATA[Implementazione aree riservata per amministratore e utente standard.
+L'amministratore avrà una pannoramica di tutte le operazioni che potranno essere eseguite nel database e visualizzare un riepilogo delle attività avvenute nel sito.
+L'utente standard una volta avvenuto il login verrà riportato nella home page dove comparirà il bottone per la visualizzazione del carrello il quale potrà essere usato per il completamento dell'ordine.]]></notes>
+            <depend id="29" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="29" name="Prodotti" color="#8cb6ce" meeting="false" start="2021-05-07" duration="2" complete="0" thirdDate="2021-05-07" thirdDate-constraint="0" expand="true">
+            <notes><![CDATA[Realizzazione della parte di visualizzazione dei prodotti presenti nel database.]]></notes>
+            <depend id="22" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="22" name="Pagamento" color="#8cb6ce" meeting="false" start="2021-05-11" duration="4" complete="0" thirdDate="2021-05-11" thirdDate-constraint="0" expand="true">
+            <notes><![CDATA[Implementazione form di inserimento dei dati relativi alla carta di credito e implementazione dell'algoritmo rsa per la sicurezza di essi. ]]></notes>
+            <depend id="26" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="26" name="Spedizione" color="#8cb6ce" meeting="false" start="2021-05-17" duration="3" complete="0" thirdDate="2021-05-17" thirdDate-constraint="0" expand="true">
+            <notes><![CDATA[Realizzaione form per l'inserimento dei dati relativi all'indirizzo di spedizione.]]></notes>
+            <depend id="12" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="12" name="Test" color="#8cb6ce" meeting="false" start="2021-05-20" duration="3" complete="0" thirdDate="2021-06-08" thirdDate-constraint="0" expand="true">
+            <notes><![CDATA[Verifica di tutte le funzionalità offerte e individuazione di eventuali erroti.]]></notes>
+            <depend id="31" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="31" name="Risoluzione problemi" color="#8cb6ce" meeting="false" start="2021-05-25" duration="3" complete="0" thirdDate="2021-05-25" thirdDate-constraint="0" expand="true">
+            <notes><![CDATA[Risoluzione dei problemi emersi dalla fase di test.]]></notes>
+            <depend id="32" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="32" name="Consegna" color="#8cb6ce" meeting="false" start="2021-05-28" duration="1" complete="0" thirdDate="2021-05-28" thirdDate-constraint="0" expand="true">
+            <notes><![CDATA[Consegna finale progetto]]></notes>
+        </task>
+    </tasks>
+    <resources>
+        <resource id="0" name="Riccardo Delfrate" function="Default:1" contacts="" phone=""/>
+    </resources>
+    <allocations>
+        <allocation task-id="0" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="9" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="12" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="27" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="28" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="23" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="24" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="25" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="21" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="29" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="22" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="26" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="31" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="32" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+    </allocations>
+    <vacations/>
+    <previous/>
+    <roles roleset-name="Default"/>
+    <roles roleset-name="SoftwareDevelopment"/>
+</project>
