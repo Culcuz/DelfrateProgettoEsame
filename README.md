@@ -3,6 +3,8 @@
 La seguente relazione illustrerà il funzionamento e conterrà le specifiche funzionali e non
 funzionali del mio elaborato.
 
+-----------------------------------------------------------------------------------------------------
+
 Finalità:
 
 L’elaborato consisterà in un sito web che permetterà di acquistare in modo sicuro dei
