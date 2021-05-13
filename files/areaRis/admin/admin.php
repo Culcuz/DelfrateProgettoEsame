@@ -348,42 +348,55 @@
             <div class="col-lg-6 col-md-12">
               <div class="card">
                 <div class="card-header card-header-warning">
-                  <h4 class="card-title">Employees Stats</h4>
-                  <p class="card-category">New employees on 15th September, 2016</p>
+                  <h4 class="card-title">Prodotti presenti</h4>
                 </div>
                 <div class="card-body table-responsive">
                   <table class="table table-hover">
                     <thead class="text-warning">
-                      <th>ID</th>
-                      <th>Name</th>
-                      <th>Salary</th>
-                      <th>Country</th>
+                      <th>Id</th>
+                      <th>Nome</th>
+                      <th>Prezzo</th>
+                      <th>Descrizione</th>
+                      <th>Categoria</th>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>Dakota Rice</td>
-                        <td>$36,738</td>
-                        <td>Niger</td>
-                      </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>Minerva Hooper</td>
-                        <td>$23,789</td>
-                        <td>Curaçao</td>
-                      </tr>
-                      <tr>
-                        <td>3</td>
-                        <td>Sage Rodriguez</td>
-                        <td>$56,142</td>
-                        <td>Netherlands</td>
-                      </tr>
-                      <tr>
-                        <td>4</td>
-                        <td>Philip Chaney</td>
-                        <td>$38,735</td>
-                        <td>Korea, South</td>
-                      </tr>
+
+                      <?php
+                      $select = "SELECT * FROM prodotto P INNER JOIN categoria C ON P.idCategoria=C.idCategoria";
+
+                      $ris = mysqli_query($conn, $select);
+                      if (!$ris) {
+
+                        exit();
+                      }
+
+                      $riga = mysqli_fetch_array($ris, MYSQLI_ASSOC); // array che conterrà queste informazioni
+                      if (!$riga) {
+
+                        exit();
+                      }
+                      while ($riga) {
+                        $id = $riga['idProdotto'];
+                        $nome = $riga['nome'];
+                        $prezzo = $riga['prezzo'];
+                        $descrizione = $riga['descrizione'];
+                        $categoria = $riga['nomeCat'];
+                        echo (" 
+                        <tr>
+                 
+                        <td>$id</td>
+                        <td>$nome</td>
+                        <td>$prezzo</td>
+                        <td>$descrizione</td>
+                        <td>$categoria</td>
+                        </tr>");
+
+
+                        $riga = mysqli_fetch_array($ris, MYSQLI_ASSOC);
+                      }
+                      mysqli_close($conn);
+
+                      ?>
                     </tbody>
                   </table>
                 </div>
