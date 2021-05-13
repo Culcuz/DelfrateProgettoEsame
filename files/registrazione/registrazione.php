@@ -55,7 +55,8 @@
         <?php
         } else {
             $_SESSION['connessione'] = 1; //mi salvo nell'arey di sessine il fatto che l'utente abbia la possibilità di entrare nell'area riservata
-        ?>
+            $_SESSION['nome'] = $nome;
+       ?>
             <script>
                 Swal.fire({
                     icon: 'success',
@@ -63,7 +64,7 @@
                     text: 'Registrazione avvenuta con successo',
                     allowEscape: false,
                     allowOutsideClick: false,
-                    confirmButtonText: "<a href='../areaRis/utente/utente.php'>OK</a>"
+                    confirmButtonText: "<a href='../../index.php'>OK</a>"
                 });
             </script>
         <?php

@@ -62,7 +62,7 @@
                 header("Location: ./admin/admin.php");
             } else {
                 $_SESSION['connessione'] = 1; //mi salvo nell'arey di sessine il fatto che l'utente abbia la possibilità di entrare nell'area riservata
-                header("Location: ./utente/utente.php");
+                header("Location: ../../index.php");
             }
         } else {
         ?>
