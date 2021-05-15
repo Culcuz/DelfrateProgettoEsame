@@ -61,7 +61,7 @@
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./typography.html">
+            <a class="nav-link" href="./files/categorie/categorie.php">
               <i class="material-icons">library_books</i>
               <p>Categorie</p>
             </a>
@@ -69,7 +69,7 @@
           <?php
           if (isset($_SESSION['connessione'])) {
             echo "<li class='nav-item'>
-            <a class='nav-link' href='./files/carrello/carrello.html'>
+            <a class='nav-link' href='./files/carrello/carrello.php'>
               <i class='material-icons'>shopping_cart</i>
               <p>Carrello</p>
             </a>
