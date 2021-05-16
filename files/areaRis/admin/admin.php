@@ -294,7 +294,7 @@
                                 <div class="form-group">
                                   <label>Nome</label>
                                   <br>
-                                  <input type="text" class="form-control" name="nome" placeholder="Nome">
+                                  <input type="text" class="form-control" name="nome" placeholder="Nome" required>
                                 </div>
                               </td>
                             </tr>
@@ -303,7 +303,7 @@
                                 <div class="form-group">
                                   <label>Prezzo</label>
                                   <br>
-                                  <input type="text" class="form-control" name="prezzo" placeholder="Prezzo">
+                                  <input type="text" class="form-control" name="prezzo" placeholder="Prezzo" required>
                                 </div>
                               </td>
                             </tr>
@@ -312,7 +312,15 @@
                                 <div class="form-group">
                                   <label>Descrizione</label>
                                   <br>
-                                  <textarea class="form-control" rows="3" name="descrizione" placeholder="Descrizione"></textarea>
+                                  <textarea class="form-control" name="descrizione" id="editor1" placeholder="Descrizione" required></textarea>
+                                  <!-- Richiamo la libreria jQuery con i CDN di Google e il file di CKEditor -->
+                                  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+                                  <script src="ckeditor/ckeditor.js"></script>
+
+                                  <!-- Eseguo lo script -->
+                                  <script>
+                                    CKEDITOR.replace('editor1');
+                                  </script>
                                 </div>
                               </td>
                             </tr>
@@ -320,7 +328,7 @@
                             <tr>
                               <td>
                                 <label>Categoria</label>
-                                <select class="form-select" name="categoria" aria-label="Default select example">
+                                <select class="form-select" name="categoria" aria-label="Default select example" required>
                                   <option value="1">Telefono</option>
                                   <option value="2">Scarpa</option>
                                   <option value="3">Tablet</option>
@@ -331,7 +339,7 @@
                             <tr>
                               <td>
                                 <label for="myfile">Immagine</label>
-                                <input type="file" name="immagine" class="form-control" accept="image/*">
+                                <input type="file" name="immagine" class="form-control" accept="image/*" required>
                               </td>
                             </tr>
                           </tbody>
