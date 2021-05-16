@@ -23,7 +23,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Alata&family=Kanit:wght@500&display=swap" rel="stylesheet">
 
   <link href="./files/css/prodotti.css" rel="stylesheet" type="text/css">
-
+  <link rel="stylesheet" href="./files/carrello/style2.css">
 </head>
 
 <body class="">
@@ -74,6 +74,14 @@
               <p>Carrello</p>
             </a>
           </li>";
+            if (isset($_SESSION['admin'])) {
+              echo "<li class='nav-item'>
+          <a class='nav-link' href='./files/areaRis/admin/admin.php'>
+          <i class='material-icons'>admin_panel_settings</i>
+            <p>Amministrazione</p>
+          </a>
+        </li>";
+            }
             echo "<li class='nav-item'>
             <a class='nav-link' href='./files/logout/logout.php'>
             <i class='material-icons'>logout</i>
