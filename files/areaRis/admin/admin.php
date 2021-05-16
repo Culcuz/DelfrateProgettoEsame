@@ -283,7 +283,7 @@
                   </div>
                 </div>
                 <div class="card-body">
-                  <form action="./insProdotto.php" method="POST">
+                  <form action="./insProdotto.php" method="post" enctype="multipart/form-data">
                     <div class="tab-content">
                       <div class="tab-pane active" id="profile">
 
@@ -339,7 +339,7 @@
                             <tr>
                               <td>
                                 <label for="myfile">Immagine</label>
-                                <input type="file" name="immagine" class="form-control" accept="image/*" required>
+                                <input type="file" name="file" class="form-control" accept="image/*" required>
                               </td>
                             </tr>
                           </tbody>
