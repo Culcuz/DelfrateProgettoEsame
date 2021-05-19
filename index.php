@@ -192,13 +192,6 @@
                       <p id='Pname'>$nome</p>
                       <p id='Pcollection'>$descrizione</p>
                     </div>
-                    <div class='Pstar'>
-                      <i class='fa fa-star' aria-hidden='true'></i>
-                      <i class='fa fa-star' aria-hidden='true'></i>
-                      <i class='fa fa-star' aria-hidden='true'></i>
-                      <i class='fa fa-star' aria-hidden='true'></i>
-                      <i class='fa fa-star-half-o' aria-hidden='true'></i>
-                    </div>
                     <h3 id='Pprice'>$ $prezzo</h3>
                     <input type='button' class='Pcart-Pbtn' value='compra'>
                     </a>
