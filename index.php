@@ -127,6 +127,9 @@
         <div class="container-fluid">
           <div style="overflow:hiddem;">
             <!-- Prodotti -->
+			<table class="ptabella">
+			<tr>
+			
             <?php
             include('./files/database/config.php');
             $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
@@ -169,21 +172,7 @@
 
             $i = 0;
             while ($riga) {
-              $i++;
-              switch ($i) {
-                case 1:
-                  $x = 11 . "em";
-                  $y = 17 . "em";
-                  break;
-                case 2:
-                  $x = 33 . "em";
-                  $y = 17 . "em";
-                  break;
-                case 3:
-                  $x = 55 . "em";
-                  $y = 17 . "em";
-                  break;
-              }
+             
 
               $nome = $riga['nome'];
               $prezzo = $riga['prezzo'];
@@ -192,7 +181,8 @@
               $riga = mysqli_fetch_array($ris, MYSQLI_ASSOC);
 
               echo "
-              <div class='Pcontainer' style='top: $y; left: $x;'>
+			<td>
+			  <div class='Pcontainer'>
                 <div class='Pimg'>
                   <img src='$immagine'>
                 </div>
@@ -215,11 +205,14 @@
                     </a>
                   </div>
                 </div>
-              </div>";
+              </div>
+			  </td>
+              ";
             };
             mysqli_close($conn);
             ?>
-
+			</tr>
+</table>
 
             <!-- Fine Podotti -->
           </div>

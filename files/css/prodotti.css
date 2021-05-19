@@ -1,14 +1,17 @@
-.Pcontainer {
-    position: absolute;
-    background: center / cover;
 
-    transform: translate(-50%, -50%);
+
+
+
+.Pcontainer {
+    position: relative;
+    background: center / cover;
     width: 280px;
     height: 370px;
     box-shadow: 0 10px 15px rgba(0, 0, 0, .2);
     border-radius: 10px;
     overflow: hidden;
     transition: .4s ease;
+	
 }
 
 .Pimg>img {
@@ -95,4 +98,10 @@
 
 ul li:hover {
     border-color: rgba(240, 58, 53, 1);
+}
+
+.Ptabella{
+	margin-left: 10m;
+	margin-top: 5em;
+	
 }
