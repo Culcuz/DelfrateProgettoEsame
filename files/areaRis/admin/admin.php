@@ -346,15 +346,13 @@
 
                         </table>
                       </div>
-
                       <button type="submit" style="width: 100%" class="btn btn-success">Inserisci</button>
-
                     </div>
                   </form>
                 </div>
               </div>
-
             </div>
+            
             <div class="col-lg-6 col-md-12">
               <div class="card">
                 <div class="card-header card-header-warning">

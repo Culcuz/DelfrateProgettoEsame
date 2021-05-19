@@ -125,62 +125,61 @@
       <!-- End Navbar -->
       <div class="content">
         <div class="container-fluid">
-          <div style="overflow:hiddem;">
-            <!-- Prodotti -->
-			<table class="ptabella">
-			<tr>
-			
-            <?php
-            include('./files/database/config.php');
-            $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
-            $select = "SELECT * FROM prodotto order by 'id'";
+          <!-- Prodotti -->
+          <table class="Ptabella">
+            <tr>
+              <?php
+              include('./files/database/config.php');
+              $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
-            $ris = mysqli_query($conn, $select);
-            if (!$ris) {
-            ?>
-              <script>
-                Swal.fire({
-                  icon: 'error',
-                  title: 'Ops...',
-                  text: 'Cè stato un problema in fase di visualizzazione',
-                  allowEscape: false,
-                  allowOutsideClick: false,
-                  confirmButtonText: '<a href="./index.php>Riprova</a>'
-                })
-              </script>
-            <?php
-              exit();
-            }
+              $select = "SELECT * FROM prodotto order by 'id'";
 
-            $riga = mysqli_fetch_array($ris, MYSQLI_ASSOC); // array che conterrà queste informazioni
-            if (!$riga) {
-            ?>
-              <script>
-                Swal.fire({
-                  icon: 'error',
-                  title: 'Ops...',
-                  text: 'Cè stato un problema in fase di visualizzazione',
-                  allowEscape: false,
-                  allowOutsideClick: false,
-                  confirmButtonText: '<a href="./index.php>Riprova</a>'
-                })
-              </script>
-            <?php
-              exit();
-            }
+              $ris = mysqli_query($conn, $select);
+              if (!$ris) {
+              ?>
+                <script>
+                  Swal.fire({
+                    icon: 'error',
+                    title: 'Ops...',
+                    text: 'Cè stato un problema in fase di visualizzazione',
+                    allowEscape: false,
+                    allowOutsideClick: false,
+                    confirmButtonText: "<a href='./index.php'>Riprova</a>"
+                  })
+                </script>
+              <?php
+                exit();
+              }
 
-            $i = 0;
-            while ($riga) {
-             
+              $riga = mysqli_fetch_array($ris, MYSQLI_ASSOC); // array che conterrà queste informazioni
+              if (!$riga) {
+              ?>
+                <script>
+                  Swal.fire({
+                    icon: 'error',
+                    title: 'Ops...',
+                    text: 'Cè stato un problema in fase di visualizzazione',
+                    allowEscape: false,
+                    allowOutsideClick: false,
+                    confirmButtonText: "<a href='./index.php'>Riprova</a>"
+                  })
+                </script>
+              <?php
+                exit();
+              }
 
-              $nome = $riga['nome'];
-              $prezzo = $riga['prezzo'];
-              $descrizione = $riga['descrizione'];
-              $immagine = $riga['immagine'];
-              $riga = mysqli_fetch_array($ris, MYSQLI_ASSOC);
+              $i = 0;
+              while ($riga) {
 
-              echo "
+
+                $nome = $riga['nome'];
+                $prezzo = $riga['prezzo'];
+                $descrizione = $riga['descrizione'];
+                $immagine = $riga['immagine'];
+                $riga = mysqli_fetch_array($ris, MYSQLI_ASSOC);
+
+                echo "
 			<td>
 			  <div class='Pcontainer'>
                 <div class='Pimg'>
@@ -208,14 +207,14 @@
               </div>
 			  </td>
               ";
-            };
-            mysqli_close($conn);
-            ?>
-			</tr>
-</table>
+              };
+              mysqli_close($conn);
+              ?>
+            </tr>
+          </table>
 
-            <!-- Fine Podotti -->
-          </div>
+          <!-- Fine Podotti -->
+
         </div>
       </div>
 
