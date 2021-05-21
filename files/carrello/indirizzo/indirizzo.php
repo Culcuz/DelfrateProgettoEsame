@@ -170,56 +170,173 @@
                                                         <tr>
                                                             <td>
                                                                 <div class="form-group">
-                                                                    <label>Nome</label>
+                                                                    <label>Via</label>
                                                                     <br>
-                                                                    <input type="text" class="form-control" name="nome" placeholder="Nome" required>
+                                                                    <input type="text" class="form-control" name="via" placeholder="Via" required>
                                                                 </div>
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td>
                                                                 <div class="form-group">
-                                                                    <label>Prezzo</label>
+                                                                    <label>CAP</label>
                                                                     <br>
-                                                                    <input type="text" class="form-control" name="prezzo" placeholder="Prezzo" required>
+                                                                    <input type="text" class="form-control" name="cap" placeholder="CAP" required>
                                                                 </div>
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td>
                                                                 <div class="form-group">
-                                                                    <label>Descrizione</label>
+                                                                    <label>Numero Civico</label>
                                                                     <br>
-                                                                    <textarea class="form-control" name="descrizione" id="editor1" placeholder="Descrizione" required></textarea>
-                                                                    <!-- Richiamo la libreria jQuery con i CDN di Google e il file di CKEditor -->
-                                                                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-                                                                    <script src="ckeditor/ckeditor.js"></script>
-
-                                                                    <!-- Eseguo lo script -->
-                                                                    <script>
-                                                                        CKEDITOR.replace('editor1');
-                                                                    </script>
+                                                                    <input type="text" class="form-control" name="nCiv" placeholder="Numero Civico" required>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="form-group">
+                                                                    <label>Comune</label>
+                                                                    <br>
+                                                                    <input type="text" class="form-control" name="comune" placeholder="Comune" required>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="form-group">
+                                                                    <label>Provincia</label>
+                                                                    <br>
+                                                                    <select class="form-select" name="provincia" aria-label="Default select example" required>
+                                                                        <option value="ag">Agrigento</option>
+                                                                        <option value="al">Alessandria</option>
+                                                                        <option value="an">Ancona</option>
+                                                                        <option value="ao">Aosta</option>
+                                                                        <option value="ar">Arezzo</option>
+                                                                        <option value="ap">Ascoli Piceno</option>
+                                                                        <option value="at">Asti</option>
+                                                                        <option value="av">Avellino</option>
+                                                                        <option value="ba">Bari</option>
+                                                                        <option value="bt">Barletta-Andria-Trani</option>
+                                                                        <option value="bl">Belluno</option>
+                                                                        <option value="bn">Benevento</option>
+                                                                        <option value="bg">Bergamo</option>
+                                                                        <option value="bi">Biella</option>
+                                                                        <option value="bo">Bologna</option>
+                                                                        <option value="bz">Bolzano</option>
+                                                                        <option value="bs">Brescia</option>
+                                                                        <option value="br">Brindisi</option>
+                                                                        <option value="ca">Cagliari</option>
+                                                                        <option value="cl">Caltanissetta</option>
+                                                                        <option value="cb">Campobasso</option>
+                                                                        <option value="ci">Carbonia-iglesias</option>
+                                                                        <option value="ce">Caserta</option>
+                                                                        <option value="ct">Catania</option>
+                                                                        <option value="cz">Catanzaro</option>
+                                                                        <option value="ch">Chieti</option>
+                                                                        <option value="co">Como</option>
+                                                                        <option value="cs">Cosenza</option>
+                                                                        <option value="cr">Cremona</option>
+                                                                        <option value="kr">Crotone</option>
+                                                                        <option value="cn">Cuneo</option>
+                                                                        <option value="en">Enna</option>
+                                                                        <option value="fm">Fermo</option>
+                                                                        <option value="fe">Ferrara</option>
+                                                                        <option value="fi">Firenze</option>
+                                                                        <option value="fg">Foggia</option>
+                                                                        <option value="fc">Forl&igrave;-Cesena</option>
+                                                                        <option value="fr">Frosinone</option>
+                                                                        <option value="ge">Genova</option>
+                                                                        <option value="go">Gorizia</option>
+                                                                        <option value="gr">Grosseto</option>
+                                                                        <option value="im">Imperia</option>
+                                                                        <option value="is">Isernia</option>
+                                                                        <option value="sp">La spezia</option>
+                                                                        <option value="aq">L'aquila</option>
+                                                                        <option value="lt">Latina</option>
+                                                                        <option value="le">Lecce</option>
+                                                                        <option value="lc">Lecco</option>
+                                                                        <option value="li">Livorno</option>
+                                                                        <option value="lo">Lodi</option>
+                                                                        <option value="lu">Lucca</option>
+                                                                        <option value="mc">Macerata</option>
+                                                                        <option value="mn">Mantova</option>
+                                                                        <option value="ms">Massa-Carrara</option>
+                                                                        <option value="mt">Matera</option>
+                                                                        <option value="vs">Medio Campidano</option>
+                                                                        <option value="me">Messina</option>
+                                                                        <option value="mi">Milano</option>
+                                                                        <option value="mo">Modena</option>
+                                                                        <option value="mb">Monza e della Brianza</option>
+                                                                        <option value="na">Napoli</option>
+                                                                        <option value="no">Novara</option>
+                                                                        <option value="nu">Nuoro</option>
+                                                                        <option value="og">Ogliastra</option>
+                                                                        <option value="ot">Olbia-Tempio</option>
+                                                                        <option value="or">Oristano</option>
+                                                                        <option value="pd">Padova</option>
+                                                                        <option value="pa">Palermo</option>
+                                                                        <option value="pr">Parma</option>
+                                                                        <option value="pv">Pavia</option>
+                                                                        <option value="pg">Perugia</option>
+                                                                        <option value="pu">Pesaro e Urbino</option>
+                                                                        <option value="pe">Pescara</option>
+                                                                        <option value="pc">Piacenza</option>
+                                                                        <option value="pi">Pisa</option>
+                                                                        <option value="pt">Pistoia</option>
+                                                                        <option value="pn">Pordenone</option>
+                                                                        <option value="pz">Potenza</option>
+                                                                        <option value="po">Prato</option>
+                                                                        <option value="rg">Ragusa</option>
+                                                                        <option value="ra">Ravenna</option>
+                                                                        <option value="rc">Reggio di Calabria</option>
+                                                                        <option value="re">Reggio nell'Emilia</option>
+                                                                        <option value="ri">Rieti</option>
+                                                                        <option value="rn">Rimini</option>
+                                                                        <option value="rm">Roma</option>
+                                                                        <option value="ro">Rovigo</option>
+                                                                        <option value="sa">Salerno</option>
+                                                                        <option value="ss">Sassari</option>
+                                                                        <option value="sv">Savona</option>
+                                                                        <option value="si">Siena</option>
+                                                                        <option value="sr">Siracusa</option>
+                                                                        <option value="so">Sondrio</option>
+                                                                        <option value="ta">Taranto</option>
+                                                                        <option value="te">Teramo</option>
+                                                                        <option value="tr">Terni</option>
+                                                                        <option value="to">Torino</option>
+                                                                        <option value="tp">Trapani</option>
+                                                                        <option value="tn">Trento</option>
+                                                                        <option value="tv">Treviso</option>
+                                                                        <option value="ts">Trieste</option>
+                                                                        <option value="ud">Udine</option>
+                                                                        <option value="va">Varese</option>
+                                                                        <option value="ve">Venezia</option>
+                                                                        <option value="vb">Verbano-Cusio-Ossola</option>
+                                                                        <option value="vc">Vercelli</option>
+                                                                        <option value="vr">Verona</option>
+                                                                        <option value="vv">Vibo valentia</option>
+                                                                        <option value="vi">Vicenza</option>
+                                                                        <option value="vt">Viterbo</option>
+                                                                    </select>
                                                                 </div>
                                                             </td>
                                                         </tr>
 
                                                         <tr>
                                                             <td>
-                                                                <label>Categoria</label>
-                                                                <select class="form-select" name="categoria" aria-label="Default select example" required>
-                                                                    <option value="1">Telefono</option>
-                                                                    <option value="2">Scarpa</option>
-                                                                    <option value="3">Tablet</option>
-                                                                </select>
+                                                                <div class="form-group">
+                                                                    <label>Informazioni aggiuntive</label>
+                                                                    <br>
+                                                                    <textarea class="form-control" name="info"></textarea>
+
+                                                                </div>
                                                             </td>
                                                         </tr>
 
-                                                        <tr>
-                                                            <td>
-                                                                <label for="myfile">Immagine</label>
-                                                                <input type="file" name="file" class="form-control" accept="image/*" required>
-                                                            </td>
-                                                        </tr>
+
+
                                                     </tbody>
 
                                                 </table>
@@ -270,56 +387,56 @@
                     </footer>
                 </div>
             </div>
-           <!-- partial -->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js'></script>
+            <!-- partial -->
+            <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+            <script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js'></script>
 
-    <script src="../script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-    <!--   Core JS Files   -->
-    <script src="../../../assets/js/core/jquery.min.js"></script>
-    <script src="../../../assets/js/core/popper.min.js"></script>
-    <script src="../../../assets/js/core/bootstrap-material-design.min.js"></script>
-    <script src="../../../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-    <!-- Plugin for the momentJs  -->
-    <script src="../../../assets/js/plugins/moment.min.js"></script>
-    <!--  Plugin for Sweet Alert -->
-    <script src="../../../assets/js/plugins/sweetalert2.js"></script>
-    <!-- Forms Validations Plugin -->
-    <script src="../../../assets/js/plugins/jquery.validate.min.js"></script>
-    <!-- Plugin for the Wizard, full documentation here: https://github.com/VinceG/twitter-bootstrap-wizard -->
-    <script src="../../../assets/js/plugins/jquery.bootstrap-wizard.js"></script>
-    <!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
-    <script src="../../../assets/js/plugins/bootstrap-selectpicker.js"></script>
-    <!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
-    <script src="../../../assets/js/plugins/bootstrap-datetimepicker.min.js"></script>
-    <!--  DataTables.net Plugin, full documentation here: https://datatables.net/  -->
-    <script src="../../../assets/js/plugins/jquery.dataTables.min.js"></script>
-    <!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
-    <script src="../../../assets/js/plugins/bootstrap-tagsinput.js"></script>
-    <!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
-    <script src="../../../assets/js/plugins/jasny-bootstrap.min.js"></script>
-    <!--  Full Calendar Plugin, full documentation here: https://github.com/fullcalendar/fullcalendar    -->
-    <script src="../../../js/plugins/fullcalendar.min.js"></script>
-    <!-- Vector Map plugin, full documentation here: http://jvectormap.com/documentation/ -->
-    <script src="../../../assets/js/plugins/jquery-jvectormap.js"></script>
-    <!--  Plugin fo the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-    <script src="../../assets/js/plugins/nouislider.min.js"></script>
-    <!-- Include a polyfill for ES6 Promises (optional) for IE11, UC Browser and Android browser support SweetAlert -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
-    <!-- Library for adding dinamically elements -->
-    <script src="../../../assets/js/plugins/arrive.min.js"></script>
-    <!--  Google Maps Plugin    -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-    <!-- Chartist JS -->
-    <script src="../../../assets/js/plugins/chartist.min.js"></script>
-    <!--  Notifications Plugin    -->
-    <script src="../../../assets/js/plugins/bootstrap-notify.js"></script>
-    <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
-    <script src="../../../assets/js/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
-    <!-- Material Dashboard DEMO methods, don't include it in your project! -->
-    <script src="../../../assets/demo/demo.js"></script>
+            <script src="../script.js"></script>
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+            <!--   Core JS Files   -->
+            <script src="../../../assets/js/core/jquery.min.js"></script>
+            <script src="../../../assets/js/core/popper.min.js"></script>
+            <script src="../../../assets/js/core/bootstrap-material-design.min.js"></script>
+            <script src="../../../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+            <!-- Plugin for the momentJs  -->
+            <script src="../../../assets/js/plugins/moment.min.js"></script>
+            <!--  Plugin for Sweet Alert -->
+            <script src="../../../assets/js/plugins/sweetalert2.js"></script>
+            <!-- Forms Validations Plugin -->
+            <script src="../../../assets/js/plugins/jquery.validate.min.js"></script>
+            <!-- Plugin for the Wizard, full documentation here: https://github.com/VinceG/twitter-bootstrap-wizard -->
+            <script src="../../../assets/js/plugins/jquery.bootstrap-wizard.js"></script>
+            <!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
+            <script src="../../../assets/js/plugins/bootstrap-selectpicker.js"></script>
+            <!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
+            <script src="../../../assets/js/plugins/bootstrap-datetimepicker.min.js"></script>
+            <!--  DataTables.net Plugin, full documentation here: https://datatables.net/  -->
+            <script src="../../../assets/js/plugins/jquery.dataTables.min.js"></script>
+            <!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
+            <script src="../../../assets/js/plugins/bootstrap-tagsinput.js"></script>
+            <!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
+            <script src="../../../assets/js/plugins/jasny-bootstrap.min.js"></script>
+            <!--  Full Calendar Plugin, full documentation here: https://github.com/fullcalendar/fullcalendar    -->
+            <script src="../../../js/plugins/fullcalendar.min.js"></script>
+            <!-- Vector Map plugin, full documentation here: http://jvectormap.com/documentation/ -->
+            <script src="../../../assets/js/plugins/jquery-jvectormap.js"></script>
+            <!--  Plugin fo the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+            <script src="../../assets/js/plugins/nouislider.min.js"></script>
+            <!-- Include a polyfill for ES6 Promises (optional) for IE11, UC Browser and Android browser support SweetAlert -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+            <!-- Library for adding dinamically elements -->
+            <script src="../../../assets/js/plugins/arrive.min.js"></script>
+            <!--  Google Maps Plugin    -->
+            <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+            <!-- Chartist JS -->
+            <script src="../../../assets/js/plugins/chartist.min.js"></script>
+            <!--  Notifications Plugin    -->
+            <script src="../../../assets/js/plugins/bootstrap-notify.js"></script>
+            <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+            <script src="../../../assets/js/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
+            <!-- Material Dashboard DEMO methods, don't include it in your project! -->
+            <script src="../../../assets/demo/demo.js"></script>
 </body>
 
 </html>
