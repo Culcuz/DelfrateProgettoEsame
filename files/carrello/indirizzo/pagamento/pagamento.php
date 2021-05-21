@@ -20,15 +20,15 @@
           <div class="card-item__side -front">
             <div class="card-item__focus" v-bind:class="{'-active' : focusElementStyle }" v-bind:style="focusElementStyle" ref="focusElement"></div>
             <div class="card-item__cover">
-              <img v-bind:src="'../../../img/carteCredito/' + currentCardBackground + '.jpeg'" class="card-item__bg">
+              <img v-bind:src="'../../../../img/carteCredito/' + currentCardBackground + '.jpeg'" class="card-item__bg">
             </div>
 
             <div class="card-item__wrapper">
               <div class="card-item__top">
-                <img src="../../../img/carteCredito/chip.png" class="card-item__chip">
+                <img src="../../../../img/carteCredito/chip.png" class="card-item__chip">
                 <div class="card-item__type">
                   <transition name="slide-fade-up">
-                    <img v-bind:src="'../../../img/carteCredito/' + getCardType + '.png'" v-if="getCardType" v-bind:key="getCardType" alt="" class="card-item__typeImg">
+                    <img v-bind:src="'../../../../img/carteCredito/' + getCardType + '.png'" v-if="getCardType" v-bind:key="getCardType" alt="" class="card-item__typeImg">
                   </transition>
                 </div>
               </div>
@@ -90,7 +90,7 @@
           </div>
           <div class="card-item__side -back">
             <div class="card-item__cover">
-              <img v-bind:src="'../../../img/carteCredito/' + currentCardBackground + '.jpeg'" class="card-item__bg">
+              <img v-bind:src="'../../../../img/carteCredito/' + currentCardBackground + '.jpeg'" class="card-item__bg">
             </div>
             <div class="card-item__band"></div>
             <div class="card-item__cvv">
@@ -102,7 +102,7 @@
 
               </div>
               <div class="card-item__type">
-                <img v-bind:src="'../../../img/carteCredito/' + getCardType + '.png'" v-if="getCardType" class="card-item__typeImg">
+                <img v-bind:src="'../../../../img/carteCredito/' + getCardType + '.png'" v-if="getCardType" class="card-item__typeImg">
               </div>
             </div>
           </div>
