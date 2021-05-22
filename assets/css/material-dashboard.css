@@ -3018,7 +3018,7 @@ fieldset:disabled a.btn {
 
 .btn-warning {
   color: #212529;
-  background-color: #ffeb3b;
+  background-color: #ffe715;
   border-color: #ffeb3b;
   box-shadow: none;
 }
@@ -17563,6 +17563,24 @@ html[dir="rtl"] .form-check .form-check-sign .check:before {
 .card.card-rotate.bg-rose .front,
 .card.card-rotate.bg-rose .back {
   background: linear-gradient(60deg, #ec407a, #d81b60);
+}
+
+.card .card-header-spedizione .card-icon,
+.card .card-header-spedizione .card-text,
+.card .card-header-spedizione:not(.card-header-icon):not(.card-header-text),
+.card.bg-spedizione,
+.card.card-rotate.bg-spedizione .front,
+.card.card-rotate.bg-spedizione .back {
+  background: linear-gradient(60deg, #34378b, #277fe5);
+}
+
+.card .card-header-fatturazione .card-icon,
+.card .card-header-fatturazione .card-text,
+.card .card-header-fatturazione:not(.card-header-icon):not(.card-header-text),
+.card.bg-fatturazione,
+.card.card-rotate.bg-fatturazione .front,
+.card.card-rotate.bg-fatturazione .back {
+  background: linear-gradient(60deg, #277fe5, #abcff8);
 }
 
 .card .card-header-primary .card-icon,
