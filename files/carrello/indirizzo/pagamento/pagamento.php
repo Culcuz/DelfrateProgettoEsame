@@ -13,6 +13,45 @@
 </head>
 
 <body>
+<?php 
+ $via = $_POST['via'];
+ $cap = $_POST['cap'];
+ $nCiv = $_POST['nCiv'];
+ $comune = $_POST['comune'];
+ $provincia = $_POST['provincia'];
+
+ $ragioneSociale = $_POST['ragSociale'];
+ $pec = $_POST['pec'];
+ $codiceUnivoco = $_POST['codiceUnivoco'];
+ $Fvia = $_POST['Fvia'];
+ $Fcap = $_POST['Fcap'];
+ $FnCiv = $_POST['FnCiv'];
+ $Fcomune = $_POST['Fcomune'];
+ $Fprovincia = $_POST['Fprovincia'];
+ echo "
+ $via <br>
+ $cap <br>
+ $nCiv <br>
+ $comune<br>
+ $provincia <br>
+ $ragioneSociale<br>
+ $pec <br>
+ $codiceUnivoco <br>
+ $Fvia<br>
+ $Fcap <br>
+ $FnCiv <br>
+ $Fcomune <br>
+ $Fprovincia <br>
+ 
+ ";
+
+
+?>
+
+
+
+
+
   <div class="wrapper" id="app">
     <div class="card-form">
       <div class="card-list">

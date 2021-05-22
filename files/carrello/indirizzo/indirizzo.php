@@ -151,7 +151,7 @@
             <div class="content">
                 <div class="container-fluid">
                     <div class="row">
-                        <form action="./insProdotto.php" method="post">
+                        <form action="./pagamento/pagamento.php" method="post">
                             <div class="col-lg-4 col-md-4">
                                 <div class="card">
                                     <div class="card-header card-header-tabs card-header-spedizione">
@@ -362,9 +362,36 @@
                                                             <tr>
                                                                 <td>
                                                                     <div class="form-group">
+                                                                        <label>Ragione sociale</label>
+                                                                        <br>
+                                                                        <input type="text" class="form-control" name="ragSociale" placeholder="Ragione sociale">
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="form-group">
+                                                                        <label>Pec</label>
+                                                                        <br>
+                                                                        <input type="email" class="form-control" name="pec" placeholder="Pec">
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="form-group">
+                                                                        <label>Codice univoco</label>
+                                                                        <br>
+                                                                        <input type="text" class="form-control" name="codiceUnivoco" placeholder="Codice univoco">
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="form-group">
                                                                         <label>Via</label>
                                                                         <br>
-                                                                        <input type="text" class="form-control" name="via" placeholder="Via" required>
+                                                                        <input type="text" class="form-control" name="Fvia" placeholder="Via">
                                                                     </div>
                                                                 </td>
                                                             </tr>
@@ -373,7 +400,7 @@
                                                                     <div class="form-group">
                                                                         <label>CAP</label>
                                                                         <br>
-                                                                        <input type="text" class="form-control" name="cap" placeholder="CAP" required>
+                                                                        <input type="text" class="form-control" name="Fcap" placeholder="CAP">
                                                                     </div>
                                                                 </td>
                                                             </tr>
@@ -382,7 +409,7 @@
                                                                     <div class="form-group">
                                                                         <label>Numero Civico</label>
                                                                         <br>
-                                                                        <input type="text" class="form-control" name="nCiv" placeholder="Numero Civico" required>
+                                                                        <input type="text" class="form-control" name="FnCiv" placeholder="Numero Civico">
                                                                     </div>
                                                                 </td>
                                                             </tr>
@@ -391,7 +418,7 @@
                                                                     <div class="form-group">
                                                                         <label>Comune</label>
                                                                         <br>
-                                                                        <input type="text" class="form-control" name="comune" placeholder="Comune" required>
+                                                                        <input type="text" class="form-control" name="Fcomune" placeholder="Comune">
                                                                     </div>
                                                                 </td>
                                                             </tr>
@@ -400,7 +427,7 @@
                                                                     <div class="form-group">
                                                                         <label>Provincia</label>
                                                                         <br>
-                                                                        <select class="form-select" name="provincia" aria-label="Default select example" required>
+                                                                        <select class="form-select" name="Fprovincia" aria-label="Default select example">
                                                                             <option value="ag">Agrigento</option>
                                                                             <option value="al">Alessandria</option>
                                                                             <option value="an">Ancona</option>
@@ -515,15 +542,6 @@
                                                                     </div>
                                                                 </td>
                                                             </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <div class="form-group">
-                                                                        <label>Informazioni aggiuntive</label>
-                                                                        <br>
-                                                                        <textarea class="form-control" name="info"></textarea>
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
                                                         </tbody>
                                                     </table>
                                                 </div>
@@ -535,13 +553,10 @@
 
                                 </div>
                             </div>
-                            <div class="summary col-md-4">
+                            <div class="summary col-md-2">
                                 <div class="terms">
-                                    <h4 class="headline-primary">Fattura e spedisci assieme </h4>
-                                    <button type="button" class="btn btn-purchase" onclick='javascript:nascondi()'>Fattura e spedisci assieme</button>
-                                    <h4 class="headline-primary">Fattura e spedisci separate </h4>
-                                    <button type="button" class="btn btn-purchase" onclick='javascript:mostra()'>Fattura e spedisci assieme</button>
-                                    <button type="button" class="btn btn-success"  onclick='javascript:mostra()'>Conferma</button>
+                                    <button type="button" class="btn btn-purchase" onclick='javascript:mostra()'>Fattura</button>
+                                    <button type="submit" class="btn btn-success">Conferma</button>
                                 </div>
 
                             </div>
@@ -549,10 +564,8 @@
                                 function mostra() {
                                     document.getElementById('fattura').style.display = 'block';
                                 }
-
-                                function nascondi() {
                                     document.getElementById('fattura').style.display = 'none';
-                                }
+                            
                             </script>
 
 
