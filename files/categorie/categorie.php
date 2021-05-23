@@ -96,7 +96,7 @@
                     if (!isset($_SESSION['connessione'])) {
                         echo "
                             <li class='nav-item '>
-                            <a class='nav-link' href='./files/login/login.php'>
+                            <a class='nav-link' href='../login/login.php'>
                             <i class='material-icons'>person</i>
                             <p>Accedi/Registrati</p>
                             </a>
@@ -106,21 +106,21 @@
                     <?php
                     if (isset($_SESSION['connessione'])) {
                         echo "
+                        <li class='nav-item'>
+                        <a class='nav-link' href='../carrello/carrello.php'>
+                        <i class='material-icons'>shopping_cart</i>
+                        <p>Carrello</p>
+                        </a>
+                        </li>";
+                    }
+                    if (isset($_SESSION['connessione'])) {
+                        echo "
                             <li class='nav-item'>
                             <a class='nav-link' href='../logout/logout.php'>
                             <i class='material-icons'>logout</i>
                             <p>Logout</p>
                             </a>
                             </li>";
-                    }
-                    if (isset($_SESSION['connessione'])) {
-                        echo "
-                        <li class='nav-item'>
-                        <a class='nav-link' href='./files/carrello/carrello.php'>
-                        <i class='material-icons'>shopping_cart</i>
-                        <p>Carrello</p>
-                        </a>
-                        </li>";
                     }
                     ?>
 

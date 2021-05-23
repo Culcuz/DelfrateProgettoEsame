@@ -20,9 +20,9 @@
  $comune = $_POST['comune'];
  $provincia = $_POST['provincia'];
 
- $ragioneSociale = $_POST['ragSociale'];
- $pecCod = $_POST['pecCod'];
- $partitaIva = $_POST['partitaIva'];
+ $FragioneSociale = $_POST['ragSociale'];
+ $FpecCod = $_POST['pecCod'];
+ $FpartitaIva = $_POST['partitaIva'];
  $Fvia = $_POST['Fvia'];
  $Fcap = $_POST['Fcap'];
  $FnCiv = $_POST['FnCiv'];
@@ -34,9 +34,9 @@
  $nCiv <br>
  $comune<br>
  $provincia <br>
- $ragioneSociale<br>
- $pec <br>
- $codiceUnivoco <br>
+ $FragioneSociale<br>
+ $FpecCod <br>
+ $FpartitaIva <br>
  $Fvia<br>
  $Fcap <br>
  $FnCiv <br>
