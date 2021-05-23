@@ -315,7 +315,7 @@
                                 <select class="form-select" name="categoria" aria-label="Default select example" required>
                                   <option value="1">Telefono</option>
                                   <option value="2">Cuffia</option>
-                                  <option value="3">Tablet</option>
+                                  <option value="3">Zaino</option>
                                 </select>
                               </td>
                             </tr>

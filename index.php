@@ -184,7 +184,7 @@
               $immagine = $riga['immagine'];
               $riga = mysqli_fetch_array($ris, MYSQLI_ASSOC);
 
-              if (($i % 5 == 0)) {
+              if (($i % 4 == 0)) {
                 echo "<tr>";
               }
 
@@ -210,7 +210,7 @@
                 </td>			          
               ";
 
-              if (($i % 5 == 0)) {
+              if (($i % 4 == 0)) {
                 echo "</tr>";
               }
               $i++;
