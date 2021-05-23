@@ -81,11 +81,13 @@
             <?php
             if (isset($_SESSION['connessione'])) {
                 $nome = $_SESSION['nome'];
-                echo "<div class='logo'>
-        <a class='simple-text logo-normal'>
-          Benvenuta/o $nome
-        </a>
-      </div>";
+                echo "
+                    <div class='logo'>
+                    <a class='simple-text logo-normal'>
+                    Benvenuta/o $nome
+                    </a>
+                    </div>"
+                ;
             }
             ?>
 
@@ -97,12 +99,18 @@
                             <p>Home page</p>
                         </a>
                     </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="./files/login/login.php">
-                            <i class="material-icons">person</i>
+                    <?php
+                    if (!isset($_SESSION['connessione'])) {
+                        echo " 
+                            <li class='nav-item '>
+                            <a class='nav-link' href='./files/login/login.php'>
+                            <i class='material-icons'>person</i>
                             <p>Accedi/Registrati</p>
-                        </a>
-                    </li>
+                            </a>
+                            </li>"
+                        ;
+                    }
+                    ?>
                     <li class="nav-item ">
                         <a class="nav-link" href="./typography.html">
                             <i class="material-icons">library_books</i>
@@ -111,12 +119,14 @@
                     </li>
                     <?php
                     if (isset($_SESSION['connessione'])) {
-                        echo "<li class='nav-item'>
-              <a class='nav-link' href='../../logout/logout.php'>
-              <i class='material-icons'>logout</i>
-                <p>Logout</p>
-              </a>
-            </li>";
+                        echo "
+                            <li class='nav-item'>
+                            <a class='nav-link' href='../../logout/logout.php'>
+                            <i class='material-icons'>logout</i>
+                            <p>Logout</p>
+                            </a>
+                            </li>"
+                        ;
                     }
                     ?>
 
@@ -134,17 +144,19 @@
                 <div class="container">
 
                     <div class="collapse navbar-collapse" id="navbarText">
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Features</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Pricing</a>
-                            </li>
-                        </ul>
+                        <!-- 
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+              </li>
+            </ul>
+            -->
                     </div>
                 </div>
             </nav>
@@ -371,18 +383,18 @@
                                                             <tr>
                                                                 <td>
                                                                     <div class="form-group">
-                                                                        <label>Pec</label>
+                                                                        <label>Pec/Codice univoco</label>
                                                                         <br>
-                                                                        <input type="email" class="form-control" name="pec" placeholder="Pec">
+                                                                        <input type="text" class="form-control" name="pecCod" placeholder="Pec/Codice univoco">
                                                                     </div>
                                                                 </td>
                                                             </tr>
                                                             <tr>
                                                                 <td>
                                                                     <div class="form-group">
-                                                                        <label>Codice univoco</label>
+                                                                        <label>Partita IVA</label>
                                                                         <br>
-                                                                        <input type="text" class="form-control" name="codiceUnivoco" placeholder="Codice univoco">
+                                                                        <input type="text" class="form-control" name="partitaIva" placeholder="Partita IVA">
                                                                     </div>
                                                                 </td>
                                                             </tr>
@@ -564,8 +576,7 @@
                                 function mostra() {
                                     document.getElementById('fattura').style.display = 'block';
                                 }
-                                    document.getElementById('fattura').style.display = 'none';
-                            
+                                document.getElementById('fattura').style.display = 'none';
                             </script>
 
 

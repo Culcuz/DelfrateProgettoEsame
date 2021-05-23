@@ -94,18 +94,7 @@
               <p>Home page</p>
             </a>
           </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./files/login/login.php">
-              <i class="material-icons">person</i>
-              <p>Accedi/Registrati</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./typography.html">
-              <i class="material-icons">library_books</i>
-              <p>Categorie</p>
-            </a>
-          </li>
+
           <?php
           if (isset($_SESSION['connessione'])) {
             echo "<li class='nav-item'>
@@ -131,6 +120,7 @@
         <div class="container">
 
           <div class="collapse navbar-collapse" id="navbarText">
+              <!-- 
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
                 <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
@@ -142,6 +132,7 @@
                 <a class="nav-link" href="#">Pricing</a>
               </li>
             </ul>
+            -->
           </div>
         </div>
       </nav>

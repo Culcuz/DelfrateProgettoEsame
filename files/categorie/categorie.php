@@ -92,20 +92,35 @@
                             <p>Home page</p>
                         </a>
                     </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="../login/login.php">
-                            <i class="material-icons">person</i>
+                    <?php
+                    if (!isset($_SESSION['connessione'])) {
+                        echo "
+                            <li class='nav-item '>
+                            <a class='nav-link' href='./files/login/login.php'>
+                            <i class='material-icons'>person</i>
                             <p>Accedi/Registrati</p>
-                        </a>
-                    </li>
+                            </a>
+                            </li>";
+                    }
+                    ?>
                     <?php
                     if (isset($_SESSION['connessione'])) {
-                        echo "<li class='nav-item'>
-              <a class='nav-link' href='../logout/logout.php'>
-              <i class='material-icons'>logout</i>
-                <p>Logout</p>
-              </a>
-            </li>";
+                        echo "
+                            <li class='nav-item'>
+                            <a class='nav-link' href='../logout/logout.php'>
+                            <i class='material-icons'>logout</i>
+                            <p>Logout</p>
+                            </a>
+                            </li>";
+                    }
+                    if (isset($_SESSION['connessione'])) {
+                        echo "
+                        <li class='nav-item'>
+                        <a class='nav-link' href='./files/carrello/carrello.php'>
+                        <i class='material-icons'>shopping_cart</i>
+                        <p>Carrello</p>
+                        </a>
+                        </li>";
                     }
                     ?>
 
@@ -123,17 +138,19 @@
                 <div class="container">
 
                     <div class="collapse navbar-collapse" id="navbarText">
+                        <!-- 
                         <ul class="navbar-nav mr-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Features</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Pricing</a>
-                            </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Pricing</a>
+                        </li>
                         </ul>
+                        -->
                     </div>
                 </div>
             </nav>

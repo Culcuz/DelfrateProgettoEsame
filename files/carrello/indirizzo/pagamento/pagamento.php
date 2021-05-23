@@ -21,8 +21,8 @@
  $provincia = $_POST['provincia'];
 
  $ragioneSociale = $_POST['ragSociale'];
- $pec = $_POST['pec'];
- $codiceUnivoco = $_POST['codiceUnivoco'];
+ $pecCod = $_POST['pecCod'];
+ $partitaIva = $_POST['partitaIva'];
  $Fvia = $_POST['Fvia'];
  $Fcap = $_POST['Fcap'];
  $FnCiv = $_POST['FnCiv'];
