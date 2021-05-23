@@ -303,15 +303,8 @@
                                 <div class="form-group">
                                   <label>Descrizione</label>
                                   <br>
-                                  <textarea class="form-control" name="descrizione" id="editor1" placeholder="Descrizione" required></textarea>
-                                  <!-- Richiamo la libreria jQuery con i CDN di Google e il file di CKEditor -->
-                                  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-                                  <script src="ckeditor/ckeditor.js"></script>
-
-                                  <!-- Eseguo lo script -->
-                                  <script>
-                                    CKEDITOR.replace('editor1');
-                                  </script>
+                                  <textarea class="form-control" name="descrizione" placeholder="Descrizione" required></textarea>
+                
                                 </div>
                               </td>
                             </tr>
@@ -321,7 +314,7 @@
                                 <label>Categoria</label>
                                 <select class="form-select" name="categoria" aria-label="Default select example" required>
                                   <option value="1">Telefono</option>
-                                  <option value="2">Scarpa</option>
+                                  <option value="2">Cuffia</option>
                                   <option value="3">Tablet</option>
                                 </select>
                               </td>

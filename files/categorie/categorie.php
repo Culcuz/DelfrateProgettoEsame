@@ -106,12 +106,12 @@
                     <?php
                     if (isset($_SESSION['connessione'])) {
                         echo "
-                        <li class='nav-item'>
-                        <a class='nav-link' href='../carrello/carrello.php'>
-                        <i class='material-icons'>shopping_cart</i>
-                        <p>Carrello</p>
-                        </a>
-                        </li>";
+                            <li class='nav-item'>
+                            <a class='nav-link' href='../carrello/carrello.php'>
+                            <i class='material-icons'>shopping_cart</i>
+                            <p>Carrello</p>
+                            </a>
+                            </li>";
                     }
                     if (isset($_SESSION['connessione'])) {
                         echo "

@@ -28,6 +28,7 @@
  $FnCiv = $_POST['FnCiv'];
  $Fcomune = $_POST['Fcomune'];
  $Fprovincia = $_POST['Fprovincia'];
+ $FcodFiscale = $_POST['FcodFiscale'];
  echo "
  $via <br>
  $cap <br>
@@ -42,6 +43,7 @@
  $FnCiv <br>
  $Fcomune <br>
  $Fprovincia <br>
+ $FcodFiscale <br>
  
  ";
 

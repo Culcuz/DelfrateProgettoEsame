@@ -401,6 +401,15 @@
                                                             <tr>
                                                                 <td>
                                                                     <div class="form-group">
+                                                                        <label>Codice fiscale</label>
+                                                                        <br>
+                                                                        <input type="text" class="form-control" name="FcodFiscale" placeholder="Codice Fiscale">
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="form-group">
                                                                         <label>Via</label>
                                                                         <br>
                                                                         <input type="text" class="form-control" name="Fvia" placeholder="Via">
