@@ -151,7 +151,7 @@
                         <div class="cart">
                             <div class="basket col-md-6 col-md-offset-1">
                                 <div class="product ux-card">
-                                    <img src="https://img1.wsimg.com/fos/react/sprite.svg#domains" height="32" width="32" />
+                                    <img src="../../img/icone/cuffia.png" height="50" width="50" />
                                     <span class="title"><a href="/product/{id}">catstewardesses</a></span>
                                     <span class="price">
                                         $12.99

@@ -159,7 +159,7 @@
                 <div class="container-fluid">
                     <div class="grid">
                         <div class="grid__item">
-                            <div class="card"><img class="card__img" src="https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=2250&amp;q=80" alt="Snowy Mountains">
+                            <div class="card"><img class="card__img" src="../../img/prodotti/iphon12.jpg">
                                 <div class="card__content">
                                     <h1 class="card__header">Telefoni</h1>
                                     <p class="card__text">Scopri la selezione dei nostri <strong>telefoni</strong> </p>
@@ -168,7 +168,7 @@
                             </div>
                         </div>
                         <div class="grid__item">
-                            <div class="card"><img class="card__img" src="https://images.unsplash.com/photo-1485160497022-3e09382fb310?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=2250&amp;q=80" alt="Desert">
+                            <div class="card"><img class="card__img" src="../../img/prodotti/bose.jpg">
                                 <div class="card__content">
                                     <h1 class="card__header">Cuffie</h1>
                                     <p class="card__text">Decine di <strong>cuffie</strong> a tua disposizione</p>
@@ -177,7 +177,7 @@
                             </div>
                         </div>
                         <div class="grid__item">
-                            <div class="card"><img class="card__img" src="https://images.unsplash.com/photo-1506318164473-2dfd3ede3623?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=3300&amp;q=80" alt="Canyons">
+                            <div class="card"><img class="card__img" src="../../img/prodotti/vans.jpg">
                                 <div class="card__content">
                                     <h1 class="card__header">Zaini</h1>
                                     <p class="card__text"><strong>Zaini</strong> per tutti i gusti e colori</p>
