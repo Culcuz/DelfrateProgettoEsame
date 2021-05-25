@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Mag 25, 2021 alle 12:12
+-- Creato il: Mag 25, 2021 alle 12:20
 -- Versione del server: 10.4.17-MariaDB
 -- Versione PHP: 8.0.1
 
@@ -159,8 +159,8 @@ ALTER TABLE `compra`
 --
 ALTER TABLE `contenuto`
   ADD PRIMARY KEY (`idContenuto`),
-  ADD KEY `idCarrello` (`idCarrello`),
-  ADD KEY `idProdotto` (`idProdotto`);
+  ADD KEY `idProdotto` (`idProdotto`),
+  ADD KEY `idCarrello` (`idCarrello`);
 
 --
 -- Indici per le tabelle `prodotto`
@@ -238,7 +238,8 @@ ALTER TABLE `compra`
 -- Limiti per la tabella `contenuto`
 --
 ALTER TABLE `contenuto`
-  ADD CONSTRAINT `contenuto_ibfk_1` FOREIGN KEY (`idProdotto`) REFERENCES `prodotto` (`idProdotto`);
+  ADD CONSTRAINT `contenuto_ibfk_1` FOREIGN KEY (`idProdotto`) REFERENCES `prodotto` (`idProdotto`),
+  ADD CONSTRAINT `contenuto_ibfk_2` FOREIGN KEY (`idCarrello`) REFERENCES `carrello` (`idCarrello`);
 
 --
 -- Limiti per la tabella `prodotto`
