@@ -164,7 +164,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <form action="./pagamento/pagamento.php" method="post">
-                            <div class="col-lg-4 col-md-4">
+                            <div class="col-lg-4 col-md-12">
                                 <div class="card">
                                     <div class="card-header card-header-tabs card-header-spedizione">
                                         <div class="nav-tabs-navigation">
@@ -355,7 +355,7 @@
                                 </div>
                             </div>
                             <div id='fattura'>
-                                <div class="col-lg-4 col-md-6">
+                                <div class="col-lg-4 col-md-12">
                                     <div class="card">
                                         <div class="card-header card-header-tabs card-header-fatturazione">
                                             <div class="nav-tabs-navigation">
@@ -574,7 +574,7 @@
 
                                 </div>
                             </div>
-                            <div class="summary col-md-2">
+                            <div class="summary col-lg-2 col-md-4">
                                 <div class="terms">
                                     <button type="button" class="btn btn-purchase" onclick='javascript:mostra()'>Fattura</button>
                                     <button type="submit" class="btn btn-success">Conferma</button>
