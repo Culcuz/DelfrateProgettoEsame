@@ -177,6 +177,7 @@
 
             $i = 1;
             while ($riga) {
+              $id = $riga['idProdotto'];
               $nome = $riga['nome'];
               $prezzo = $riga['prezzo'];
               $descrizione = $riga['descrizione'];
@@ -188,7 +189,8 @@
               }
 
               echo "
-              <td>
+                <td>
+                <form action='' method='POST'> FORM DA ESEGUIRE NELLA STESSA PAGINA NON
                   <div class='Pcontainer'>
                     <div class='Pimg'>
                       <img src='$immagine'>
@@ -200,14 +202,23 @@
                           <p id='Pname'>$nome</p>
                           <p class='Pcollection'>$descrizione</p>
                         </div>
-                        <h3 id='Pprice'>$ $prezzo</h3>
-                        <input type='button' class='Pcart-Pbtn' value='compra'>
+                        <h3 id='Pprice'>€ $prezzo</h3>
+                        <input type='submit' class='Pcart-Pbtn' name='submitButton' value='compra'>
                         </a>
                       </div>
                     </div>
                   </div>
+                </form>
+
+                  
                 </td>			          
               ";
+
+              if (isset($_POST['submitButton'])) { //check if form was submitted
+               echo "okk";
+              }
+
+
 
               if (($i % 4 == 0)) {
                 echo "</tr>";
@@ -222,6 +233,21 @@
 
         </div>
       </div>
+      <script type="text/javascript">
+        function aggiungiAlCarrello(id) {
+
+          <?php
+
+          $idUtenteLoggato = $_SESSION["idUtenteLoggato"];
+          $ottieniIdCarrello = "SELECT idCarrello FROM utente WHERE idUtente=$idUtenteLoggato";
+          $result = mysqli_query($conn, $ottieniIdCarrello);
+          $row = mysqli_fetch_array($result);
+          $d = $row['idCarrello'];
+          echo "<script type='text/javascript'>alert('$d');</script>";
+          ?>
+
+        }
+      </script>
 
       <footer class="footer">
         <div class="container-fluid">

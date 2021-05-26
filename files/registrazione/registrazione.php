@@ -38,7 +38,20 @@
         $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
         $password = cryptPassword($password);
 
-        $insert = "INSERT INTO utente (nome, cognome, email, password, isAdmin) VALUES ('$nome', '$cognome', '$email', '$password', '0')";
+        $insertIdCarrello = "INSERT INTO carrello () VALUES ()";
+        if (!mysqli_query($conn, $insertIdCarrello)) {
+            echo ("ERRORE QUERY CARRELLO");
+        }
+
+        $select = "SELECT idCarrello FROM carrello ORDER by idCarrello DESC LIMIT 1";
+        $result = mysqli_query($conn, $select);
+        $row = mysqli_fetch_array($result);
+        $d = $row['idCarrello'];
+
+        $insert = "INSERT INTO utente (nome, cognome, email, password, isAdmin, idCarrello) VALUES ('$nome', '$cognome', '$email', '$password', '0', '$d')";
+
+
+
 
         if (!mysqli_query($conn, $insert)) {
     ?>
@@ -56,7 +69,7 @@
         } else {
             $_SESSION['connessione'] = 1; //mi salvo nell'arey di sessine il fatto che l'utente abbia la possibilità di entrare nell'area riservata
             $_SESSION['nome'] = $nome;
-       ?>
+        ?>
             <script>
                 Swal.fire({
                     icon: 'success',
