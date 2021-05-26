@@ -214,9 +214,7 @@
                 </td>			          
               ";
 
-              if (isset($_POST['submitButton'])) { //check if form was submitted
-               echo "okk";
-              }
+           
 
 
 
@@ -233,6 +231,8 @@
 
         </div>
       </div>
+
+      FARE IN MODO CHE QUESTA PARTE VENGA FATTA QUANDO UN UTENTE SCHIACCIA SUL BOTTONE DI ACQUISTO
       <script type="text/javascript">
         function aggiungiAlCarrello(id) {
 
