@@ -43,8 +43,8 @@ a {
 
 button {
     border-radius: 20px;
-    border: 1px solid #5d106b;
-    background-color: #9c27b0;
+    border: 1px solid #491a6e;
+    background: #7132a5;
     color: #FFFFFF;
     font-size: 12px;
     font-weight: bold;
@@ -238,7 +238,6 @@ footer {
 footer p {
     margin: 10px 0;
 }
-
 
 footer a {
     color: #3c97bf;
