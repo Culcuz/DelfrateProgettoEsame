@@ -157,33 +157,43 @@
             </nav>
             <div class="content">
                 <div class="container-fluid">
+
                     <div class="grid">
                         <div class="grid__item">
-                            <div class="card"><img class="card__img" src="../../img/prodotti/iphon12.jpg">
-                                <div class="card__content">
-                                    <h1 class="card__header">Telefoni</h1>
-                                    <p class="card__text">Scopri la selezione dei nostri <strong>telefoni</strong> </p>
-                                    <button class="card__btn">Esplora <span>&rarr;</span></button>
+                            <form action="./visCategoria.php" method="POST">
+                                <div class="card"><img class="card__img" src="../../img/icone/telefoni.jpg">
+                                    <input type='hidden' name='idCat' value='1'>
+                                    <div class="card__content">
+                                        <h1 class="card__header">Telefoni</h1>
+                                        <p class="card__text">Scopri la selezione dei nostri <strong>telefoni</strong> </p>
+                                        <button class="card__btn">Esplora <span>&rarr;</span></button>
+                                    </div>
                                 </div>
-                            </div>
+                            </form>
                         </div>
                         <div class="grid__item">
-                            <div class="card"><img class="card__img" src="../../img/prodotti/bose.jpg">
-                                <div class="card__content">
-                                    <h1 class="card__header">Cuffie</h1>
-                                    <p class="card__text">Decine di <strong>cuffie</strong> a tua disposizione</p>
-                                    <button class="card__btn">Esplora <span>&rarr;</span></button>
+                            <form action="./visCategoria.php" method="POST">
+                                <div class="card"><img class="card__img" src="../../img/prodotti/bose.jpg">
+                                    <input type='hidden' name='idCat' value='2'>
+                                    <div class="card__content">
+                                        <h1 class="card__header">Cuffie</h1>
+                                        <p class="card__text">Decine di <strong>cuffie</strong> a tua disposizione</p>
+                                        <button class="card__btn">Esplora <span>&rarr;</span></button>
+                                    </div>
                                 </div>
-                            </div>
+                            </form>
                         </div>
                         <div class="grid__item">
-                            <div class="card"><img class="card__img" src="../../img/prodotti/vans.jpg">
-                                <div class="card__content">
-                                    <h1 class="card__header">Zaini</h1>
-                                    <p class="card__text"><strong>Zaini</strong> per tutti i gusti e colori</p>
-                                    <button class="card__btn">Esplora <span>&rarr;</span></button>
+                            <form action="./visCategoria.php" method="POST">
+                                <input type='hidden' name='idCat' value='3'>
+                                <div class="card"><img class="card__img" src="../../img/prodotti/vans.jpg">
+                                    <div class="card__content">
+                                        <h1 class="card__header">Zaini</h1>
+                                        <p class="card__text"><strong>Zaini</strong> per tutti i gusti e colori</p>
+                                        <button class="card__btn">Esplora <span>&rarr;</span></button>
+                                    </div>
                                 </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>
