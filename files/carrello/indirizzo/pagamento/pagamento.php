@@ -3,8 +3,8 @@
 
 <head>
   <meta charset="utf-8" />
-  <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="./assets/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../../../../assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="../../../../assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title> Nøzama </title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
@@ -13,23 +13,23 @@
 </head>
 
 <body>
-<?php 
- $via = $_POST['via'];
- $cap = $_POST['cap'];
- $nCiv = $_POST['nCiv'];
- $comune = $_POST['comune'];
- $provincia = $_POST['provincia'];
+  <?php
+  $via = $_POST['via'];
+  $cap = $_POST['cap'];
+  $nCiv = $_POST['nCiv'];
+  $comune = $_POST['comune'];
+  $provincia = $_POST['provincia'];
 
- $FragioneSociale = $_POST['ragSociale'];
- $FpecCod = $_POST['pecCod'];
- $FpartitaIva = $_POST['partitaIva'];
- $Fvia = $_POST['Fvia'];
- $Fcap = $_POST['Fcap'];
- $FnCiv = $_POST['FnCiv'];
- $Fcomune = $_POST['Fcomune'];
- $Fprovincia = $_POST['Fprovincia'];
- $FcodFiscale = $_POST['FcodFiscale'];
- echo "
+  $FragioneSociale = $_POST['ragSociale'];
+  $FpecCod = $_POST['pecCod'];
+  $FpartitaIva = $_POST['partitaIva'];
+  $Fvia = $_POST['Fvia'];
+  $Fcap = $_POST['Fcap'];
+  $FnCiv = $_POST['FnCiv'];
+  $Fcomune = $_POST['Fcomune'];
+  $Fprovincia = $_POST['Fprovincia'];
+  $FcodFiscale = $_POST['FcodFiscale'];
+  echo "
  $via <br>
  $cap <br>
  $nCiv <br>
@@ -48,7 +48,7 @@
  ";
 
 
-?>
+  ?>
 
 
 
@@ -100,18 +100,18 @@
               </label>
               <div class="card-item__content">
                 <label for="cardName" class="card-item__info" ref="cardName">
-                  <div class="card-item__holder">Card Holder</div>
+                  <div class="card-item__holder">Titolare</div>
                   <transition name="slide-fade-up">
                     <div class="card-item__name" v-if="cardName.length" key="1">
                       <transition-group name="slide-fade-right">
                         <span class="card-item__nameItem" v-for="(n, $index) in cardName.replace(/\s\s+/g, ' ')" v-if="$index === $index" v-bind:key="$index + 1">{{n}}</span>
                       </transition-group>
                     </div>
-                    <div class="card-item__name" v-else key="2">Full Name</div>
+                    <div class="card-item__name" v-else key="2">Nome Cognome</div>
                   </transition>
                 </label>
                 <div class="card-item__date" ref="cardDate">
-                  <label for="cardMonth" class="card-item__dateTitle">Expires</label>
+                  <label for="cardMonth" class="card-item__dateTitle">Scadenza</label>
                   <label for="cardMonth" class="card-item__dateItem">
                     <transition name="slide-fade-up">
                       <span v-if="cardMonth" v-bind:key="cardMonth">{{cardMonth}}</span>
@@ -153,13 +153,13 @@
         <form action="./RSA/chiavi.php" method="POST">
           <!-- NUMERO CARTA -->
           <div class="card-input">
-            <label for="cardNumber" class="card-input__label">Card Number</label>
+            <label for="cardNumber" class="card-input__label">Numero carta</label>
             <input type="text" id="cardNumber" name="numero" class="card-input__input" v-mask="generateCardNumberMask" required v-model="cardNumber" v-on:focus="focusInput" v-on:blur="blurInput" data-ref="cardNumber" autocomplete="off">
           </div>
           <!-- FINE NUMERO CARTA -->
           <!-- NOME CARTA -->
           <div class="card-input">
-            <label for="cardName" class="card-input__label">Card Holders</label>
+            <label for="cardName" class="card-input__label">Titolare</label>
             <input type="text" id="cardName" name="nome" class="card-input__input" v-model="cardName" v-on:focus="focusInput" required v-on:blur="blurInput" data-ref="cardName" autocomplete="off">
           </div>
           <!-- FINE NOME CARTA -->
@@ -167,9 +167,9 @@
             <div class="card-form__col">
               <div class="card-form__group">
                 <!-- MESE -->
-                <label for="cardMonth" class="card-input__label">Expiration Date</label>
+                <label for="cardMonth" class="card-input__label">Scadenza</label>
                 <select class="card-input__input -select" id="cardMonth" name="mese" v-model="cardMonth" v-on:focus="focusInput" required v-on:blur="blurInput" data-ref="cardDate">
-                  <option value="" disabled selected>Month</option>
+                  <option value="" disabled selected>Mese</option>
                   <option v-bind:value="n < 10 ? '0' + n : n" v-for="n in 12" v-bind:disabled="n < minCardMonth" v-bind:key="n">
                     {{n < 10 ? '0' + n : n}}
                   </option>
@@ -177,7 +177,7 @@
                 <!-- FINE MESE -->
                 <!-- ANNO -->
                 <select class="card-input__input -select" id="cardYear" name="anno" v-model="cardYear" v-on:focus="focusInput" required v-on:blur="blurInput" data-ref="cardDate">
-                  <option value="" disabled selected>Year</option>
+                  <option value="" disabled selected>Anno</option>
                   <option v-bind:value="$index + minCardYear" v-for="(n, $index) in 12" v-bind:key="n">
                     {{$index + minCardYear}}
                   </option>
@@ -195,9 +195,7 @@
             <!-- FINE CVV -->
           </div>
 
-          <button class="card-form__button" type="submit">
-            Submit
-          </button>
+          <button class="card-form__button" type="submit"> Conferma </button>
         </form>
 
       </div>

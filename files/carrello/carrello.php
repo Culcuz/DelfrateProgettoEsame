@@ -175,7 +175,7 @@
                                 </div>
                                 <div class="complete">
                                     <form action="./indirizzo/indirizzo.php" method="POST">
-                                        <button type="submit" disabled="disabled" class="btn btn-purchase">Procedi con indirizzo</button>
+                                        <button type="submit" disabled="disabled" class="btn btn-purchase">Procedi</button>
                                     </form>
 
                                 </div>

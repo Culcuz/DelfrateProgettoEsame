@@ -120,6 +120,7 @@
 
                     $plaintext = "$numero-$nome-$mese-$anno-$cvc";
 
+                    //da rivedere con che chiave cripto
                     $rsa->loadKey($privatekey);
                     $ciphertext = $rsa->encrypt($plaintext);
                     $rsa->loadKey($publickey);
