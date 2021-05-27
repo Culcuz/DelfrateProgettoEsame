@@ -151,59 +151,14 @@
                         <div class="cart">
                             <div class="basket col-md-6 col-md-offset-1">
                                 <div class="product ux-card">
+                                <!-- predere l'icona a seconda di che prodotto sia prendere nome e prezzo -->
                                     <img src="../../img/icone/cuffia.png" height="50" width="50" />
-                                    <span class="title"><a href="/product/{id}">catstewardesses</a></span>
+                                    <span class="title">catstewardesses</span>
                                     <span class="price">
                                         $12.99
                                     </span>
-
                                     <button class="btn btn-canvas btn-xs remove" href="product/remove"><span class="uxicon uxicon-trash"></span>Remove</button>
-                                </div>
-                                <div class="product ux-card">
-                                    <img src="https://img1.wsimg.com/fos/react/sprite.svg#domains" height="32" width="32" />
-                                    <span class="title"><a href="/product/{id}">catstewardesses</a></span>
-                                    <span class="price">
-                                        $12.99
-                                    </span>
-
-                                    <button class="btn btn-canvas btn-xs remove" href="product/remove"><span class="uxicon uxicon-trash"></span>Remove</button>
-                                </div>
-                                <div class="product ux-card">
-                                    <img src="https://img1.wsimg.com/fos/react/sprite.svg#domains" height="32" width="32" />
-                                    <span class="title"><a href="/product/{id}">catstewardesses</a></span>
-                                    <span class="price">
-                                        $12.99
-                                    </span>
-
-                                    <button class="btn btn-canvas btn-xs remove" href="product/remove"><span class="uxicon uxicon-trash"></span>Remove</button>
-                                </div>
-                                <div class="product ux-card">
-                                    <img src="https://img1.wsimg.com/fos/react/sprite.svg#domains" height="32" width="32" />
-                                    <span class="title"><a href="/product/{id}">catstewardesses</a></span>
-                                    <span class="price">
-                                        $12.99
-                                    </span>
-
-                                    <button class="btn btn-canvas btn-xs remove" href="product/remove"><span class="uxicon uxicon-trash"></span>Remove</button>
-                                </div>
-                                <div class="product ux-card">
-                                    <img src="https://img1.wsimg.com/fos/react/sprite.svg#domains" height="32" width="32" />
-                                    <span class="title"><a href="/product/{id}">catstewardesses</a></span>
-                                    <span class="price">
-                                        $12.99
-                                    </span>
-
-                                    <button class="btn btn-canvas btn-xs remove" href="product/remove"><span class="uxicon uxicon-trash"></span>Remove</button>
-                                </div>
-                                <div class="product ux-card">
-                                    <img src="https://img1.wsimg.com/fos/react/sprite.svg#domains" height="32" width="32" />
-                                    <span class="title"><a href="/product/{id}">catstewardesses</a></span>
-                                    <span class="price">
-                                        $12.99
-                                    </span>
-
-                                    <button class="btn btn-canvas btn-xs remove" href="product/remove"><span class="uxicon uxicon-trash"></span>Remove</button>
-                                </div>
+                                </div>                              
                             </div>
                             <div class="summary col-md-4">
                                 <dl class="total">
