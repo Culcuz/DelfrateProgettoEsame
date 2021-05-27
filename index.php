@@ -173,7 +173,7 @@
               exit();
             }
 
-            $i = 1;
+            $i = 0;
             while ($riga) {
               $id = $riga['idProdotto'];
               $nome = $riga['nome'];
@@ -182,7 +182,8 @@
               $immagine = $riga['immagine'];
               $riga = mysqli_fetch_array($ris, MYSQLI_ASSOC);
 
-              if (($i % 4 == 0)) {
+              if (($i == 4)) {
+                $i=0;
                 echo "<tr>";
               }
 
@@ -211,7 +212,8 @@
                 </td>			          
               ";
               
-              if (($i % 4 == 0)) {
+              if (($i == 4)) {
+                $i=0;
                 echo "</tr>";
               }
               $i++;

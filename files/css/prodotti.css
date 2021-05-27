@@ -92,14 +92,19 @@ ul li:hover {
     margin: 0 auto 40px;
 }
 
-@media screen and (min-width:800px) {
+@media screen and (min-width:1200px) {
     .Ptabella {
         width: 60%;
     }
 }
 
-@media screen and (max-width:799px) {
-    .Ptabella, thead, tbody, th, tr, td {
+@media screen and (max-width:1199px) {
+    .Ptabella,
+    thead,
+    tbody,
+    th,
+    tr,
+    td {
         display: block;
     }
     .Ptabella {

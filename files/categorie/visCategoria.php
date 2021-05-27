@@ -178,7 +178,7 @@
                             exit();
                         }
 
-                        $i = 1;
+                        $i = 0;
                         while ($riga) {
                             $id = $riga['idProdotto'];
                             $nome = $riga['nome'];
@@ -191,36 +191,38 @@
 
                             $riga = mysqli_fetch_array($ris, MYSQLI_ASSOC);
 
-                            if (($i % 4 == 0)) {
+                            if (($i == 4)) {
+                                $i = 0;
                                 echo "<tr>";
                             }
 
                             echo "
-                <td>
-                <form action='./files/carrello/insCarrello.php' method='POST'>
-                  <div class='Pcontainer'>
-                    <div class='Pimg'>
-                      <img src='$immagine'>
-                      <input type='hidden' name='idProdotto' value='$id' >
-                    </div>
-      
-                    <div class='Player-Pcontainer'>
-                      <div class='Ptext-Pcontent'>
-                        <div>
-                          <p id='Pname'>$nome</p>
-                          <p class='Pcollection'>$descrizione</p>
-                        </div>
-                        <h3 id='Pprice'>€ $prezzo</h3>
-                        <input type='submit' class='Pcart-Pbtn' name='submitButton' value='compra'>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </form>
-                </td>			          
-              ";
+                            <td>
+                                <form action='./files/carrello/insCarrello.php' method='POST'>
+                                    <div class='Pcontainer'>
+                                        <div class='Pimg'>
+                                        <img src='$immagine'>
+                                        <input type='hidden' name='idProdotto' value='$id' >
+                                        </div>
+                        
+                                        <div class='Player-Pcontainer'>
+                                        <div class='Ptext-Pcontent'>
+                                            <div>
+                                            <p id='Pname'>$nome</p>
+                                            <p class='Pcollection'>$descrizione</p>
+                                            </div>
+                                            <h3 id='Pprice'>€ $prezzo</h3>
+                                            <input type='submit' class='Pcart-Pbtn' name='submitButton' value='compra'>
+                                            </a>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </td>			          
+                            ";
 
-                            if (($i % 4 == 0)) {
+                            if (($i == 4)) {
+                                $i = 0;
                                 echo "</tr>";
                             }
                             $i++;
