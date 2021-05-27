@@ -45,6 +45,7 @@ button {
     border-radius: 20px;
     border: 1px solid #491a6e;
     background: #7132a5;
+    box-shadow: 0 5px 15px #491a6e;
     color: #FFFFFF;
     font-size: 12px;
     font-weight: bold;

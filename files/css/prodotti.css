@@ -66,11 +66,12 @@
     right: 15px;
     width: 120px;
     height: 40px;
-    background: rgba(240, 58, 53, 1);
+    border: 1px solid #491a6e;
+    background: #9c27b0;
     color: #fff;
     font-size: 15px;
     border-radius: 5px;
-    box-shadow: 0 5px 15px rgba(240, 58, 53, .3);
+    box-shadow: 0 5px 15px #491a6e;
 }
 
 .Pcontainer:hover {
@@ -83,7 +84,7 @@
 }
 
 ul li:hover {
-    border-color: rgba(240, 58, 53, 1);
+    border-color: #7132a5;
 }
 
 .Ptabella {

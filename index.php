@@ -203,7 +203,7 @@
                           <p class='Pcollection'>$descrizione</p>
                         </div>
                         <h3 id='Pprice'>€ $prezzo</h3>
-                        <input type='submit' class='Pcart-Pbtn' name='submitButton' value='compra'>
+                        <input type='submit' class='Pcart-Pbtn' name='submitButton' value='Compra'>
                         </a>
                       </div>
                     </div>
