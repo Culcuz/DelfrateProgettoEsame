@@ -35,43 +35,6 @@
     include('../database/config.php');
     $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
-    if (!isset($_SESSION['connessione'])) {
-    ?>
-        <script>
-            Swal.fire({
-                icon: 'error',
-                title: 'Ops...',
-                text: 'Non sei autorizzato',
-                allowEscape: false,
-                allowOutsideClick: false,
-                confirmButtonText: "<a href='../../../index.php'>Esci</a>"
-            });
-        </script>
-    <?php
-    } else {
-    ?>
-        <!-- ACCESSO AVVENUTO -->
-        <script>
-            const Toast = Swal.mixin({
-                toast: true,
-                position: 'top-end',
-                showConfirmButton: false,
-                timer: 3000,
-                timerProgressBar: true,
-                didOpen: (toast) => {
-                    toast.addEventListener('mouseenter', Swal.stopTimer)
-                    toast.addEventListener('mouseleave', Swal.resumeTimer)
-                }
-            })
-
-            Toast.fire({
-                icon: 'success',
-                title: 'Accesso avvenuto'
-            })
-        </script>
-        <!-- FINE ACCESSO AVVENUTO -->
-    <?php
-    }
 
     ?>
 
@@ -80,11 +43,12 @@
             <?php
             if (isset($_SESSION['connessione'])) {
                 $nome = $_SESSION['nome'];
-                echo "<div class='logo'>
-        <a class='simple-text logo-normal'>
-          Benvenuta/o $nome
-        </a>
-      </div>";
+                echo "
+                    <div class='logo'>
+                    <a class='simple-text logo-normal'>
+                    Benvenuta/o $nome
+                    </a>
+                    </div>";
             }
             ?>
 
@@ -104,12 +68,13 @@
                     </li>
                     <?php
                     if (isset($_SESSION['connessione'])) {
-                        echo "<li class='nav-item'>
-              <a class='nav-link' href='../logout/logout.php'>
-              <i class='material-icons'>logout</i>
-                <p>Logout</p>
-              </a>
-            </li>";
+                        echo "
+                            <li class='nav-item'>
+                            <a class='nav-link' href='../logout/logout.php'>
+                            <i class='material-icons'>logout</i>
+                            <p>Logout</p>
+                            </a>
+                            </li>";
                     }
                     ?>
 
@@ -127,61 +92,146 @@
                 <div class="container">
 
                     <div class="collapse navbar-collapse" id="navbarText">
-                          <!-- 
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
-              </li>
-            </ul>
-            -->
+                        <!-- 
+                        <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Pricing</a>
+                        </li>
+                        </ul>
+                        -->
                     </div>
                 </div>
             </nav>
             <div class="content">
                 <div class="container-fluid">
-
-
                     <div class="container">
                         <div class="cart">
                             <div class="basket col-md-6 col-md-offset-1">
-                                <div class="product ux-card">
-                                <!-- predere l'icona a seconda di che prodotto sia prendere nome e prezzo -->
-                                    <img src="../../img/icone/cuffia.png" height="50" width="50" />
-                                    <span class="title">catstewardesses</span>
-                                    <span class="price">
-                                        $12.99
-                                    </span>
-                                    <button class="btn btn-canvas btn-xs remove" href="product/remove"><span class="uxicon uxicon-trash"></span>Remove</button>
-                                </div> 
-                                <div class="product ux-card">
-                                <!-- predere l'icona a seconda di che prodotto sia prendere nome e prezzo -->
-                                    <img src="../../img/icone/telefono.png" height="50" width="50" />
-                                    <span class="title">catstewardesses</span>
-                                    <span class="price">
-                                        $12.99
-                                    </span>
-                                    <button class="btn btn-canvas btn-xs remove" href="product/remove"><span class="uxicon uxicon-trash"></span>Remove</button>
-                                </div> 
-                                <div class="product ux-card">
-                                <!-- predere l'icona a seconda di che prodotto sia prendere nome e prezzo -->
-                                    <img src="../../img/icone/zaino.jpg" height="50" width="50" />
-                                    <span class="title">catstewardesses</span>
-                                    <span class="price">
-                                        $12.99
-                                    </span>
-                                    <button class="btn btn-canvas btn-xs remove" href="product/remove"><span class="uxicon uxicon-trash"></span>Remove</button>
-                                </div>                              
+
+                                <?php
+
+                                //-----PRENDO L'idCarrello DELL'UTENTE LOGGATO-----
+                                $idUtenteLoggato = $_SESSION['idUtenteLoggato'];
+                                $select = "SELECT idCarrello FROM utente WHERE idUtente=$idUtenteLoggato";
+
+                                $ris = mysqli_query($conn, $select);
+                                if (!$ris) {
+                                ?>
+                                    <script>
+                                        Swal.fire({
+                                            icon: 'error',
+                                            title: 'Ops...',
+                                            text: 'Cè stato un problema in fase di visualizzazione',
+                                            allowEscape: false,
+                                            allowOutsideClick: false,
+                                            confirmButtonText: "<a href='../../index.php'>Riprova</a>"
+                                        })
+                                    </script>
+                                <?php
+                                    exit();
+                                }
+
+                                $riga = mysqli_fetch_array($ris, MYSQLI_ASSOC); // array che conterrà queste informazioni
+                                if (!$riga) {
+                                ?>
+                                    <script>
+                                        Swal.fire({
+                                            icon: 'error',
+                                            title: 'Ops...',
+                                            text: 'Cè stato un problema in fase di visualizzazione',
+                                            allowEscape: false,
+                                            allowOutsideClick: false,
+                                            confirmButtonText: "<a href='../../index.php'>Riprova</a>"
+                                        })
+                                    </script>
+                                <?php
+                                    exit();
+                                }
+                                $idCarrello = $riga['idCarrello'];
+                                //-----FINE QUERY-----
+
+                                //-----PRENDO L'idProdotti DALLA TABELLA carrello DOVE L'idCarrello E' QUELLO DI PRIMA-----
+                                $select = "SELECT * FROM prodotto P INNER JOIN contenuto C ON P.idProdotto=C.idProdotto WHERE c.idCarrello=$idCarrello";
+                                $ris = mysqli_query($conn, $select);
+                                if (!$ris) {
+                                ?>
+                                    <script>
+                                        Swal.fire({
+                                            icon: 'error',
+                                            title: 'Ops...',
+                                            text: 'Cè stato un problema in fase di visualizzazione',
+                                            allowEscape: false,
+                                            allowOutsideClick: false,
+                                            confirmButtonText: "<a href='../../index.php'>Riprova</a>"
+                                        })
+                                    </script>
+                                <?php
+                                    exit();
+                                }
+                                $riga2 = mysqli_fetch_array($ris, MYSQLI_ASSOC); // array che conterrà queste informazioni
+                                if (!$riga2) {
+                                ?>
+                                    <script>
+                                        Swal.fire({
+                                            icon: 'error',
+                                            title: 'Ops...',
+                                            text: 'Cè stato un problema in fase di visualizzazione',
+                                            allowEscape: false,
+                                            allowOutsideClick: false,
+                                            confirmButtonText: "<a href='../../index.php'>Riprova</a>"
+                                        })
+                                    </script>
+                                <?php
+                                    exit();
+                                }
+                                $totale = 0;
+                                while ($riga2) {
+                                    $id = $riga2['idProdotto'];
+                                    $nome = $riga2['nome'];
+                                    $prezzo = $riga2['prezzo'];
+                                    $totale = $totale + $prezzo;
+
+                                    $categoria = $riga2['idCategoria'];
+                                    switch ($categoria) {
+                                        case '1':
+                                            $icona = "../../img/icone/telefono.png";
+                                            break;
+                                        case '2':
+                                            $icona = "../../img/icone/cuffia.png";
+                                            break;
+                                        case '3':
+                                            $icona = "../../img/icone/zaino.jpg";
+                                            break;
+                                    }
+
+                                    echo "
+                                    <div class='product ux-card'>
+                                    <!-- predere l'icona a seconda di che prodotto sia prendere nome e prezzo -->
+                                    <img src='$icona' height='50' width='50' />
+                                    <span class='title'>$nome</span>
+                                    <span class='price'>€ $prezzo</span>
+                                    <button class='btn btn-canvas btn-xs remove' href='product/remove'><i class='material-icons'>delete</i> Rimuovi</button>
+                                </div>
+                                    ";
+                                    $riga2 = mysqli_fetch_array($ris, MYSQLI_ASSOC);
+                                };
+                                //-----FINE QUERY-----
+
+
+
+                                mysqli_close($conn);
+                                ?>
                             </div>
                             <div class="summary col-md-4">
                                 <dl class="total">
                                     <dt>Totale</dt>
-                                    <dd>$18.41</dd>
+                                    <dd><?php echo"€ $totale"; ?></dd>
                                 </dl>
                                 <div class="terms">
                                     <h4 class="headline-primary">Termini e condizioni </h3>
