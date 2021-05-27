@@ -131,10 +131,8 @@
       <!-- End Navbar -->
       <div class="content">
         <div class="container-fluid">
-
           <!-- Prodotti -->
           <table class="Ptabella">
-
             <?php
             include('./files/database/config.php');
             $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
@@ -190,10 +188,11 @@
 
               echo "
                 <td>
-                <form action='' method='POST'> FORM DA ESEGUIRE NELLA STESSA PAGINA NON
+                <form action='./files/carrello/insCarrello.php' method='POST'>
                   <div class='Pcontainer'>
                     <div class='Pimg'>
                       <img src='$immagine'>
+                      <input type='hidden' name='idProdotto' value='$id' >
                     </div>
       
                     <div class='Player-Pcontainer'>
@@ -209,8 +208,6 @@
                     </div>
                   </div>
                 </form>
-
-                  
                 </td>			          
               ";
 
@@ -231,24 +228,6 @@
 
         </div>
       </div>
-
-      FARE IN MODO CHE QUESTA PARTE VENGA FATTA QUANDO UN UTENTE SCHIACCIA SUL BOTTONE DI ACQUISTO
-      <script type="text/javascript">
-        function aggiungiAlCarrello(id) {
-
-          <?php
-
-          $idUtenteLoggato = $_SESSION["idUtenteLoggato"];
-          $ottieniIdCarrello = "SELECT idCarrello FROM utente WHERE idUtente=$idUtenteLoggato";
-          $result = mysqli_query($conn, $ottieniIdCarrello);
-          $row = mysqli_fetch_array($result);
-          $d = $row['idCarrello'];
-          echo "<script type='text/javascript'>alert('$d');</script>";
-          ?>
-
-        }
-      </script>
-
       <footer class="footer">
         <div class="container-fluid">
           <nav class="float-left">
