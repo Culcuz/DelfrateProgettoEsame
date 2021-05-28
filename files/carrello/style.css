@@ -15,12 +15,12 @@
 }
 
 .action-link, .payment > a, .terms > a, .ux-card a {
-  color: #008A32;
+  color: #9c27b0;
   font-weight: bold;
   text-decoration: none;
 }
 .action-link:hover, .payment > a:hover, .terms > a:hover, .ux-card a:hover {
-  color: #008A32;
+  color: #9c27b0;
 }
 
 .ux-card {
@@ -31,7 +31,7 @@
 }
 .ux-card:hover {
   cursor: pointer;
-  border-color: #008a32;
+  border-color: #9c27b0;
   background-color: #fff;
 }
 .ux-card.deleted {
@@ -96,7 +96,7 @@ a:hover {
   float: right;
   clear: right;
   display: none;
-  color: #008a32 !important;
+  color: #d30f0f !important;
   border-width: 1px;
   box-shadow: none !important;
   font-size: 12px;
@@ -107,7 +107,7 @@ a:hover {
   box-shadow: none !important;
 }
 .product .remove:hover {
-  border-color: #008a32 !important;
+  border-color: #d30f0f !important;
 }
 @media screen and (min-width: 992px) {
   .product .remove {
@@ -152,7 +152,7 @@ a:hover {
   }
 }
 .summary .total {
-  background: #128937;
+  background: #9c27b0;
   color: #fff;
   padding: 20px;
 }

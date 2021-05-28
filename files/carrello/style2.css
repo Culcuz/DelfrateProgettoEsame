@@ -2494,20 +2494,20 @@ textarea.sf-colorpicker-main input[type=text] {
 
 .btn-purchase {
     color: #fff!important;
-    background-color: #ef6c0f!important;
-    border-color: #c2580c!important
+    background-color: #2364d2!important;
+    border-color: #2364d2!important
 }
 
 .btn-purchase:hover {
     color: #fff!important;
-    background-color: #f1751d!important;
-    border-color: #d05e0d!important
+    background-color: #2364d2!important;
+    border-color: #2364d2!important
 }
 
 .btn-purchase:focus, .btn-purchase:active, .btn-purchase.active, .open .dropdown-toggle.btn-purchase {
     color: #fff!important;
-    background-color: #c2580c!important;
-    border-color: #c2580c!important
+    background-color: #2364d2!important;
+    border-color: #2364d2!important
 }
 
 .btn-purchase:active, .btn-purchase.active, .open .dropdown-toggle.btn-purchase {
@@ -2515,8 +2515,8 @@ textarea.sf-colorpicker-main input[type=text] {
 }
 
 .btn-purchase.disabled, .btn-purchase[disabled], fieldset[disabled] .btn-purchase, .btn-purchase.disabled:hover, .btn-purchase[disabled]:hover, fieldset[disabled] .btn-purchase:hover, .btn-purchase.disabled:focus, .btn-purchase[disabled]:focus, fieldset[disabled] .btn-purchase:focus, .btn-purchase.disabled:active, .btn-purchase[disabled]:active, fieldset[disabled] .btn-purchase:active, .btn-purchase.disabled.active, .btn-purchase[disabled].active, fieldset[disabled] .btn-purchase.active {
-    background-color: #ef6c0f!important;
-    border-color: #ef6c0f!important
+    background-color: #2364d2!important;
+    border-color: #2364d2!important
 }
 
 .btn-nav {

@@ -28,7 +28,7 @@
   <link rel="stylesheet" href="./files//css/visProdotti.css">
 </head>
 
-<body class="">
+<body>
   <div class="wrapper ">
     <div class="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-3.jpg">
       <!--
