@@ -198,7 +198,7 @@
 
                             echo "
                             <td>
-                                <form action='./files/carrello/insCarrello.php' method='POST'>
+                                <form action='../carrello/insCarrello.php' method='POST'>
                                     <div class='Pcontainer'>
                                         <div class='Pimg'>
                                         <img src='$immagine'>

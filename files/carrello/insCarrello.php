@@ -44,10 +44,27 @@ if (!isset($_SESSION["idUtenteLoggato"])) {
                 confirmButtonText: "<a href='../../index.php'>Riprova</a>"
             })
         </script>
+    <?php
+        exit();
+    }
+
+    $insert = "INSERT INTO compra (idUtente, idProdotto)  VALUES ('$idUtenteLoggato', '$idProdotto')";
+    $ris = mysqli_query($conn, $insert);
+    if (!$ris) {
+    ?>
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Ops...',
+                text: 'Cè stato un problema in fase di visualizzazione',
+                allowEscape: false,
+                allowOutsideClick: false,
+                confirmButtonText: "<a href='../../index.php'>Riprova</a>"
+            })
+        </script>
 <?php
         exit();
     }
+    $_SESSION['acquisto'] = 1;
+    header("Location: ../../index.php");
 }
-
-
-/*INSERIRE ANCHE NELLA TABELLA COMPRA*/

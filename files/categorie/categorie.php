@@ -165,7 +165,7 @@
                                     <input type='hidden' name='idCat' value='1'>
                                     <div class="card__content">
                                         <h1 class="card__header">Telefoni</h1>
-                                        <p class="card__text">Scopri la selezione dei nostri <strong>telefoni</strong> .</p>
+                                        <p class="card__text">Scopri la selezione dei nostri <strong>telefoni</strong>.</p>
                                         <button class="card__btn">Esplora <span>&rarr;</span></button>
                                     </div>
                                 </div>
@@ -189,7 +189,7 @@
                                 <div class="card"><img class="card__img" src="../../img/prodotti/vans.jpg">
                                     <div class="card__content">
                                         <h1 class="card__header">Zaini</h1>
-                                        <p class="card__text"><strong>Zaini</strong> per tutti i gusti e colori.</p><br><br>
+                                        <p class="card__text"><strong>Zaini</strong> per tutti i gusti e colori.</p>
                                         <button class="card__btn">Esplora <span>&rarr;</span></button>
                                     </div>
                                 </div>

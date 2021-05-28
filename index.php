@@ -22,6 +22,8 @@
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Alata&family=Kanit:wght@500&display=swap" rel="stylesheet">
 
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.all.min.js"></script>
+
   <link rel="stylesheet" href="./files/carrello/style2.css">
 </head>
 
@@ -43,6 +45,9 @@
         </a>
       </div>";
       }
+
+
+
       ?>
 
       <div class="sidebar-wrapper">
@@ -99,6 +104,23 @@
       </div>
     </div>
     <div class="main-panel">
+      <?php
+      if ((isset($_SESSION['acquisto'])) && ($_SESSION['acquisto'] == 1)) {
+      ?>
+        <script>
+          Swal.fire({
+            position: 'top-start',
+            width: 200,
+            icon: 'success',
+            title: 'Prodotto inserito',
+            showConfirmButton: false,
+            timer: 2500
+          })
+        </script>
+      <?php
+        $_SESSION['acquisto'] = 0;
+      }
+      ?>
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg bg-dark">
         <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
@@ -183,7 +205,7 @@
               $riga = mysqli_fetch_array($ris, MYSQLI_ASSOC);
 
               if (($i == 4)) {
-                $i=0;
+                $i = 0;
                 echo "<tr>";
               }
 
@@ -211,9 +233,9 @@
                 </form>
                 </td>			          
               ";
-              
+
               if (($i == 4)) {
-                $i=0;
+                $i = 0;
                 echo "</tr>";
               }
               $i++;

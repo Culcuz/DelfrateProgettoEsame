@@ -28,6 +28,15 @@
     <link rel="stylesheet" href="../style.css">
     <script src="../script.js"></script>
 
+    <!-- Form spedizione-->
+    <!-- Icons font CSS-->
+    <link href="./vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <!-- Vendor CSS-->
+    <link href="./vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <!-- Main CSS-->
+    <link href="../../css/main.css" rel="stylesheet" media="all">
+
+
 </head>
 
 <body>
@@ -159,613 +168,511 @@
             </nav>
             <div class="content">
                 <div class="container-fluid">
-                <!-- INIZIO INSERIMENTO INDIRIZZO NUOVO-->
-                <link href="../../css/main.css" rel="stylesheet" media="all">
-                    <div class="col-lg-4 col-md-12">
-                        <div class="wrapper wrapper--w790">
-                            <div class="card card-5">
-                                <div class="card-heading">
-                                    <h2 class="title">Event Registration Form</h2>
-                                </div>
-                                <div class="card-body">
-                                    <form method="POST">
-                                        <div class="form-row m-b-55">
-                                            <div class="name">Name</div>
-                                            <div class="value">
-                                                <div class="row row-space">
-                                                    <div class="col-2">
-                                                        <div class="input-group-desc">
-                                                            <input class="input--style-5" type="text" name="first_name">
-                                                            <label class="label--desc">first name</label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-2">
-                                                        <div class="input-group-desc">
-                                                            <input class="input--style-5" type="text" name="last_name">
-                                                            <label class="label--desc">last name</label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="name">Company</div>
-                                            <div class="value">
-                                                <div class="input-group">
-                                                    <input class="input--style-5" type="text" name="company">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="name">Email</div>
-                                            <div class="value">
-                                                <div class="input-group">
-                                                    <input class="input--style-5" type="email" name="email">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-row m-b-55">
-                                            <div class="name">Phone</div>
-                                            <div class="value">
-                                                <div class="row row-refine">
-                                                    <div class="col-3">
-                                                        <div class="input-group-desc">
-                                                            <input class="input--style-5" type="text" name="area_code">
-                                                            <label class="label--desc">Area Code</label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-9">
-                                                        <div class="input-group-desc">
-                                                            <input class="input--style-5" type="text" name="phone">
-                                                            <label class="label--desc">Phone Number</label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="name">Subject</div>
-                                            <div class="value">
-                                                <div class="input-group">
-                                                    <div class="rs-select2 js-select-simple select--no-search">
-                                                        <select name="subject">
-                                                            <option disabled="disabled" selected="selected">Choose option</option>
-                                                            <option>Subject 1</option>
-                                                            <option>Subject 2</option>
-                                                            <option>Subject 3</option>
-                                                        </select>
-                                                        <div class="select-dropdown"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-row p-t-20">
-                                            <label class="label label--block">Are you an existing customer?</label>
-                                            <div class="p-t-15">
-                                                <label class="radio-container m-r-55">Yes
-                                                    <input type="radio" checked="checked" name="exist">
-                                                    <span class="checkmark"></span>
-                                                </label>
-                                                <label class="radio-container">No
-                                                    <input type="radio" name="exist">
-                                                    <span class="checkmark"></span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <button class="btn btn--radius-2 btn--red" type="submit">Register</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                     <!-- FINE INSERIMENTO INDIRIZZO NUOVO-->
-
+                    <!-- INIZIO INSERIMENTO INDIRIZZO NUOVO-->
+                    <link href="../../css/main.css" rel="stylesheet" media="all">
                     <div class="row">
-                        <form action="./pagamento/pagamento.php" method="post">
+                        <form action="./pagamento/pagamento.php" method="POST">
                             <div class="col-lg-4 col-md-12">
-                                <div class="card">
-                                    <div class="card-header card-header-tabs card-header-spedizione">
-                                        <div class="nav-tabs-navigation">
-                                            <div class="nav-tabs-wrapper">
-                                                <h4 class="card-title">Spedizione</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card-body">
-
-                                        <div class="tab-content">
-                                            <div class="tab-pane active" id="profile">
-
-                                                <table class="table">
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>
-                                                                <div class="form-group">
-                                                                    <label>Via</label>
-                                                                    <br>
-                                                                    <input type="text" class="form-control" name="via" placeholder="Via" required>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <div class="form-group">
-                                                                    <label>CAP</label>
-                                                                    <br>
-                                                                    <input type="text" class="form-control" name="cap" placeholder="CAP" required>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <div class="form-group">
-                                                                    <label>Numero Civico</label>
-                                                                    <br>
-                                                                    <input type="text" class="form-control" name="nCiv" placeholder="Numero Civico" required>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <div class="form-group">
-                                                                    <label>Comune</label>
-                                                                    <br>
-                                                                    <input type="text" class="form-control" name="comune" placeholder="Comune" required>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <div class="form-group">
-                                                                    <label>Provincia</label>
-                                                                    <br>
-                                                                    <select class="form-select" name="provincia" aria-label="Default select example" required>
-                                                                        <option value="ag">Agrigento</option>
-                                                                        <option value="al">Alessandria</option>
-                                                                        <option value="an">Ancona</option>
-                                                                        <option value="ao">Aosta</option>
-                                                                        <option value="ar">Arezzo</option>
-                                                                        <option value="ap">Ascoli Piceno</option>
-                                                                        <option value="at">Asti</option>
-                                                                        <option value="av">Avellino</option>
-                                                                        <option value="ba">Bari</option>
-                                                                        <option value="bt">Barletta-Andria-Trani</option>
-                                                                        <option value="bl">Belluno</option>
-                                                                        <option value="bn">Benevento</option>
-                                                                        <option value="bg">Bergamo</option>
-                                                                        <option value="bi">Biella</option>
-                                                                        <option value="bo">Bologna</option>
-                                                                        <option value="bz">Bolzano</option>
-                                                                        <option value="bs">Brescia</option>
-                                                                        <option value="br">Brindisi</option>
-                                                                        <option value="ca">Cagliari</option>
-                                                                        <option value="cl">Caltanissetta</option>
-                                                                        <option value="cb">Campobasso</option>
-                                                                        <option value="ci">Carbonia-iglesias</option>
-                                                                        <option value="ce">Caserta</option>
-                                                                        <option value="ct">Catania</option>
-                                                                        <option value="cz">Catanzaro</option>
-                                                                        <option value="ch">Chieti</option>
-                                                                        <option value="co">Como</option>
-                                                                        <option value="cs">Cosenza</option>
-                                                                        <option value="cr">Cremona</option>
-                                                                        <option value="kr">Crotone</option>
-                                                                        <option value="cn">Cuneo</option>
-                                                                        <option value="en">Enna</option>
-                                                                        <option value="fm">Fermo</option>
-                                                                        <option value="fe">Ferrara</option>
-                                                                        <option value="fi">Firenze</option>
-                                                                        <option value="fg">Foggia</option>
-                                                                        <option value="fc">Forl&igrave;-Cesena</option>
-                                                                        <option value="fr">Frosinone</option>
-                                                                        <option value="ge">Genova</option>
-                                                                        <option value="go">Gorizia</option>
-                                                                        <option value="gr">Grosseto</option>
-                                                                        <option value="im">Imperia</option>
-                                                                        <option value="is">Isernia</option>
-                                                                        <option value="sp">La spezia</option>
-                                                                        <option value="aq">L'aquila</option>
-                                                                        <option value="lt">Latina</option>
-                                                                        <option value="le">Lecce</option>
-                                                                        <option value="lc">Lecco</option>
-                                                                        <option value="li">Livorno</option>
-                                                                        <option value="lo">Lodi</option>
-                                                                        <option value="lu">Lucca</option>
-                                                                        <option value="mc">Macerata</option>
-                                                                        <option value="mn">Mantova</option>
-                                                                        <option value="ms">Massa-Carrara</option>
-                                                                        <option value="mt">Matera</option>
-                                                                        <option value="vs">Medio Campidano</option>
-                                                                        <option value="me">Messina</option>
-                                                                        <option value="mi">Milano</option>
-                                                                        <option value="mo">Modena</option>
-                                                                        <option value="mb">Monza e della Brianza</option>
-                                                                        <option value="na">Napoli</option>
-                                                                        <option value="no">Novara</option>
-                                                                        <option value="nu">Nuoro</option>
-                                                                        <option value="og">Ogliastra</option>
-                                                                        <option value="ot">Olbia-Tempio</option>
-                                                                        <option value="or">Oristano</option>
-                                                                        <option value="pd">Padova</option>
-                                                                        <option value="pa">Palermo</option>
-                                                                        <option value="pr">Parma</option>
-                                                                        <option value="pv">Pavia</option>
-                                                                        <option value="pg">Perugia</option>
-                                                                        <option value="pu">Pesaro e Urbino</option>
-                                                                        <option value="pe">Pescara</option>
-                                                                        <option value="pc">Piacenza</option>
-                                                                        <option value="pi">Pisa</option>
-                                                                        <option value="pt">Pistoia</option>
-                                                                        <option value="pn">Pordenone</option>
-                                                                        <option value="pz">Potenza</option>
-                                                                        <option value="po">Prato</option>
-                                                                        <option value="rg">Ragusa</option>
-                                                                        <option value="ra">Ravenna</option>
-                                                                        <option value="rc">Reggio di Calabria</option>
-                                                                        <option value="re">Reggio nell'Emilia</option>
-                                                                        <option value="ri">Rieti</option>
-                                                                        <option value="rn">Rimini</option>
-                                                                        <option value="rm">Roma</option>
-                                                                        <option value="ro">Rovigo</option>
-                                                                        <option value="sa">Salerno</option>
-                                                                        <option value="ss">Sassari</option>
-                                                                        <option value="sv">Savona</option>
-                                                                        <option value="si">Siena</option>
-                                                                        <option value="sr">Siracusa</option>
-                                                                        <option value="so">Sondrio</option>
-                                                                        <option value="ta">Taranto</option>
-                                                                        <option value="te">Teramo</option>
-                                                                        <option value="tr">Terni</option>
-                                                                        <option value="to">Torino</option>
-                                                                        <option value="tp">Trapani</option>
-                                                                        <option value="tn">Trento</option>
-                                                                        <option value="tv">Treviso</option>
-                                                                        <option value="ts">Trieste</option>
-                                                                        <option value="ud">Udine</option>
-                                                                        <option value="va">Varese</option>
-                                                                        <option value="ve">Venezia</option>
-                                                                        <option value="vb">Verbano-Cusio-Ossola</option>
-                                                                        <option value="vc">Vercelli</option>
-                                                                        <option value="vr">Verona</option>
-                                                                        <option value="vv">Vibo valentia</option>
-                                                                        <option value="vi">Vicenza</option>
-                                                                        <option value="vt">Viterbo</option>
-                                                                    </select>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <div class="form-group">
-                                                                    <label>Informazioni aggiuntive</label>
-                                                                    <br>
-                                                                    <textarea class="form-control" name="info"></textarea>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div id='fattura'>
-                                <div class="col-lg-4 col-md-12">
-                                    <div class="card">
-                                        <div class="card-header card-header-tabs card-header-fatturazione">
-                                            <div class="nav-tabs-navigation">
-                                                <div class="nav-tabs-wrapper">
-                                                    <h4 class="card-title">Fatturazione</h4>
-                                                </div>
-                                            </div>
+                                <div class="wrapper wrapper--w790">
+                                    <div class="card card-5">
+                                        <div class="card-heading">
+                                            <h2 class="title">Dati di Spedizione</h2>
                                         </div>
                                         <div class="card-body">
 
-                                            <div class="tab-content">
-                                                <div class="tab-pane active" id="profile">
-
-                                                    <table class="table">
-                                                        <tbody>
-                                                            <tr>
-                                                                <td>
-                                                                    <div class="form-group">
-                                                                        <label>Ragione sociale</label>
-                                                                        <br>
-                                                                        <input type="text" class="form-control" name="ragSociale" placeholder="Ragione sociale">
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <div class="form-group">
-                                                                        <label>Pec/Codice univoco</label>
-                                                                        <br>
-                                                                        <input type="text" class="form-control" name="pecCod" placeholder="Pec/Codice univoco">
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <div class="form-group">
-                                                                        <label>Partita IVA</label>
-                                                                        <br>
-                                                                        <input type="text" class="form-control" name="partitaIva" placeholder="Partita IVA">
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <div class="form-group">
-                                                                        <label>Codice fiscale</label>
-                                                                        <br>
-                                                                        <input type="text" class="form-control" name="FcodFiscale" placeholder="Codice Fiscale">
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <div class="form-group">
-                                                                        <label>Via</label>
-                                                                        <br>
-                                                                        <input type="text" class="form-control" name="Fvia" placeholder="Via">
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <div class="form-group">
-                                                                        <label>CAP</label>
-                                                                        <br>
-                                                                        <input type="text" class="form-control" name="Fcap" placeholder="CAP">
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <div class="form-group">
-                                                                        <label>Numero Civico</label>
-                                                                        <br>
-                                                                        <input type="text" class="form-control" name="FnCiv" placeholder="Numero Civico">
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <div class="form-group">
-                                                                        <label>Comune</label>
-                                                                        <br>
-                                                                        <input type="text" class="form-control" name="Fcomune" placeholder="Comune">
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <div class="form-group">
-                                                                        <label>Provincia</label>
-                                                                        <br>
-                                                                        <select class="form-select" name="Fprovincia" aria-label="Default select example">
-                                                                            <option value="ag">Agrigento</option>
-                                                                            <option value="al">Alessandria</option>
-                                                                            <option value="an">Ancona</option>
-                                                                            <option value="ao">Aosta</option>
-                                                                            <option value="ar">Arezzo</option>
-                                                                            <option value="ap">Ascoli Piceno</option>
-                                                                            <option value="at">Asti</option>
-                                                                            <option value="av">Avellino</option>
-                                                                            <option value="ba">Bari</option>
-                                                                            <option value="bt">Barletta-Andria-Trani</option>
-                                                                            <option value="bl">Belluno</option>
-                                                                            <option value="bn">Benevento</option>
-                                                                            <option value="bg">Bergamo</option>
-                                                                            <option value="bi">Biella</option>
-                                                                            <option value="bo">Bologna</option>
-                                                                            <option value="bz">Bolzano</option>
-                                                                            <option value="bs">Brescia</option>
-                                                                            <option value="br">Brindisi</option>
-                                                                            <option value="ca">Cagliari</option>
-                                                                            <option value="cl">Caltanissetta</option>
-                                                                            <option value="cb">Campobasso</option>
-                                                                            <option value="ci">Carbonia-iglesias</option>
-                                                                            <option value="ce">Caserta</option>
-                                                                            <option value="ct">Catania</option>
-                                                                            <option value="cz">Catanzaro</option>
-                                                                            <option value="ch">Chieti</option>
-                                                                            <option value="co">Como</option>
-                                                                            <option value="cs">Cosenza</option>
-                                                                            <option value="cr">Cremona</option>
-                                                                            <option value="kr">Crotone</option>
-                                                                            <option value="cn">Cuneo</option>
-                                                                            <option value="en">Enna</option>
-                                                                            <option value="fm">Fermo</option>
-                                                                            <option value="fe">Ferrara</option>
-                                                                            <option value="fi">Firenze</option>
-                                                                            <option value="fg">Foggia</option>
-                                                                            <option value="fc">Forl&igrave;-Cesena</option>
-                                                                            <option value="fr">Frosinone</option>
-                                                                            <option value="ge">Genova</option>
-                                                                            <option value="go">Gorizia</option>
-                                                                            <option value="gr">Grosseto</option>
-                                                                            <option value="im">Imperia</option>
-                                                                            <option value="is">Isernia</option>
-                                                                            <option value="sp">La spezia</option>
-                                                                            <option value="aq">L'aquila</option>
-                                                                            <option value="lt">Latina</option>
-                                                                            <option value="le">Lecce</option>
-                                                                            <option value="lc">Lecco</option>
-                                                                            <option value="li">Livorno</option>
-                                                                            <option value="lo">Lodi</option>
-                                                                            <option value="lu">Lucca</option>
-                                                                            <option value="mc">Macerata</option>
-                                                                            <option value="mn">Mantova</option>
-                                                                            <option value="ms">Massa-Carrara</option>
-                                                                            <option value="mt">Matera</option>
-                                                                            <option value="vs">Medio Campidano</option>
-                                                                            <option value="me">Messina</option>
-                                                                            <option value="mi">Milano</option>
-                                                                            <option value="mo">Modena</option>
-                                                                            <option value="mb">Monza e della Brianza</option>
-                                                                            <option value="na">Napoli</option>
-                                                                            <option value="no">Novara</option>
-                                                                            <option value="nu">Nuoro</option>
-                                                                            <option value="og">Ogliastra</option>
-                                                                            <option value="ot">Olbia-Tempio</option>
-                                                                            <option value="or">Oristano</option>
-                                                                            <option value="pd">Padova</option>
-                                                                            <option value="pa">Palermo</option>
-                                                                            <option value="pr">Parma</option>
-                                                                            <option value="pv">Pavia</option>
-                                                                            <option value="pg">Perugia</option>
-                                                                            <option value="pu">Pesaro e Urbino</option>
-                                                                            <option value="pe">Pescara</option>
-                                                                            <option value="pc">Piacenza</option>
-                                                                            <option value="pi">Pisa</option>
-                                                                            <option value="pt">Pistoia</option>
-                                                                            <option value="pn">Pordenone</option>
-                                                                            <option value="pz">Potenza</option>
-                                                                            <option value="po">Prato</option>
-                                                                            <option value="rg">Ragusa</option>
-                                                                            <option value="ra">Ravenna</option>
-                                                                            <option value="rc">Reggio di Calabria</option>
-                                                                            <option value="re">Reggio nell'Emilia</option>
-                                                                            <option value="ri">Rieti</option>
-                                                                            <option value="rn">Rimini</option>
-                                                                            <option value="rm">Roma</option>
-                                                                            <option value="ro">Rovigo</option>
-                                                                            <option value="sa">Salerno</option>
-                                                                            <option value="ss">Sassari</option>
-                                                                            <option value="sv">Savona</option>
-                                                                            <option value="si">Siena</option>
-                                                                            <option value="sr">Siracusa</option>
-                                                                            <option value="so">Sondrio</option>
-                                                                            <option value="ta">Taranto</option>
-                                                                            <option value="te">Teramo</option>
-                                                                            <option value="tr">Terni</option>
-                                                                            <option value="to">Torino</option>
-                                                                            <option value="tp">Trapani</option>
-                                                                            <option value="tn">Trento</option>
-                                                                            <option value="tv">Treviso</option>
-                                                                            <option value="ts">Trieste</option>
-                                                                            <option value="ud">Udine</option>
-                                                                            <option value="va">Varese</option>
-                                                                            <option value="ve">Venezia</option>
-                                                                            <option value="vb">Verbano-Cusio-Ossola</option>
-                                                                            <option value="vc">Vercelli</option>
-                                                                            <option value="vr">Verona</option>
-                                                                            <option value="vv">Vibo valentia</option>
-                                                                            <option value="vi">Vicenza</option>
-                                                                            <option value="vt">Viterbo</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
+                                            <div class="form-row">
+                                                <div class="name">Via</div>
+                                                <div class="value">
+                                                    <div class="input-group">
+                                                        <input class="input--style-5" type="text" name="via" required>
+                                                    </div>
                                                 </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="name">CAP</div>
+                                                <div class="value">
+                                                    <div class="input-group">
+                                                        <input class="input--style-5" type="text" name="cap" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="name">Numero Civico</div>
+                                                <div class="value">
+                                                    <div class="input-group">
+                                                        <input class="input--style-5" type="text" name="nCiv" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="name">Comune</div>
+                                                <div class="value">
+                                                    <div class="input-group">
+                                                        <input class="input--style-5" type="text" name="comune" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="name">Provincia</div>
+                                                <div class="value">
+                                                    <div class="input-group">
+                                                        <div class="rs-select2 js-select-simple select--no-search">
+                                                            <select name="provincia" required>
+                                                                <option disabled="disabled" selected="selected">Provincia</option>
+                                                                <option value="ag">Agrigento</option>
+                                                                <option value="al">Alessandria</option>
+                                                                <option value="an">Ancona</option>
+                                                                <option value="ao">Aosta</option>
+                                                                <option value="ar">Arezzo</option>
+                                                                <option value="ap">Ascoli Piceno</option>
+                                                                <option value="at">Asti</option>
+                                                                <option value="av">Avellino</option>
+                                                                <option value="ba">Bari</option>
+                                                                <option value="bt">Barletta-Andria-Trani</option>
+                                                                <option value="bl">Belluno</option>
+                                                                <option value="bn">Benevento</option>
+                                                                <option value="bg">Bergamo</option>
+                                                                <option value="bi">Biella</option>
+                                                                <option value="bo">Bologna</option>
+                                                                <option value="bz">Bolzano</option>
+                                                                <option value="bs">Brescia</option>
+                                                                <option value="br">Brindisi</option>
+                                                                <option value="ca">Cagliari</option>
+                                                                <option value="cl">Caltanissetta</option>
+                                                                <option value="cb">Campobasso</option>
+                                                                <option value="ci">Carbonia-iglesias</option>
+                                                                <option value="ce">Caserta</option>
+                                                                <option value="ct">Catania</option>
+                                                                <option value="cz">Catanzaro</option>
+                                                                <option value="ch">Chieti</option>
+                                                                <option value="co">Como</option>
+                                                                <option value="cs">Cosenza</option>
+                                                                <option value="cr">Cremona</option>
+                                                                <option value="kr">Crotone</option>
+                                                                <option value="cn">Cuneo</option>
+                                                                <option value="en">Enna</option>
+                                                                <option value="fm">Fermo</option>
+                                                                <option value="fe">Ferrara</option>
+                                                                <option value="fi">Firenze</option>
+                                                                <option value="fg">Foggia</option>
+                                                                <option value="fc">Forl&igrave;-Cesena</option>
+                                                                <option value="fr">Frosinone</option>
+                                                                <option value="ge">Genova</option>
+                                                                <option value="go">Gorizia</option>
+                                                                <option value="gr">Grosseto</option>
+                                                                <option value="im">Imperia</option>
+                                                                <option value="is">Isernia</option>
+                                                                <option value="sp">La spezia</option>
+                                                                <option value="aq">L'aquila</option>
+                                                                <option value="lt">Latina</option>
+                                                                <option value="le">Lecce</option>
+                                                                <option value="lc">Lecco</option>
+                                                                <option value="li">Livorno</option>
+                                                                <option value="lo">Lodi</option>
+                                                                <option value="lu">Lucca</option>
+                                                                <option value="mc">Macerata</option>
+                                                                <option value="mn">Mantova</option>
+                                                                <option value="ms">Massa-Carrara</option>
+                                                                <option value="mt">Matera</option>
+                                                                <option value="vs">Medio Campidano</option>
+                                                                <option value="me">Messina</option>
+                                                                <option value="mi">Milano</option>
+                                                                <option value="mo">Modena</option>
+                                                                <option value="mb">Monza e della Brianza</option>
+                                                                <option value="na">Napoli</option>
+                                                                <option value="no">Novara</option>
+                                                                <option value="nu">Nuoro</option>
+                                                                <option value="og">Ogliastra</option>
+                                                                <option value="ot">Olbia-Tempio</option>
+                                                                <option value="or">Oristano</option>
+                                                                <option value="pd">Padova</option>
+                                                                <option value="pa">Palermo</option>
+                                                                <option value="pr">Parma</option>
+                                                                <option value="pv">Pavia</option>
+                                                                <option value="pg">Perugia</option>
+                                                                <option value="pu">Pesaro e Urbino</option>
+                                                                <option value="pe">Pescara</option>
+                                                                <option value="pc">Piacenza</option>
+                                                                <option value="pi">Pisa</option>
+                                                                <option value="pt">Pistoia</option>
+                                                                <option value="pn">Pordenone</option>
+                                                                <option value="pz">Potenza</option>
+                                                                <option value="po">Prato</option>
+                                                                <option value="rg">Ragusa</option>
+                                                                <option value="ra">Ravenna</option>
+                                                                <option value="rc">Reggio di Calabria</option>
+                                                                <option value="re">Reggio nell'Emilia</option>
+                                                                <option value="ri">Rieti</option>
+                                                                <option value="rn">Rimini</option>
+                                                                <option value="rm">Roma</option>
+                                                                <option value="ro">Rovigo</option>
+                                                                <option value="sa">Salerno</option>
+                                                                <option value="ss">Sassari</option>
+                                                                <option value="sv">Savona</option>
+                                                                <option value="si">Siena</option>
+                                                                <option value="sr">Siracusa</option>
+                                                                <option value="so">Sondrio</option>
+                                                                <option value="ta">Taranto</option>
+                                                                <option value="te">Teramo</option>
+                                                                <option value="tr">Terni</option>
+                                                                <option value="to">Torino</option>
+                                                                <option value="tp">Trapani</option>
+                                                                <option value="tn">Trento</option>
+                                                                <option value="tv">Treviso</option>
+                                                                <option value="ts">Trieste</option>
+                                                                <option value="ud">Udine</option>
+                                                                <option value="va">Varese</option>
+                                                                <option value="ve">Venezia</option>
+                                                                <option value="vb">Verbano-Cusio-Ossola</option>
+                                                                <option value="vc">Vercelli</option>
+                                                                <option value="vr">Verona</option>
+                                                                <option value="vv">Vibo valentia</option>
+                                                                <option value="vi">Vicenza</option>
+                                                                <option value="vt">Viterbo</option>
+                                                            </select>
+                                                            <div class="select-dropdown"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="name">Informazioni</div>
+                                                <div class="value">
+                                                    <div class="input-group">
 
+                                                        <textarea class="input--style-6" rows="4" cols="50" ame="info"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-row m-b-55">
+                                                <div>
+                                                    <button class="btn btn--radius-2 btn--red" id="procedi1" type="submit">Procedi</button>
+                                                </div>
+                                                <div>
+                                                    <button class="btn btn--radius-2 btn--red" type="button" id="fattura1" onclick="mostra()">Fattura</button>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-12" id="fattura">
+                                <div class="wrapper wrapper--w790">
+                                    <div class="card card-5">
+                                        <div class="card-heading">
+                                            <h2 class="title">Dati di Fatturazione</h2>
+                                        </div>
+                                        <div class="card-body">
+
+                                            <div class="form-row">
+                                                <div class="name">Ragione sociale</div>
+                                                <div class="value">
+                                                    <div class="input-group">
+                                                        <input class="input--style-5" type="text" name="ragSociale">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="name">Pec/Codice univoco</div>
+                                                <div class="value">
+                                                    <div class="input-group">
+                                                        <input class="input--style-5" type="text" name="pecCod">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="name">Partita IVA</div>
+                                                <div class="value">
+                                                    <div class="input-group">
+                                                        <input class="input--style-5" type="text" name="partitaIva">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="name">Codice fiscale</div>
+                                                <div class="value">
+                                                    <div class="input-group">
+                                                        <input class="input--style-5" type="text" name="FcodFiscale">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="name">Via</div>
+                                                <div class="value">
+                                                    <div class="input-group">
+                                                        <input class="input--style-5" type="text" name="Fvia">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="name">CAP</div>
+                                                <div class="value">
+                                                    <div class="input-group">
+                                                        <input class="input--style-5" type="text" name="Fcap">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="name">Numero Civico</div>
+                                                <div class="value">
+                                                    <div class="input-group">
+                                                        <input class="input--style-5" type="text" name="FnCiv">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="name">Comune</div>
+                                                <div class="value">
+                                                    <div class="input-group">
+                                                        <input class="input--style-5" type="text" name="Fcomune">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="name">Provincia</div>
+                                                <div class="value">
+                                                    <div class="input-group">
+                                                        <div class="rs-select2 js-select-simple select--no-search">
+                                                            <select name="Fprovincia">
+                                                                <option selected="selected" value="null">Provincia</option>
+                                                                <option value="ag">Agrigento</option>
+                                                                <option value="al">Alessandria</option>
+                                                                <option value="an">Ancona</option>
+                                                                <option value="ao">Aosta</option>
+                                                                <option value="ar">Arezzo</option>
+                                                                <option value="ap">Ascoli Piceno</option>
+                                                                <option value="at">Asti</option>
+                                                                <option value="av">Avellino</option>
+                                                                <option value="ba">Bari</option>
+                                                                <option value="bt">Barletta-Andria-Trani</option>
+                                                                <option value="bl">Belluno</option>
+                                                                <option value="bn">Benevento</option>
+                                                                <option value="bg">Bergamo</option>
+                                                                <option value="bi">Biella</option>
+                                                                <option value="bo">Bologna</option>
+                                                                <option value="bz">Bolzano</option>
+                                                                <option value="bs">Brescia</option>
+                                                                <option value="br">Brindisi</option>
+                                                                <option value="ca">Cagliari</option>
+                                                                <option value="cl">Caltanissetta</option>
+                                                                <option value="cb">Campobasso</option>
+                                                                <option value="ci">Carbonia-iglesias</option>
+                                                                <option value="ce">Caserta</option>
+                                                                <option value="ct">Catania</option>
+                                                                <option value="cz">Catanzaro</option>
+                                                                <option value="ch">Chieti</option>
+                                                                <option value="co">Como</option>
+                                                                <option value="cs">Cosenza</option>
+                                                                <option value="cr">Cremona</option>
+                                                                <option value="kr">Crotone</option>
+                                                                <option value="cn">Cuneo</option>
+                                                                <option value="en">Enna</option>
+                                                                <option value="fm">Fermo</option>
+                                                                <option value="fe">Ferrara</option>
+                                                                <option value="fi">Firenze</option>
+                                                                <option value="fg">Foggia</option>
+                                                                <option value="fc">Forl&igrave;-Cesena</option>
+                                                                <option value="fr">Frosinone</option>
+                                                                <option value="ge">Genova</option>
+                                                                <option value="go">Gorizia</option>
+                                                                <option value="gr">Grosseto</option>
+                                                                <option value="im">Imperia</option>
+                                                                <option value="is">Isernia</option>
+                                                                <option value="sp">La spezia</option>
+                                                                <option value="aq">L'aquila</option>
+                                                                <option value="lt">Latina</option>
+                                                                <option value="le">Lecce</option>
+                                                                <option value="lc">Lecco</option>
+                                                                <option value="li">Livorno</option>
+                                                                <option value="lo">Lodi</option>
+                                                                <option value="lu">Lucca</option>
+                                                                <option value="mc">Macerata</option>
+                                                                <option value="mn">Mantova</option>
+                                                                <option value="ms">Massa-Carrara</option>
+                                                                <option value="mt">Matera</option>
+                                                                <option value="vs">Medio Campidano</option>
+                                                                <option value="me">Messina</option>
+                                                                <option value="mi">Milano</option>
+                                                                <option value="mo">Modena</option>
+                                                                <option value="mb">Monza e della Brianza</option>
+                                                                <option value="na">Napoli</option>
+                                                                <option value="no">Novara</option>
+                                                                <option value="nu">Nuoro</option>
+                                                                <option value="og">Ogliastra</option>
+                                                                <option value="ot">Olbia-Tempio</option>
+                                                                <option value="or">Oristano</option>
+                                                                <option value="pd">Padova</option>
+                                                                <option value="pa">Palermo</option>
+                                                                <option value="pr">Parma</option>
+                                                                <option value="pv">Pavia</option>
+                                                                <option value="pg">Perugia</option>
+                                                                <option value="pu">Pesaro e Urbino</option>
+                                                                <option value="pe">Pescara</option>
+                                                                <option value="pc">Piacenza</option>
+                                                                <option value="pi">Pisa</option>
+                                                                <option value="pt">Pistoia</option>
+                                                                <option value="pn">Pordenone</option>
+                                                                <option value="pz">Potenza</option>
+                                                                <option value="po">Prato</option>
+                                                                <option value="rg">Ragusa</option>
+                                                                <option value="ra">Ravenna</option>
+                                                                <option value="rc">Reggio di Calabria</option>
+                                                                <option value="re">Reggio nell'Emilia</option>
+                                                                <option value="ri">Rieti</option>
+                                                                <option value="rn">Rimini</option>
+                                                                <option value="rm">Roma</option>
+                                                                <option value="ro">Rovigo</option>
+                                                                <option value="sa">Salerno</option>
+                                                                <option value="ss">Sassari</option>
+                                                                <option value="sv">Savona</option>
+                                                                <option value="si">Siena</option>
+                                                                <option value="sr">Siracusa</option>
+                                                                <option value="so">Sondrio</option>
+                                                                <option value="ta">Taranto</option>
+                                                                <option value="te">Teramo</option>
+                                                                <option value="tr">Terni</option>
+                                                                <option value="to">Torino</option>
+                                                                <option value="tp">Trapani</option>
+                                                                <option value="tn">Trento</option>
+                                                                <option value="tv">Treviso</option>
+                                                                <option value="ts">Trieste</option>
+                                                                <option value="ud">Udine</option>
+                                                                <option value="va">Varese</option>
+                                                                <option value="ve">Venezia</option>
+                                                                <option value="vb">Verbano-Cusio-Ossola</option>
+                                                                <option value="vc">Vercelli</option>
+                                                                <option value="vr">Verona</option>
+                                                                <option value="vv">Vibo valentia</option>
+                                                                <option value="vi">Vicenza</option>
+                                                                <option value="vt">Viterbo</option>
+                                                            </select>
+                                                            <div class="select-dropdown"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div>
+                                                <button class="btn btn--radius-2 btn--red" type="submit">Procedi</button>
                                             </div>
 
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
-                            <div class="summary col-lg-2 col-md-4">
-                                <div class="terms">
-                                    <button type="button" class="btn btn-purchase" onclick='javascript:mostra()'>Fattura</button>
-                                    <button type="submit" class="btn btn-success">Conferma</button>
-                                </div>
-
-                            </div>
-                            <script>
-                                function mostra() {
-                                    document.getElementById('fattura').style.display = 'block';
-                                }
-                                document.getElementById('fattura').style.display = 'none';
-                            </script>
-
-
                         </form>
-
 
                     </div>
 
-                    <footer class="footer">
-                        <div class="container-fluid">
-                            <nav class="float-left">
-                                <ul>
-                                    <li>
-                                        <a href="#">
-                                            About Me
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
-                            <div class="copyright float-right">
-                                &copy;
-                                <script>
-                                    document.write(new Date().getFullYear())
-                                </script>
-                                by <strong> Riccardo Delfrate</strong>
-                            </div>
-                        </div>
-                    </footer>
+                    <!-- FINE INSERIMENTO INDIRIZZO NUOVO-->
+
+                    <script>
+                        function mostra() {
+                            document.getElementById('fattura').style.display = 'block';
+                            document.getElementById('procedi1').style.display = 'none';
+                            document.getElementById('fattura1').style.display = 'none';
+
+                        }
+                        document.getElementById('fattura').style.display = 'none';
+                    </script>
+
+
+
+
+
                 </div>
             </div>
-            <!-- partial -->
-            <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-            <script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js'></script>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <nav class="float-left">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    About Me
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="copyright float-right">
+                        &copy;
+                        <script>
+                            document.write(new Date().getFullYear())
+                        </script>
+                        by <strong> Riccardo Delfrate</strong>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
 
-            <script src="../script.js"></script>
-            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-            <!--   Core JS Files   -->
-            <script src="../../../assets/js/core/jquery.min.js"></script>
-            <script src="../../../assets/js/core/popper.min.js"></script>
-            <script src="../../../assets/js/core/bootstrap-material-design.min.js"></script>
-            <script src="../../../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-            <!-- Plugin for the momentJs  -->
-            <script src="../../../assets/js/plugins/moment.min.js"></script>
-            <!--  Plugin for Sweet Alert -->
-            <script src="../../../assets/js/plugins/sweetalert2.js"></script>
-            <!-- Forms Validations Plugin -->
-            <script src="../../../assets/js/plugins/jquery.validate.min.js"></script>
-            <!-- Plugin for the Wizard, full documentation here: https://github.com/VinceG/twitter-bootstrap-wizard -->
-            <script src="../../../assets/js/plugins/jquery.bootstrap-wizard.js"></script>
-            <!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
-            <script src="../../../assets/js/plugins/bootstrap-selectpicker.js"></script>
-            <!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
-            <script src="../../../assets/js/plugins/bootstrap-datetimepicker.min.js"></script>
-            <!--  DataTables.net Plugin, full documentation here: https://datatables.net/  -->
-            <script src="../../../assets/js/plugins/jquery.dataTables.min.js"></script>
-            <!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
-            <script src="../../../assets/js/plugins/bootstrap-tagsinput.js"></script>
-            <!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
-            <script src="../../../assets/js/plugins/jasny-bootstrap.min.js"></script>
-            <!--  Full Calendar Plugin, full documentation here: https://github.com/fullcalendar/fullcalendar    -->
-            <script src="../../../js/plugins/fullcalendar.min.js"></script>
-            <!-- Vector Map plugin, full documentation here: http://jvectormap.com/documentation/ -->
-            <script src="../../../assets/js/plugins/jquery-jvectormap.js"></script>
-            <!--  Plugin fo the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-            <script src="../../assets/js/plugins/nouislider.min.js"></script>
-            <!-- Include a polyfill for ES6 Promises (optional) for IE11, UC Browser and Android browser support SweetAlert -->
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
-            <!-- Library for adding dinamically elements -->
-            <script src="../../../assets/js/plugins/arrive.min.js"></script>
-            <!--  Google Maps Plugin    -->
-            <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-            <!-- Chartist JS -->
-            <script src="../../../assets/js/plugins/chartist.min.js"></script>
-            <!--  Notifications Plugin    -->
-            <script src="../../../assets/js/plugins/bootstrap-notify.js"></script>
-            <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
-            <script src="../../../assets/js/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
-            <!-- Material Dashboard DEMO methods, don't include it in your project! -->
-            <script src="../../../assets/demo/demo.js"></script>
+
+    <!-- Jquery JS-->
+    <script src="./vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="./vendor/select2/select2.min.js"></script>
+    <script src="./vendor/datepicker/moment.min.js"></script>
+    <script src="./vendor/datepicker/daterangepicker.js"></script>
+
+    <!-- Main JS-->
+    <script src="./js/global.js"></script>
+
+
+
+
+    <!-- partial -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js'></script>
+
+    <script src="../script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <!--   Core JS Files   -->
+    <script src="../../../assets/js/core/jquery.min.js"></script>
+    <script src="../../../assets/js/core/popper.min.js"></script>
+    <script src="../../../assets/js/core/bootstrap-material-design.min.js"></script>
+    <script src="../../../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+    <!-- Plugin for the momentJs  -->
+    <script src="../../../assets/js/plugins/moment.min.js"></script>
+    <!--  Plugin for Sweet Alert -->
+    <script src="../../../assets/js/plugins/sweetalert2.js"></script>
+    <!-- Forms Validations Plugin -->
+    <script src="../../../assets/js/plugins/jquery.validate.min.js"></script>
+    <!-- Plugin for the Wizard, full documentation here: https://github.com/VinceG/twitter-bootstrap-wizard -->
+    <script src="../../../assets/js/plugins/jquery.bootstrap-wizard.js"></script>
+    <!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
+    <script src="../../../assets/js/plugins/bootstrap-selectpicker.js"></script>
+    <!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
+    <script src="../../../assets/js/plugins/bootstrap-datetimepicker.min.js"></script>
+    <!--  DataTables.net Plugin, full documentation here: https://datatables.net/  -->
+    <script src="../../../assets/js/plugins/jquery.dataTables.min.js"></script>
+    <!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
+    <script src="../../../assets/js/plugins/bootstrap-tagsinput.js"></script>
+    <!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
+    <script src="../../../assets/js/plugins/jasny-bootstrap.min.js"></script>
+    <!--  Full Calendar Plugin, full documentation here: https://github.com/fullcalendar/fullcalendar    -->
+    <script src="../../../js/plugins/fullcalendar.min.js"></script>
+    <!-- Vector Map plugin, full documentation here: http://jvectormap.com/documentation/ -->
+    <script src="../../../assets/js/plugins/jquery-jvectormap.js"></script>
+    <!--  Plugin fo the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+    <script src="../../assets/js/plugins/nouislider.min.js"></script>
+    <!-- Include a polyfill for ES6 Promises (optional) for IE11, UC Browser and Android browser support SweetAlert -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+    <!-- Library for adding dinamically elements -->
+    <script src="../../../assets/js/plugins/arrive.min.js"></script>
+    <!--  Google Maps Plugin    -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+    <!-- Chartist JS -->
+    <script src="../../../assets/js/plugins/chartist.min.js"></script>
+    <!--  Notifications Plugin    -->
+    <script src="../../../assets/js/plugins/bootstrap-notify.js"></script>
+    <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+    <script src="../../../assets/js/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
+    <!-- Material Dashboard DEMO methods, don't include it in your project! -->
+    <script src="../../../assets/demo/demo.js"></script>
 </body>
 
 </html>
