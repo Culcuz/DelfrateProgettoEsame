@@ -23,6 +23,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Alata&family=Kanit:wght@500&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../carrello/style2.css">
+    <link rel="stylesheet" href="../css/visProdotti.css">
 </head>
 
 <body class="">
@@ -135,7 +136,7 @@
             <div class="content">
                 <div class="container-fluid">
                     <!-- Prodotti -->
-                    <table class="Ptabella">
+                    <div class="grid">
                         <?php
                         include('../database/config.php');
                         $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
@@ -191,46 +192,40 @@
 
                             $riga = mysqli_fetch_array($ris, MYSQLI_ASSOC);
 
-                            if (($i == 4)) {
-                                $i = 0;
-                                echo "<tr>";
-                            }
+                     
 
                             echo "
-                            <td>
-                                <form action='../carrello/insCarrello.php' method='POST'>
-                                    <div class='Pcontainer'>
-                                        <div class='Pimg'>
-                                        <img src='$immagine'>
-                                        <input type='hidden' name='idProdotto' value='$id' >
-                                        </div>
-                        
-                                        <div class='Player-Pcontainer'>
-                                        <div class='Ptext-Pcontent'>
-                                            <div>
-                                            <p id='Pname'>$nome</p>
-                                            <p class='Pcollection'>$descrizione</p>
-                                            </div>
-                                            <h3 id='Pprice'>€ $prezzo</h3>
-                                            <input type='submit' class='Pcart-Pbtn' name='submitButton' value='compra'>
-                                            </a>
-                                        </div>
-                                        </div>
+                            <div class='grid__item'>
+                
+                            <form action='../carrello/insCarrello.php' method='POST'>
+                              <div class='Pcontainer'>
+                                <div class='Pimg'>
+                                  <img src='$immagine'>
+                                  <input type='hidden' name='idProdotto' value='$id' >
+                                </div>
+                  
+                                <div class='Player-Pcontainer'>
+                                  <div class='Ptext-Pcontent'>
+                                    <div>
+                                      <p id='Pname'>$nome</p>
+                                      <p class='Pcollection'>$descrizione</p>
                                     </div>
-                                </form>
-                            </td>			          
+                                    <h3 id='Pprice'>€ $prezzo</h3>
+                                    <input type='submit' class='Pcart-Pbtn' name='submitButton' value='Compra'>
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </form>
+                            </div>	       		          
                             ";
 
-                            if (($i == 4)) {
-                                $i = 0;
-                                echo "</tr>";
-                            }
-                            $i++;
+                     
                         };
                         mysqli_close($conn);
                         ?>
 
-                    </table>
+                    </div>
                     <!-- Fine Podotti -->
 
                 </div>

@@ -25,6 +25,7 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.all.min.js"></script>
 
   <link rel="stylesheet" href="./files/carrello/style2.css">
+  <link rel="stylesheet" href="./files//css/visProdotti.css">
 </head>
 
 <body class="">
@@ -154,7 +155,7 @@
       <div class="content">
         <div class="container-fluid">
           <!-- Prodotti -->
-          <table class="Ptabella">
+          <div class="grid">
             <?php
             include('./files/database/config.php');
             $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
@@ -195,6 +196,7 @@
               exit();
             }
 
+            
             $i = 0;
             while ($riga) {
               $id = $riga['idProdotto'];
@@ -204,13 +206,11 @@
               $immagine = $riga['immagine'];
               $riga = mysqli_fetch_array($ris, MYSQLI_ASSOC);
 
-              if (($i == 4)) {
-                $i = 0;
-                echo "<tr>";
-              }
+            
 
               echo "
-                <td>
+                <div class='grid__item'>
+                
                 <form action='./files/carrello/insCarrello.php' method='POST'>
                   <div class='Pcontainer'>
                     <div class='Pimg'>
@@ -231,19 +231,15 @@
                     </div>
                   </div>
                 </form>
-                </td>			          
+                </div>	          
               ";
 
-              if (($i == 4)) {
-                $i = 0;
-                echo "</tr>";
-              }
               $i++;
             };
             mysqli_close($conn);
             ?>
 
-          </table>
+          </div>
           <!-- Fine Podotti -->
 
         </div>
