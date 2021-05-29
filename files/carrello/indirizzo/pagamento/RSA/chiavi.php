@@ -116,14 +116,13 @@
 
 
                     $rsa = new Crypt_RSA();
-                    extract($rsa->createKey());
+                    extract($rsa->createKey(2048));
 
                     $plaintext = "$numero-$nome-$mese-$anno-$cvc";
 
-                    //da rivedere con che chiave cripto
-                    $rsa->loadKey($privatekey);
-                    $ciphertext = $rsa->encrypt($plaintext);
                     $rsa->loadKey($publickey);
+                    $ciphertext = $rsa->encrypt($plaintext);
+                    $rsa->loadKey($privatekey);
                     $decriptato = $rsa->decrypt($ciphertext);
                     ?>
                     <!-- FINE RSA -->
