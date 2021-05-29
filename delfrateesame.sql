@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Mag 26, 2021 alle 18:28
+-- Creato il: Mag 29, 2021 alle 08:48
 -- Versione del server: 10.4.18-MariaDB
 -- Versione PHP: 8.0.3
 
@@ -83,6 +83,19 @@ CREATE TABLE `compra` (
   `idProdotto` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dump dei dati per la tabella `compra`
+--
+
+INSERT INTO `compra` (`idCompra`, `idUtente`, `idProdotto`) VALUES
+(2, 2, 7),
+(36, 1, 11),
+(37, 2, 5),
+(38, 2, 13),
+(39, 2, 12),
+(40, 1, 3),
+(41, 1, 5);
+
 -- --------------------------------------------------------
 
 --
@@ -94,6 +107,19 @@ CREATE TABLE `contenuto` (
   `idCarrello` int(5) NOT NULL,
   `idProdotto` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dump dei dati per la tabella `contenuto`
+--
+
+INSERT INTO `contenuto` (`idContenuto`, `idCarrello`, `idProdotto`) VALUES
+(12, 2, 7),
+(46, 1, 11),
+(47, 2, 5),
+(48, 2, 13),
+(49, 2, 12),
+(50, 1, 3),
+(51, 1, 5);
 
 -- --------------------------------------------------------
 
@@ -115,10 +141,10 @@ CREATE TABLE `prodotto` (
 --
 
 INSERT INTO `prodotto` (`idProdotto`, `nome`, `prezzo`, `descrizione`, `immagine`, `idCategoria`) VALUES
-(1, 'Iphone 12', '849', 'iOS 14 processore A14 Dimensioni schermo 6.1 Capacità memoria interna 128 GB Bluetooth Sì', './img/prodotti/iphon12.jpg', 1),
-(3, 'Samsung A51', '279', '\'6.5\\\" Ram 4 GB 128 GB Doppia SIM 4G USB tipo-C Android 10.0 4000 mAh', './img/prodotti/samsungA51.jpg', 1),
+(1, 'iPhone 12', '849', 'iOS 14 processore A14 Dimensioni schermo 6.1 Capacità memoria interna 128 GB Bluetooth Sì', './img/prodotti/iphon12.jpg', 1),
+(3, 'Samsung A51', '279', '6.5\\\" Ram 4 GB 128 GB Doppia SIM 4G USB tipo-C Android 10.0 4000 mAh', './img/prodotti/samsungA51.jpg', 1),
 (4, 'Huawei p20 pro', '458', 'Huawei P20 Pro Single SIM 4G 128GB Black- Smartphones (15.5 cm (6.1\\\"), 128 GB, 40 MP)', './img/prodotti/P20Pro.jpg', 1),
-(5, 'Galaxy S9', '225', 'SAMSUNG Galaxy S9 Single SIM 64 GB Android 8.0 Oreo UK Version SIM Free Smartphone &ndash; Purple\\r\\n', './img/prodotti/galaxy-s9.jpg', 1),
+(5, 'Galaxy S9', '225', 'SAMSUNG Galaxy S9 Single SIM 64 GB Android 8.0 Oreo UK Version SIM Free Smartphone Purple', './img/prodotti/galaxy-s9.jpg', 1),
 (6, 'DOQAUS C1', '29', 'Bluetooth, 3 EQ Modalita di Suono, Cuffie Over Ear con tempo di riproduzione di 52 ore, Comode Cuffie con Microfono', './img/prodotti/cuffie1.jpg', 2),
 (7, 'Bose QuietComfort 35', '207', 'Noise Cancelling Bluetooth Headphones - Cuffie Over-Ear Wireless con Microfono Integrato e Controllo Vocale', './img/prodotti/bose.jpg', 2),
 (8, 'Soundcore Anker Q30', '80.56', 'Canc. attiva rumore mod. multiple, suono alta ris, 40 ore di ripr, chiamate chiare, ric. rapida, auricolari morbidi, cuffie Bluetooth', './img/prodotti/Anker.jpg', 2),
@@ -164,8 +190,8 @@ CREATE TABLE `utente` (
 --
 
 INSERT INTO `utente` (`idUtente`, `nome`, `cognome`, `email`, `password`, `isAdmin`, `via`, `cap`, `nCiv`, `comune`, `provincia`, `FragioneSociale`, `FpecCod`, `FpartitaIva`, `Fvia`, `Fcap`, `FnCiv`, `Fcomune`, `Fprovincia`, `FcodFiscale`, `idChiave`, `idCarrello`) VALUES
-(1, 'admin', 'admin', 'admin@admin.com', '$6$rounds=5000$K8d6sRt2$CoTVB2swIoLs48.PNBHPQN.e57A4GVUB6ZCAecLQ.E/fSpx6XoHPxnNVRERQOr/olk18nQnMdSzwHP8u8G8lb1', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1),
-(2, 'utente', 'utente', 'prova@prova.com', '$6$rounds=5000$K8d6sRt2$um./LVyXN0HH7LJHFxTbSf6ZZQ5afM7S944JOtQpBmf1MuMeXnU2.xT0sRU36.yg/uQv0R7lfnmG1ir6zGSzq/', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2);
+(1, 'Riccardo', 'Delfrate', 'admin@admin.com', '$6$rounds=5000$K8d6sRt2$CoTVB2swIoLs48.PNBHPQN.e57A4GVUB6ZCAecLQ.E/fSpx6XoHPxnNVRERQOr/olk18nQnMdSzwHP8u8G8lb1', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1),
+(2, 'Riccardo', 'Delfrate', 'prova@prova.com', '$6$rounds=5000$K8d6sRt2$um./LVyXN0HH7LJHFxTbSf6ZZQ5afM7S944JOtQpBmf1MuMeXnU2.xT0sRU36.yg/uQv0R7lfnmG1ir6zGSzq/', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2);
 
 --
 -- Indici per le tabelle scaricate
@@ -246,13 +272,13 @@ ALTER TABLE `chiave`
 -- AUTO_INCREMENT per la tabella `compra`
 --
 ALTER TABLE `compra`
-  MODIFY `idCompra` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `idCompra` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT per la tabella `contenuto`
 --
 ALTER TABLE `contenuto`
-  MODIFY `idContenuto` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `idContenuto` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT per la tabella `prodotto`
