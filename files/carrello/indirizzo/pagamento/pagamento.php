@@ -14,6 +14,10 @@
 
 <body>
   <?php
+  include('../../../database/config.php');
+  session_start();
+  $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+
   $via = $_POST['via'];
   $cap = $_POST['cap'];
   $nCiv = $_POST['nCiv'];
@@ -29,23 +33,43 @@
   $Fcomune = $_POST['Fcomune'];
   $Fprovincia = $_POST['Fprovincia'];
   $FcodFiscale = $_POST['FcodFiscale'];
-  echo "
- $via <br>
- $cap <br>
- $nCiv <br>
- $comune<br>
- $provincia <br>
- $FragioneSociale<br>
- $FpecCod <br>
- $FpartitaIva <br>
- $Fvia<br>
- $Fcap <br>
- $FnCiv <br>
- $Fcomune <br>
- $Fprovincia <br>
- $FcodFiscale <br>
- 
- ";
+
+  $idUtente = $_SESSION['idUtenteLoggato'];
+
+
+  $insert = "UPDATE utente SET via = '$via', cap = '$cap', nCiv = '$nCiv', comune = '$comune', provincia = '$provincia' WHERE idUtente = $idUtente";
+  if (!mysqli_query($conn, $insert)) {
+  ?>
+    <script>
+      Swal.fire({
+        icon: 'error',
+        title: 'Ops...',
+        text: 'Cè stato un problema in fase di registrazione',
+        allowEscape: false,
+        allowOutsideClick: false,
+        confirmButtonText: "<a href='../login/login.php'>Riprova</a>"
+      });
+    </script>
+    <?php
+  }
+
+  if ($FragioneSociale != NULL) {
+    $insert2 = "UPDATE utente SET FragioneSociale = '$FragioneSociale', FpecCod = '$FpecCod', FpartitaIva = '$FpartitaIva', Fvia = '$Fvia', Fcap = '$Fcap', FnCiv = '$FnCiv',  Fcomune = '$Fcomune', Fprovincia = '$Fprovincia', FcodFiscale = '$FcodFiscale'  WHERE idUtente = $idUtente";
+    if (!mysqli_query($conn, $insert2)) {
+    ?>
+      <script>
+        Swal.fire({
+          icon: 'error',
+          title: 'Ops...',
+          text: 'Cè stato un problema in fase di registrazione',
+          allowEscape: false,
+          allowOutsideClick: false,
+          confirmButtonText: "<a href='../login/login.php'>Riprova</a>"
+        });
+      </script>
+  <?php
+    }
+  }
 
 
   ?>

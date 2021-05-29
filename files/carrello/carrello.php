@@ -170,66 +170,85 @@
                                             confirmButtonText: "<a href='../../index.php'>Riprova</a>"
                                         })
                                     </script>
-                                <?php
+                                    <?php
                                     exit();
                                 }
-                                $riga2 = mysqli_fetch_array($ris, MYSQLI_ASSOC); // array che conterrà queste informazioni
-                                if (!$riga2) {
-                                ?>
-                                    <script>
-                                        Swal.fire({
-                                            icon: 'error',
-                                            title: 'Ops...',
-                                            text: 'Cè stato un problema in fase di visualizzazione',
-                                            allowEscape: false,
-                                            allowOutsideClick: false,
-                                            confirmButtonText: "<a href='../../index.php'>Riprova</a>"
-                                        })
-                                    </script>
-                                <?php
-                                    exit();
-                                }
-                                $totale = 0;
-                                while ($riga2) {
-                                    $idProdotto = $riga2['idProdotto'];
-                                    $nome = $riga2['nome'];
-                                    $prezzo = $riga2['prezzo'];
-                                    $totale = $totale + $prezzo;
-
-                                    $categoria = $riga2['idCategoria'];
-                                    switch ($categoria) {
-                                        case '1':
-                                            $icona = "../../img/icone/telefono.png";
-                                            break;
-                                        case '2':
-                                            $icona = "../../img/icone/cuffia.png";
-                                            break;
-                                        case '3':
-                                            $icona = "../../img/icone/zaino.jpg";
-                                            break;
-                                    }
-
+                                $conta = mysqli_num_rows($ris);
+                                if ($conta == 0) {
+                                    $totale = 0;
                                     echo "
                                     <div class='product ux-card'>
-                                        <form action='./eliminaProdotto.php' method='POST'>
-                                            <img src='$icona' height='50' width='50' />
-                                            <span class='title'>$nome</span>
-                                            <span class='price'>€ $prezzo</span>
-                                      
-                                            <input type='hidden' name='idCarrello' value='$idCarrello'>
-                                            <input type='hidden' name='idProdotto' value='$idProdotto'>
-                                            <button class='btn btn-canvas btn-xs remove' type='submit'><i class='material-icons'>delete</i> Rimuovi</button>
+                                        <form action='../../index.php' method='POST'>
+                                            <img src='../../img/icone/warning.png' height='50' width='50' />
+                                            <span class='title'>Ops</span><br>
+                                            <p>Sembra che il carrello sia vuoto</p>
+                                         
+                                            <button class='btn btn-canvas btn-xs remove' type='submit'><i class='material-icons'>undo</i> Home</button>
                                         </form>
                                     </div>
                                     ";
-                                    $riga2 = mysqli_fetch_array($ris, MYSQLI_ASSOC);
-                                };
-                                //-----FINE QUERY-----
+                                } else {
+                                    $riga2 = mysqli_fetch_array($ris, MYSQLI_ASSOC); // array che conterrà queste informazioni
+                                    if (!$riga2) {
+                                    ?>
+                                        <script>
+                                            Swal.fire({
+                                                icon: 'error',
+                                                title: 'Ops...',
+                                                text: 'Cè stato un problema in fase di visualizzazione',
+                                                allowEscape: false,
+                                                allowOutsideClick: false,
+                                                confirmButtonText: "<a href='../../index.php'>Riprova</a>"
+                                            })
+                                        </script>
+                                <?php
+                                        exit();
+                                    }
+
+
+                                    $totale = 0;
+                                    while ($riga2) {
+                                        $idProdotto = $riga2['idProdotto'];
+                                        $nome = $riga2['nome'];
+                                        $prezzo = $riga2['prezzo'];
+                                        $totale = $totale + $prezzo;
+
+                                        $categoria = $riga2['idCategoria'];
+                                        switch ($categoria) {
+                                            case '1':
+                                                $icona = "../../img/icone/telefono.png";
+                                                break;
+                                            case '2':
+                                                $icona = "../../img/icone/cuffia.png";
+                                                break;
+                                            case '3':
+                                                $icona = "../../img/icone/zaino.jpg";
+                                                break;
+                                        }
+
+                                        echo "
+                                        <div class='product ux-card'>
+                                            <form action='./eliminaProdotto.php' method='POST'>
+                                                <img src='$icona' height='50' width='50' />
+                                                <span class='title'>$nome</span>
+                                                <span class='price'>€ $prezzo</span>
+                                          
+                                                <input type='hidden' name='idCarrello' value='$idCarrello'>
+                                                <input type='hidden' name='idProdotto' value='$idProdotto'>
+                                                <button class='btn btn-canvas btn-xs remove' type='submit'><i class='material-icons'>delete</i> Rimuovi</button>
+                                            </form>
+                                        </div>
+                                        ";
+                                        $riga2 = mysqli_fetch_array($ris, MYSQLI_ASSOC);
+                                    };
+                                    //-----FINE QUERY-----
 
 
 
-                                mysqli_close($conn);
+                                    mysqli_close($conn);
+                                }
                                 ?>
+
                             </div>
                             <div class="summary col-md-4">
                                 <dl class="total">

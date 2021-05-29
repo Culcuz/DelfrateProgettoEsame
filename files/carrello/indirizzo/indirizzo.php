@@ -579,26 +579,6 @@
                 document.getElementById('fattura').style.display = 'none';
             </script>
 
-            <footer class="footer">
-                <div class="container-fluid">
-                    <nav class="float-left">
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    About Me
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <div class="copyright float-right">
-                        &copy;
-                        <script>
-                            document.write(new Date().getFullYear())
-                        </script>
-                        by <strong> Riccardo Delfrate</strong>
-                    </div>
-                </div>
-            </footer>
         </div>
     </div>
 

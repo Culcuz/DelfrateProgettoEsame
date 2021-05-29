@@ -54,7 +54,7 @@
 
 
         if (!mysqli_query($conn, $insert)) {
-    ?>
+        ?>
             <script>
                 Swal.fire({
                     icon: 'error',
