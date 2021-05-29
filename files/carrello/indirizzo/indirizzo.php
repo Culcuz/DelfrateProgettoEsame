@@ -172,7 +172,7 @@
             <link href="../../css/main.css" rel="stylesheet" media="all">
             <div class="row">
                 <form action="./pagamento/pagamento.php" method="POST">
-                    <div class="col-lg-6 col-md-12 " >
+                    <div class="col-lg-6 col-md-12 ">
                         <div class="wrapper wrapper--w790">
                             <div class="card card-5">
                                 <div class="card-heading">
@@ -346,9 +346,9 @@
                                     </div>
 
                                     <div class="form-row m-b-55">
-                                        <div  style="margin-left: 10em">
+                                        <div>
                                             <button class="btn btn--radius-2 btn--blue" id="procedi1" type="submit">Procedi</button>
-                                            <button style="margin-left: 5em" class="btn btn--radius-2 btn--blue" type="button" id="fattura1" onclick="mostra()">Fattura</button>
+                                            <button class="btn btn--radius-2 btn--blue" type="button" id="fattura1" onclick="mostra()">Fattura</button>
                                         </div>
 
                                     </div>
