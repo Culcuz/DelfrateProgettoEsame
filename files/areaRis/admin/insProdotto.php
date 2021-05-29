@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $nome = $_POST['nome'];
 $prezzo = $_POST['prezzo'];
 $descrizione = $_POST['descrizione'];
@@ -55,5 +57,7 @@ if (!$ris) {
     </script>
 <?php
     exit();
+} else {
+    $_SESSION['inserito'] = 1;
+    header('Location: ./admin.php');
 }
-

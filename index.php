@@ -115,7 +115,7 @@
             icon: 'success',
             title: 'Prodotto inserito',
             showConfirmButton: false,
-            timer: 2500
+            timer: 2000
           })
         </script>
       <?php

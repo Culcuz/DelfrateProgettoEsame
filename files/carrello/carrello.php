@@ -90,7 +90,6 @@
                     <span class="navbar-toggler-icon icon-bar"></span>
                 </button>
                 <div class="container">
-
                     <div class="collapse navbar-collapse" id="navbarText">
                         <!-- 
                         <ul class="navbar-nav mr-auto">
@@ -192,7 +191,7 @@
                                 }
                                 $totale = 0;
                                 while ($riga2) {
-                                    $id = $riga2['idProdotto'];
+                                    $idProdotto = $riga2['idProdotto'];
                                     $nome = $riga2['nome'];
                                     $prezzo = $riga2['prezzo'];
                                     $totale = $totale + $prezzo;
@@ -212,12 +211,16 @@
 
                                     echo "
                                     <div class='product ux-card'>
-                                    <!-- predere l'icona a seconda di che prodotto sia prendere nome e prezzo -->
-                                    <img src='$icona' height='50' width='50' />
-                                    <span class='title'>$nome</span>
-                                    <span class='price'>€ $prezzo</span>
-                                    <button class='btn btn-canvas btn-xs remove' href='product/remove'><i class='material-icons'>delete</i> Rimuovi</button>
-                                </div>
+                                        <form action='./eliminaProdotto.php' method='POST'>
+                                            <img src='$icona' height='50' width='50' />
+                                            <span class='title'>$nome</span>
+                                            <span class='price'>€ $prezzo</span>
+                                      
+                                            <input type='hidden' name='idCarrello' value='$idCarrello'>
+                                            <input type='hidden' name='idProdotto' value='$idProdotto'>
+                                            <button class='btn btn-canvas btn-xs remove' type='submit'><i class='material-icons'>delete</i> Rimuovi</button>
+                                        </form>
+                                    </div>
                                     ";
                                     $riga2 = mysqli_fetch_array($ris, MYSQLI_ASSOC);
                                 };
@@ -231,7 +234,7 @@
                             <div class="summary col-md-4">
                                 <dl class="total">
                                     <dt>Totale</dt>
-                                    <dd><?php echo"€ $totale"; ?></dd>
+                                    <dd><?php echo "€ $totale"; ?></dd>
                                 </dl>
                                 <div class="terms">
                                     <h4 class="headline-primary">Termini e condizioni </h3>

@@ -22,6 +22,7 @@
   <link href="./files/css/prodotti.css" rel="stylesheet" type="text/css">
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Alata&family=Kanit:wght@500&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.all.min.js"></script>
 
   <link rel="stylesheet" href="../../carrello/style2.css">
 
@@ -32,44 +33,6 @@
   session_start();
   include('../../database/config.php');
   $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-
-  if (!isset($_SESSION['connessione'])) {
-  ?>
-    <script>
-      Swal.fire({
-        icon: 'error',
-        title: 'Ops...',
-        text: 'Non sei autorizzato',
-        allowEscape: false,
-        allowOutsideClick: false,
-        confirmButtonText: "<a href='../../../index.php'>Esci</a>"
-      });
-    </script>
-  <?php
-  } else {
-  ?>
-    <!-- ACCESSO AVVENUTO -->
-    <script>
-      const Toast = Swal.mixin({
-        toast: true,
-        position: 'top-end',
-        showConfirmButton: false,
-        timer: 3000,
-        timerProgressBar: true,
-        didOpen: (toast) => {
-          toast.addEventListener('mouseenter', Swal.stopTimer)
-          toast.addEventListener('mouseleave', Swal.resumeTimer)
-        }
-      })
-
-      Toast.fire({
-        icon: 'success',
-        title: 'Accesso avvenuto'
-      })
-    </script>
-    <!-- FINE ACCESSO AVVENUTO -->
-  <?php
-  }
 
   ?>
 
@@ -110,6 +73,23 @@
       </div>
     </div>
     <div class="main-panel">
+      <?php
+      if ((isset($_SESSION['inserito'])) && ($_SESSION['inserito'] == 1)) {
+      ?>
+        <script>
+          Swal.fire({
+            position: 'top-start',
+            width: 200,
+            icon: 'success',
+            title: 'Prodotto inserito',
+            showConfirmButton: false,
+            timer: 2000
+          })
+        </script>
+      <?php
+        $_SESSION['inserito'] = 0;
+      }
+      ?>
       <nav class="navbar navbar-expand-lg bg-dark">
         <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
           <span class="sr-only">Toggle navigation</span>
@@ -120,7 +100,7 @@
         <div class="container">
 
           <div class="collapse navbar-collapse" id="navbarText">
-              <!-- 
+            <!-- 
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
                 <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
@@ -288,7 +268,7 @@
                                   <label>Descrizione</label>
                                   <br>
                                   <textarea class="form-control" name="descrizione" placeholder="Descrizione" required></textarea>
-                
+
                                 </div>
                               </td>
                             </tr>
@@ -320,7 +300,7 @@
                 </div>
               </div>
             </div>
-            
+
             <div class="col-lg-6 col-md-12">
               <div class="card">
                 <div class="card-header card-header-warning">
