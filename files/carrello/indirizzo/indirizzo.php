@@ -189,18 +189,18 @@
                                         </div>
                                     </div>
                                     <div class="form-row">
-                                        <div class="name">CAP</div>
-                                        <div class="value">
-                                            <div class="input-group">
-                                                <input class="input--style-5" type="text" name="cap" required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
                                         <div class="name">Numero Civico</div>
                                         <div class="value">
                                             <div class="input-group">
                                                 <input class="input--style-5" type="text" name="nCiv" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="name">CAP</div>
+                                        <div class="value">
+                                            <div class="input-group">
+                                                <input class="input--style-5" type="text" name="cap" required>
                                             </div>
                                         </div>
                                     </div>
@@ -407,18 +407,18 @@
                                         </div>
                                     </div>
                                     <div class="form-row">
-                                        <div class="name">CAP</div>
-                                        <div class="value">
-                                            <div class="input-group">
-                                                <input class="input--style-5" type="text" name="Fcap">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
                                         <div class="name">Numero Civico</div>
                                         <div class="value">
                                             <div class="input-group">
                                                 <input class="input--style-5" type="text" name="FnCiv">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="name">CAP</div>
+                                        <div class="value">
+                                            <div class="input-group">
+                                                <input class="input--style-5" type="text" name="Fcap">
                                             </div>
                                         </div>
                                     </div>
