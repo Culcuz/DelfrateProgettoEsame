@@ -25,5 +25,24 @@ if (!$ris) {
 <?php
     exit();
 }
+$idUtente=$_SESSION['idUtenteLoggato'];
+$delete2 = "DELETE FROM compra where idProdotto=$idProdotto AND idUtente=$idUtente";
+
+$ris = mysqli_query($conn, $delete2);
+if (!$ris) {
+?>
+    <script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Ops...',
+            text: 'Cè stato un problema in fase di visualizzazione',
+            allowEscape: false,
+            allowOutsideClick: false,
+            confirmButtonText: "<a href='../../index.php'>Riprova</a>"
+        })
+    </script>
+<?php
+    exit();
+}
 
 header("Location: ./carrello.php");
