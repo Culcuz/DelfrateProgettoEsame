@@ -23,6 +23,7 @@
   $nCiv = $_POST['nCiv'];
   $comune = $_POST['comune'];
   $provincia = $_POST['provincia'];
+  $info = $_POST['info'];
 
   $FragioneSociale = $_POST['ragSociale'];
   $FpecCod = $_POST['pecCod'];
@@ -37,7 +38,7 @@
   $idUtente = $_SESSION['idUtenteLoggato'];
 
 
-  $insert = "UPDATE utente SET via = '$via', cap = '$cap', nCiv = '$nCiv', comune = '$comune', provincia = '$provincia' WHERE idUtente = $idUtente";
+  $insert = "UPDATE utente SET via = '$via', cap = '$cap', nCiv = '$nCiv', comune = '$comune', provincia = '$provincia', info = '$info' WHERE idUtente = $idUtente";
   if (!mysqli_query($conn, $insert)) {
   ?>
     <script>

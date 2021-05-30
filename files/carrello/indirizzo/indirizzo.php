@@ -339,8 +339,7 @@
                                         <div class="name">Informazioni</div>
                                         <div class="value">
                                             <div class="input-group">
-
-                                                <textarea class="input--style-6" rows="4" cols="50" ame="info"></textarea>
+                                                <textarea class="input--style-6" rows="4" cols="50" name="info"></textarea>
                                             </div>
                                         </div>
                                     </div>
