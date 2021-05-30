@@ -35,7 +35,7 @@
     ?>
 
     <div class="wrapper ">
-        <div class="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-3.jpg">
+        <div class="sidebar" data-color="purple" data-background-color="white">
             <?php
             if (isset($_SESSION['connessione'])) {
                 $nome = $_SESSION['nome'];
@@ -118,16 +118,162 @@
                     $rsa = new Crypt_RSA();
                     extract($rsa->createKey(2048));
 
+                    //-----PRENDO IL CAMPO idChiave DALLA TABELLA UTENTE DELL'UTENTE LOGGATO
+                    $idUtente = $_SESSION['idUtenteLoggato'];
+                    $select = "SELECT idChiave FROM utente WHERE idUtente=$idUtente";
+                    $ris = mysqli_query($conn, $select);
+                    if (!$ris) {
+                    ?>
+                        <script>
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Ops...',
+                                text: 'Errore',
+                                allowEscape: false,
+                                allowOutsideClick: false,
+                                confirmButtonText: "<a href='../../../carrello.php'>Riprova</a>"
+                            });
+                        </script>
+                        <?php
+                    } else {
+                        $riga = mysqli_fetch_row($ris);
+                        $idChiave = $riga[0];
+
+
+                        //----- INSERISCO LE CHIAVI NELLA TABELLA -----
+                        $insert = "INSERT INTO chiave (pubblica, privata) VALUES ('$publickey', '$privatekey')";
+                        if (!mysqli_query($conn, $insert)) {
+                        ?>
+                            <script>
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Ops...',
+                                    text: 'Cè stato un problema in fase di registrazione',
+                                    allowEscape: false,
+                                    allowOutsideClick: false,
+                                    confirmButtonText: "<a href='../../../carrello.php>Riprova</a>"
+                                });
+                            </script>
+                            <?php
+                        }
+                        if ($idChiave == NULL) {
+
+
+
+                            //----- PRENDO L'ID DELLE CHIAVI APPENA INSERITE-----
+                            $select2 = "SELECT * FROM chiave ORDER BY idChiave DESC LIMIT 1";
+                            $ris = mysqli_query($conn, $select2);
+                            if (!$ris) {
+                            ?>
+                                <script>
+                                    Swal.fire({
+                                        icon: 'error',
+                                        title: 'Ops...',
+                                        text: 'Errore',
+                                        allowEscape: false,
+                                        allowOutsideClick: false,
+                                        confirmButtonText: "<a href='../../../carrello.php'>Riprova</a>"
+                                    });
+                                </script>
+                            <?php
+                            }
+
+                            $riga = mysqli_fetch_row($ris);
+                            $idChiave = $riga[0];
+
+                            //----- AGGIORNO LA TABELLA UTENTE CON L'ID DELLE CHIAVI
+                            $update = "UPDATE utente SET idChiave = '$idChiave' WHERE idUtente = $idUtente";
+                            if (!mysqli_query($conn, $update)) {
+                            ?>
+                                <script>
+                                    Swal.fire({
+                                        icon: 'error',
+                                        title: 'Ops...',
+                                        text: 'Cè stato un problema in fase di registrazione',
+                                        allowEscape: false,
+                                        allowOutsideClick: false,
+                                        confirmButtonText: "<a href='../login/login.php'>Riprova</a>"
+                                    });
+                                </script>
+                            <?php
+                            }
+                        } else {
+
+                            //----- PRENDO L'ID DELLE CHIAVI APPENA INSERITE-----
+                            $select3 = "SELECT * FROM chiave ORDER BY idChiave DESC LIMIT 1";
+                            $ris = mysqli_query($conn, $select3);
+                            if (!$ris) {
+                            ?>
+                                <script>
+                                    Swal.fire({
+                                        icon: 'error',
+                                        title: 'Ops...',
+                                        text: 'Errore',
+                                        allowEscape: false,
+                                        allowOutsideClick: false,
+                                        confirmButtonText: "<a href='../../../carrello.php'>Riprova</a>"
+                                    });
+                                </script>
+                            <?php
+                            }
+                            $riga = mysqli_fetch_row($ris);
+                            $idChiave2 = $riga[0];
+
+
+                            //----- AGGIORNO LA TABELLA UTENTE CON L'ID DELLE CHIAVI
+                            $update2 = "UPDATE utente SET idChiave = '$idChiave2' WHERE idUtente = $idUtente";
+                            if (!mysqli_query($conn, $update2)) {
+                            ?>
+                                <script>
+                                    Swal.fire({
+                                        icon: 'error',
+                                        title: 'Ops...',
+                                        text: 'Cè stato un problema in fase di registrazione',
+                                        allowEscape: false,
+                                        allowOutsideClick: false,
+                                        confirmButtonText: "<a href='../login/login.php'>Riprova</a>"
+                                    });
+                                </script>
+                        <?php
+                            }
+                        }
+                    }
+
+
+
+
+                    //----- CRIPTAZIONE -----
                     $plaintext = "$numero-$nome-$mese-$anno-$cvc";
 
                     $rsa->loadKey($publickey);
                     $ciphertext = $rsa->encrypt($plaintext);
+                    $ciphertext64 = base64_encode($ciphertext); //salvo in base 64 sennò il db fa casini con la cofifica
+
+                    $update3 = "UPDATE utente SET cartaCredito = '$ciphertext64' WHERE idUtente = $idUtente";
+                    if (!mysqli_query($conn, $update3)) {
+                        ?>
+                        <script>
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Ops...',
+                                text: 'Cè stato un problema in fase di registrazione',
+                                allowEscape: false,
+                                allowOutsideClick: false,
+                                confirmButtonText: "<a href='../login/login.php'>Riprova</a>"
+                            });
+                        </script>
+                    <?php
+                    }
+                    //----- FINE CRIPTAZIONE -----
+
+                    //----- DECRIPTAZIONE -----
                     $rsa->loadKey($privatekey);
-                    $decriptato = $rsa->decrypt($ciphertext);
+                    $cript64Dec=base64_decode($ciphertext64);
+                    $decriptato = $rsa->decrypt($cript64Dec);
+                    //----- FINE DECRIPTAZIONE -----
+
                     ?>
                     <!-- FINE RSA -->
-
-
 
                     <div class="row">
                         <div class="col-lg-6 col-md-12">
@@ -186,6 +332,23 @@
                                             <tr>
                                                 <td><?php echo $ciphertext; ?></td>
                                             </tr>
+                                            <tr class="text-center">
+                                                <td>
+                                                    <strong>Codifica base64 </strong>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><?php echo $ciphertext64; ?></td>
+                                            </tr>
+                                            <tr class="text-center">
+                                                <td>
+                                                    <strong>Decodifica base64 </strong>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><?php echo $cript64Dec; ?></td>
+                                            </tr>
+                                           
                                             <tr class="text-center">
                                                 <td>
                                                     <strong>Testo decriptato </strong>
