@@ -26,6 +26,7 @@
 
   <link rel="stylesheet" href="./files/carrello/style2.css">
   <link rel="stylesheet" href="./files//css/visProdotti.css">
+  <link rel="stylesheet" href="./files/css/link.css">
 </head>
 
 <body>

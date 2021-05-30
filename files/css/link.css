@@ -1,0 +1,7 @@
+a:link, a:visited {
+    color: #ffffff;
+    background-color: transparent;
+}
+a:hover, a:active {
+    color: #ffffff;
+}

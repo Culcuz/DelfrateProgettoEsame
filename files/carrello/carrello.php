@@ -27,6 +27,8 @@
     <link rel="stylesheet" href="./style2.css">
     <link rel="stylesheet" href="./style.css">
 
+    <link rel="stylesheet" href="../css/link.css">
+
 </head>
 
 <body>

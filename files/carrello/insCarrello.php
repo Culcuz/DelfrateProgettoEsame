@@ -24,8 +24,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.all.min.js"></script>
 
-    <link rel="stylesheet" href="./files/carrello/style2.css">
-    <link rel="stylesheet" href="./files//css/visProdotti.css">
+    <link rel="stylesheet" href="../css/link.css">
 </head>
 
 <body>
