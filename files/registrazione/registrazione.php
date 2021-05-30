@@ -54,7 +54,7 @@
 
 
         if (!mysqli_query($conn, $insert)) {
-        ?>
+    ?>
             <script>
                 Swal.fire({
                     icon: 'error',
@@ -65,11 +65,52 @@
                     confirmButtonText: "<a href='../login/login.php'>Riprova</a>"
                 });
             </script>
-        <?php
+            <?php
         } else {
-            $_SESSION['connessione'] = 1; //mi salvo nell'arey di sessine il fatto che l'utente abbia la possibilità di entrare nell'area riservata
             $_SESSION['nome'] = $nome;
-        ?>
+
+            $select = "SELECT * FROM utente WHERE email='$email' and password='$password'";
+
+            $ris = mysqli_query($conn, $select);
+            if (!$ris) {
+            ?>
+                <script>
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Ops...',
+                        text: 'Cè stato un problema in fase di login',
+                        allowEscape: false,
+                        allowOutsideClick: false,
+                        confirmButtonText: "<a href='../login/login.php'>Riprova</a>"
+                    });
+                </script>
+                <?php
+            } else {
+                $riga = mysqli_fetch_row($ris);
+                $conta = mysqli_num_rows($ris);
+                if ($conta == 1) {
+                    $_SESSION['nome'] = $riga[1];
+                    $_SESSION['idUtenteLoggato'] = $riga[0];
+                    $_SESSION['connessione'] = 1; //mi salvo nell'arey di sessine il fatto che l'utente abbia la possibilità di entrare nell'area riservata
+                    header("Location: ../../index.php");
+                } else {
+                ?>
+                    <script>
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Ops...',
+                            text: 'Credenziali errate',
+                            allowEscape: false,
+                            allowOutsideClick: false,
+                            confirmButtonText: "<a href='../login/login.php'>Riprova</a>"
+                        });
+                    </script>
+            <?php
+
+                }
+            }
+
+            ?>
             <script>
                 Swal.fire({
                     icon: 'success',
@@ -77,7 +118,7 @@
                     text: 'Registrazione avvenuta con successo',
                     allowEscape: false,
                     allowOutsideClick: false,
-                    confirmButtonText: "<a href='../../index.php'>OK</a>"
+                    confirmButtonText: "<a href='../../index.php'>Procedi</a>"
                 });
             </script>
         <?php
