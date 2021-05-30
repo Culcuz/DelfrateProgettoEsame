@@ -1,9 +1,4 @@
 
-@media (max-width: 60em) {
-  body {
-    padding: 3rem;
-  }
-}
 
 .grid {
   display: grid;
