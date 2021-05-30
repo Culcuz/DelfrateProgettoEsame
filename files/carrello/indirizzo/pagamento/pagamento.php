@@ -38,7 +38,7 @@
   $idUtente = $_SESSION['idUtenteLoggato'];
 
 
-  $insert = "UPDATE utente SET via = '$via', cap = '$cap', nCiv = '$nCiv', comune = '$comune', provincia = '$provincia', info = '$inf' WHERE idUtente = $idUtente";
+  $insert = "UPDATE utente SET via = '$via', cap = '$cap', nCiv = '$nCiv', comune = '$comune', provincia = '$provincia', info = '$info' WHERE idUtente = $idUtente";
   if (!mysqli_query($conn, $insert)) {
   ?>
     <script>

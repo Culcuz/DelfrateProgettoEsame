@@ -364,67 +364,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <?php
-
-                    ?>
-
-                    <div style="width: 100%;">
-                        <div class="card">
-                            <div class="card-header card-header-danger">
-                                <h4 class="card-title">Riepilogo ordine</h4>
-                            </div>
-                            <div class="card-body table-responsive">
-                                <table class="table table-hover">
-
-                                    <tbody>
-                                        <tr class="text-left">
-                                            <td>
-                                                <strong>Testo in chiaro </strong>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><?php echo $plaintext; ?></td>
-                                        </tr>
-                                        <tr class="text-left">
-                                            <td>
-                                                <strong>Testo criptato </strong>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><?php echo $ciphertext; ?></td>
-                                        </tr>
-                                        <tr class="text-left">
-                                            <td>
-                                                <strong>Codifica base64 (Valore salvato nel database)</strong>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><?php echo $ciphertext64; ?></td>
-                                        </tr>
-                                        <tr class="text-left">
-                                            <td>
-                                                <strong>Decodifica base64 </strong>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><?php echo $cript64Dec; ?></td>
-                                        </tr>
-
-                                        <tr class="text-left">
-                                            <td>
-                                                <strong>Testo decriptato </strong>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><?php echo $decriptato; ?></td>
-                                        </tr>
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
 
