@@ -77,6 +77,7 @@
               <p>Categorie</p>
             </a>
           </li>
+
           <?php
           if (isset($_SESSION['connessione'])) {
             echo "<li class='nav-item'>
@@ -101,6 +102,12 @@
           </li>";
           }
           ?>
+          <li class="nav-item ">
+            <a class="nav-link" target="_blank" href="./pdf/Nøzama_Manuale_Utente.pdf">
+              <i class="material-icons">support</i>
+              <p>Manuale utente</p>
+            </a>
+          </li>
 
         </ul>
       </div>
@@ -197,7 +204,7 @@
               exit();
             }
 
-            
+
             $i = 0;
             while ($riga) {
               $id = $riga['idProdotto'];
@@ -207,7 +214,7 @@
               $immagine = $riga['immagine'];
               $riga = mysqli_fetch_array($ris, MYSQLI_ASSOC);
 
-            
+
 
               echo "
                 <div class='grid__item'>
