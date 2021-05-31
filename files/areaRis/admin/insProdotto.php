@@ -60,39 +60,61 @@
 
     if ($check) {
         if (move_uploaded_file($_FILES['file']['tmp_name'], $target_File)) {
-            echo "file caricatro";
+            $immagine = "./img/prodotti/" . $filename;
+
+            include('../../database/config.php');
+            $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+            $ins = "INSERT INTO prodotto (nome, prezzo, descrizione, immagine, idCategoria) VALUES ('$nome','$prezzo','$descrizione','$immagine','$categoria')";
+
+            $ris = mysqli_query($conn, $ins);
+            if (!$ris) {
+            ?>
+                <script>
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Ops...',
+                        text: 'Cè stato un problema in fase di visualizzazione',
+                        allowEscape: false,
+                        allowOutsideClick: false,
+                        confirmButtonText: "<a href='../../../index.php'</a>"
+                    })
+                </script>
+            <?php
+                exit();
+            } else {
+                $_SESSION['inserito'] = 1;
+                header('Location: ./admin.php');
+            }
         } else {
-            echo "errore";
+            ?>
+            <script>
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Ops...',
+                    text: 'Errore in fase di caricamento del file',
+                    allowEscape: false,
+                    allowOutsideClick: false,
+                    confirmButtonText: "<a href='./admin.php'</a>"
+                })
+            </script>
+        <?php
         };
     } else {
-        echo $output;
-    }
-
-    $immagine = "./img/prodotti/" . $filename;
-
-    include('../../database/config.php');
-    $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-    $ins = "INSERT INTO prodotto (nome, prezzo, descrizione, immagine, idCategoria) VALUES ('$nome','$prezzo','$descrizione','$immagine','$categoria')";
-
-    $ris = mysqli_query($conn, $ins);
-    if (!$ris) {
-    ?>
+        ?>
         <script>
             Swal.fire({
                 icon: 'error',
                 title: 'Ops...',
-                text: 'Cè stato un problema in fase di visualizzazione',
+                text: 'Errore <?php $output ?>',
                 allowEscape: false,
                 allowOutsideClick: false,
-                confirmButtonText: "<a href='../../../index.php'</a>"
+                confirmButtonText: "<a href='./admin.php'</a>"
             })
         </script>
     <?php
-        exit();
-    } else {
-        $_SESSION['inserito'] = 1;
-        header('Location: ./admin.php');
     }
+
+
     ?>
 </body>
 
