@@ -371,7 +371,7 @@
                     <nav class="float-left">
                         <ul>
                             <li>
-                                <a href="#">
+                                <a href="../../../../../pdf/Delfrare_Riccardo_CV.pdf">
                                     About Me
                                 </a>
                             </li>
