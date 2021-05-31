@@ -140,7 +140,7 @@
                         text: 'Cè stato un problema in fase di visualizzazione',
                         allowEscape: false,
                         allowOutsideClick: false,
-                        confirmButtonText: '<a href="../../../index.php>Riprova</a>'
+                        confirmButtonText: "<a href='../../../index.php'>Riprova</a>"
                       });
                     </script>
                   <?php
@@ -175,7 +175,7 @@
                         text: 'Cè stato un problema in fase di visualizzazione',
                         allowEscape: false,
                         allowOutsideClick: false,
-                        confirmButtonText: '<a href="../../../index.php>Riprova</a>'
+                        confirmButtonText: "<a href='../../../index.php'>Riprova</a>"
                       });
                     </script>
                   <?php
@@ -210,7 +210,7 @@
                         text: 'Cè stato un problema in fase di visualizzazione',
                         allowEscape: false,
                         allowOutsideClick: false,
-                        confirmButtonText: '<a href="../../../index.php>Riprova</a>'
+                        confirmButtonText: "<a href='../../../index.php'>Riprova</a>"
                       });
                     </script>
                   <?php

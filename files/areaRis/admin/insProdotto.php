@@ -44,9 +44,6 @@
     $check = true;
     $output = "";
 
-    echo $filename;
-    echo "<br>";
-    echo $target_File;
 
     if (file_exists($target_File)) {
         $check = false;
@@ -68,7 +65,7 @@
 
             $ris = mysqli_query($conn, $ins);
             if (!$ris) {
-            ?>
+    ?>
                 <script>
                     Swal.fire({
                         icon: 'error',
@@ -76,7 +73,7 @@
                         text: 'Cè stato un problema in fase di visualizzazione',
                         allowEscape: false,
                         allowOutsideClick: false,
-                        confirmButtonText: "<a href='../../../index.php'</a>"
+                        confirmButtonText: "<a href='../../../index.php'> Riprova</a>"
                     })
                 </script>
             <?php
@@ -94,7 +91,7 @@
                     text: 'Errore in fase di caricamento del file',
                     allowEscape: false,
                     allowOutsideClick: false,
-                    confirmButtonText: "<a href='./admin.php'</a>"
+                    confirmButtonText: "<a href='./admin.php'> Riprova </a>"
                 })
             </script>
         <?php
@@ -108,7 +105,7 @@
                 text: 'Errore <?php $output ?>',
                 allowEscape: false,
                 allowOutsideClick: false,
-                confirmButtonText: "<a href='./admin.php'</a>"
+                confirmButtonText: "<a href='./admin.php'>Riprova</a>"
             })
         </script>
     <?php
