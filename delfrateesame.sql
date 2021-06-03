@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Mag 30, 2021 alle 18:09
+-- Creato il: Mag 31, 2021 alle 17:47
 -- Versione del server: 10.4.18-MariaDB
 -- Versione PHP: 8.0.3
 
@@ -288,7 +288,7 @@ ALTER TABLE `contenuto`
 -- AUTO_INCREMENT per la tabella `prodotto`
 --
 ALTER TABLE `prodotto`
-  MODIFY `idProdotto` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `idProdotto` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT per la tabella `utente`
