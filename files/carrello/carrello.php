@@ -262,7 +262,7 @@
                                         <p class="review">Cliccando su "Acconsento" accetti i nostri <a style="color: black" href="https://www.iubenda.com/privacy-policy/10655652" target="_blank">Termini e condizioni</a>.
                                         </p>
                                         <p class="review">I prodotti possono essere soggetti a <strong>cambi di prezzi nel corso del tempo</strong></p>
-                                        <p class="agreed">Ho letto e accetto i <a href="https://www.iubenda.com/privacy-policy/10655652" target="_blank">Termini e condizioni</a>.</p>
+                                        <p class="agreed">Ho letto e accetto i <a style="color: black" href="https://www.iubenda.com/privacy-policy/10655652" target="_blank">Termini e condizioni</a>.</p>
                                         <?php
                                         if ($totale == 0) {
                                             echo " <button type='button' disabled='disabled' class='btn btn-purchase review'>Acconsento</button>";

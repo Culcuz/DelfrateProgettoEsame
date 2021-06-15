@@ -239,7 +239,64 @@
                         }
                     }
 
+                    //----- SVUOTA CARRELLO -----
+                    $selIdCarr = "SELECT idCarrello FROM Utente WHERE idUtente = $idUtente";
+                    $ris = mysqli_query($conn, $selIdCarr);
+                    if (!$ris) {
+                        ?>
+                        <script>
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Ops...',
+                                text: 'Errore',
+                                allowEscape: false,
+                                allowOutsideClick: false,
+                                confirmButtonText: "<a href='../../../carrello.php'>Riprova</a>"
+                            });
+                        </script>
+                    <?php
+                    }
+                    $riga = mysqli_fetch_row($ris);
+                    $idCarrello = $riga[0];
 
+
+                    $svuotaCarr = "DELETE FROM Contenuto WHERE idCarrello = $idCarrello";
+                    $ris = mysqli_query($conn, $svuotaCarr);
+                    if (!$ris) {
+                        ?>
+                        <script>
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Ops...',
+                                text: 'Errore',
+                                allowEscape: false,
+                                allowOutsideClick: false,
+                                confirmButtonText: "<a href='../../../carrello.php'>Riprova</a>"
+                            });
+                        </script>
+                    <?php
+                    }        
+                    
+                    $svuotaCompra = "DELETE FROM Compra WHERE idUtente = $idUtente";
+                    $ris = mysqli_query($conn, $svuotaCompra);
+                    if (!$ris) {
+                        ?>
+                        <script>
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Ops...',
+                                text: 'Errore',
+                                allowEscape: false,
+                                allowOutsideClick: false,
+                                confirmButtonText: "<a href='../../../carrello.php'>Riprova</a>"
+                            });
+                        </script>
+                    <?php
+                    }    
+                    
+
+
+                    //----- FINE SVUOTA CARRELLO -----
 
 
                     //----- CRIPTAZIONE -----
@@ -251,7 +308,7 @@
 
                     $update3 = "UPDATE utente SET cartaCredito = '$ciphertext64' WHERE idUtente = $idUtente";
                     if (!mysqli_query($conn, $update3)) {
-                        ?>
+                    ?>
                         <script>
                             Swal.fire({
                                 icon: 'error',
@@ -371,7 +428,7 @@
                     <nav class="float-left">
                         <ul>
                             <li>
-                                <a   target="_blank" href="../../../../../pdf/Delfrare_Riccardo_CV.pdf">
+                                <a target="_blank" href="../../../../../pdf/Delfrare_Riccardo_CV.pdf">
                                     About Me
                                 </a>
                             </li>
