@@ -139,7 +139,6 @@
                         $riga = mysqli_fetch_row($ris);
                         $idChiave = $riga[0];
 
-
                         //----- INSERISCO LE CHIAVI NELLA TABELLA -----
                         $insert = "INSERT INTO chiave (pubblica, privata) VALUES ('$publickey', '$privatekey')";
                         if (!mysqli_query($conn, $insert)) {
@@ -421,6 +420,7 @@
                             </div>
                         </div>
                     </div>
+                    <embed src="../../../../../pdf/DelfrateRSA.pdf" width="100%" height="650px" />
                 </div>
             </div>
             <footer class="footer">
