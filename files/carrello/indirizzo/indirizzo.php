@@ -107,19 +107,8 @@
                             <p>Home page</p>
                         </a>
                     </li>
-                    <?php
-                    if (!isset($_SESSION['connessione'])) {
-                        echo " 
-                            <li class='nav-item '>
-                            <a class='nav-link' href='./files/login/login.php'>
-                            <i class='material-icons'>person</i>
-                            <p>Accedi/Registrati</p>
-                            </a>
-                            </li>";
-                    }
-                    ?>
                     <li class="nav-item ">
-                        <a class="nav-link" href="./typography.html">
+                        <a class="nav-link" href="../../categorie/categorie.php">
                             <i class="material-icons">library_books</i>
                             <p>Categorie</p>
                         </a>
