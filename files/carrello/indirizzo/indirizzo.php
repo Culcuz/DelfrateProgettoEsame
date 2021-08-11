@@ -79,7 +79,7 @@
                 title: 'Accesso avvenuto'
             })
         </script>
-        <!-- FINE ACCESSO AVVENUTO -->
+        <!-- FINE ACCESSO AVVENUTO  -->
     <?php
     }
 
