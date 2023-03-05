@@ -1,3 +1,3 @@
-# DelfrateProgettoEsame
+#Easame di stato 2021
 Progetto per esame di stato 2021, sito di E-commerce con criptazione RSA
-pllplp
+IIS-Falcone Righi Corsico
